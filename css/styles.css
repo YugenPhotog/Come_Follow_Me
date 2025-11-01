@@ -1,0 +1,142 @@
+/* =========================================================
+   Gospel Doctrine – Shared Stylesheet
+   Works for both: 
+   - Gospel Doctrine cards (hero, .card, .card-grid)
+   - Course cards layout (.courses-section, .course-card)
+   ========================================================= */
+
+/* ---------- Palette & base ---------- */
+:root{
+  --ink:#0A2230;        /* deep text */
+  --blue-35:#005175;    /* header */
+  --blue-45:#063A52;    /* header darker */
+  --sage-20:#61706B;    /* accent */
+  --sand-10:#E9E4DB;    /* parchment */
+  --gold-20:#C6A86B;    /* warm accent */
+  --paper:#FFFFFF;
+  --muted:#5A6B74;
+  --radius:18px;
+  --shadow:0 6px 22px rgba(10,34,48,.08);
+}
+
+/* sanity test (remove when done) */
+/* body { outline: 6px solid hotpink; } */
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--sand-10), #F7F5F1 220px) fixed;
+  line-height:1.6;
+}
+
+/* ---------- Typography helpers ---------- */
+.section-title{
+  font-family:"EB Garamond", Georgia, "Times New Roman", serif;
+  font-size:clamp(1.6rem, 2.4vw, 2rem);
+  letter-spacing:.01em;
+  margin:0 0 10px;
+}
+.lead{font-size:1.05rem;max-width:70ch}
+
+/* ---------- Hero banner (Gospel Doctrine) ---------- */
+.hero{
+  color:#fff;
+  background:
+    radial-gradient(1200px 420px at 50% -10%, rgba(255,255,255,.12), transparent 60%),
+    linear-gradient(180deg, var(--blue-35), var(--blue-45) 60%, #052B3C);
+  padding:64px 20px 36px;
+  text-align:center;
+}
+.hero__inner{max-width:1100px;margin:0 auto}
+.hero__title{
+  font-family:"EB Garamond", Georgia, "Times New Roman", serif;
+  font-weight:800;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  letter-spacing:.02em;
+  margin:0 0 4px;
+}
+.hero__subtitle{font-size:clamp(1.05rem, 1.6vw, 1.25rem);margin:0 0 16px;opacity:.95}
+.hero__rule{width:140px;height:3px;background:var(--gold-20);margin:14px auto 18px;border-radius:2px}
+.topnav{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.topnav__link{color:#E7F7FF;text-decoration:none;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);transition:all .2s ease}
+.topnav__link:hover,.topnav__link:focus{background:rgba(255,255,255,.12);outline:none}
+
+/* ---------- Generic container ---------- */
+.container{max-width:1100px;margin:28px auto;padding:0 20px}
+
+/* ---------- Gospel Doctrine cards ---------- */
+.cards{margin-top:18px}
+.card-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{
+  grid-column:span 12;background:var(--paper);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:var(--shadow);border:1px solid #E6ECEF
+}
+@media (min-width:740px){.card{grid-column:span 6}}
+@media (min-width:1040px){.card{grid-column:span 3}}
+.card__eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;color:var(--muted)}
+.card__title{font-family:"EB Garamond", Georgia, serif;margin:.2rem 0 .4rem;font-size:1.4rem}
+.card__verse{font-style:italic;color:#2c4150;margin:.25rem 0 .5rem}
+.ref{opacity:.85}
+.card__text{margin:0 0 14px}
+.card--dc{border-top:4px solid var(--gold-20)}
+.card--ot{border-top:4px solid #7C7A5B}
+.card--nt{border-top:4px solid #3E7FA7}
+.card--bom{border-top:4px solid #2F7D62}
+.btn{display:inline-block;font-weight:700;text-decoration:none;background:var(--blue-35);color:#fff;padding:10px 14px;border-radius:10px;border:1px solid var(--blue-45);transition:transform .06s ease, box-shadow .2s ease}
+.btn:hover,.btn:focus{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,81,117,.22);outline:none}
+
+/* ---------- Course cards (your current index.html layout) ---------- */
+.text-banner{
+  background:linear-gradient(180deg, var(--blue-35), var(--blue-45));
+  color:#fff;
+  padding:56px 20px 28px;
+  text-align:center;
+}
+.banner-content{max-width:1100px;margin:0 auto}
+.banner-main-title{
+  font-family:"EB Garamond", Georgia, serif;
+  font-weight:800;letter-spacing:.08em;
+  margin:0 0 6px;
+  font-size:clamp(1.6rem, 3.6vw, 2.4rem)
+}
+.banner-subtitle{font-size:clamp(1rem, 1.6vw, 1.15rem);opacity:.95;margin:0}
+.decorative-rule{width:140px;height:3px;background:var(--gold-20);margin:16px auto 0;border-radius:2px}
+
+.main-nav{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:14px 0 0}
+.nav-link{color:#E7F7FF;text-decoration:none;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25)}
+.nav-link:hover,.nav-link:focus{background:rgba(255,255,255,.12);outline:none}
+
+.courses-section{max-width:1100px;margin:28px auto;padding:0 20px}
+.course-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.course-card{
+  grid-column:span 12;background:var(--paper);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:var(--shadow);border:1px solid #E6ECEF;
+  display:flex;flex-direction:column;gap:6px
+}
+@media (min-width:740px){.course-card{grid-column:span 6}}
+@media (min-width:1040px){.course-card{grid-column:span 3}}
+.course-icon{font-size:1.6rem}
+.course-number{margin:0;color:var(--muted);font-weight:700;letter-spacing:.06em}
+.course-title{margin:0;font-family:"EB Garamond", Georgia, serif}
+.course-description{margin:.25rem 0 .5rem}
+.course-meta{font-size:.9rem;color:#3b4d58;margin:0 0 .5rem}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.cta{display:inline-block;background:var(--blue-35);color:#fff;text-decoration:none;padding:8px 12px;border-radius:10px;border:1px solid var(--blue-45)}
+.cta.secondary{background:#f0f4f6;color:#063A52;border:1px solid #cfe1ea}
+
+/* ---------- Schedule & Resources (shared) ---------- */
+.schedule{margin-top:34px}
+.bullets{padding-left:1.1rem}
+.link-list{padding-left:1.1rem}
+.link-list a{color:#124E6D}
+.link-list a:hover,.link-list a:focus{text-decoration:underline}
+.note{margin-top:12px;font-size:.95rem;background:#F3F6F8;border-left:4px solid var(--sage-20);padding:12px 14px;border-radius:8px}
+
+/* ---------- Footer ---------- */
+.site-footer{margin-top:40px;text-align:center;color:#3b4d58;padding:26px 14px 40px}
+.footer__rule{width:100%;max-width:1100px;height:1px;background:#D9E4EA;margin:0 auto 14px}
+
+/* ---------- Accessibility ---------- */
+a:focus{outline:2px dashed #91BED4;outline-offset:3px}

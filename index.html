@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Come Follow Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Banner -->
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">Gospel Doctrine</h1>
+      <p class="hero__subtitle">“Seek learning, even by study and also by faith.” <span class="ref">— D&amp;C 88:118</span></p>
+      <div class="hero__rule" aria-hidden="true"></div>
+      <nav class="topnav" aria-label="Primary">
+        <a class="topnav__link" href="#scriptures">Scripture Courses</a>
+        <a class="topnav__link" href="#schedule">Schedule</a>
+        <a class="topnav__link" href="#resources">Resources</a>
+        <a class="topnav__link" href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <h2 id="welcome-title" class="section-title">Welcome</h2>
+      <p class="lead">
+        This site gathers weekly materials for our Gospel Doctrine class. You’ll find readings, handouts, and lesson links for the <em>Doctrine and Covenants</em>, <em>Old Testament</em>, <em>New Testament</em>, and the <em>Book of Mormon</em>.
+      </p>
+    </section>
+
+    <section id="scriptures" class="cards" aria-labelledby="scriptures-title">
+      <h2 id="scriptures-title" class="section-title">Scripture Courses</h2>
+      <div class="card-grid">
+        <article class="card card--dc" aria-labelledby="dc-title">
+          <div class="card__eyebrow">Standard Works</div>
+          <h3 id="dc-title" class="card__title">Doctrine &amp; Covenants</h3>
+          <p class="card__verse">“Whether by mine own voice or by the voice of my servants, it is the same.” <span class="ref">— D&amp;C 1:38</span></p>
+          <p class="card__text">Revelations for the latter days: restoration, priesthood keys, covenants, and the House of the Lord.</p>
+          <a class="btn" href="doctrine-and-covenants/index.html">Enter</a>
+        </article>
+
+        <article class="card card--ot" aria-labelledby="ot-title">
+          <div class="card__eyebrow">Standard Works</div>
+          <h3 id="ot-title" class="card__title">Old Testament</h3>
+          <p class="card__verse">“Hear, O Israel: The Lord our God is one Lord.” <span class="ref">— Deut. 6:4</span></p>
+          <p class="card__text">Covenant beginnings from Creation to prophets and exile—promises that point to Christ.</p>
+          <a class="btn" href="old-testament/index.html">Enter</a>
+        </article>
+
+        <article class="card card--nt" aria-labelledby="nt-title">
+          <div class="card__eyebrow">Standard Works</div>
+          <h3 id="nt-title" class="card__title">New Testament</h3>
+          <p class="card__verse">“Come, follow me.” <span class="ref">— Luke 18:22</span></p>
+          <p class="card__text">The mortal ministry of Jesus Christ, His Apostles, and the early Church—grace and discipleship.</p>
+          <a class="btn" href="new-testament/index.html">Enter</a>
+        </article>
+
+        <article class="card card--bom" aria-labelledby="bom-title">
+          <div class="card__eyebrow">Standard Works</div>
+          <h3 id="bom-title" class="card__title">Book of Mormon</h3>
+          <p class="card__verse">“And we talk of Christ, we rejoice in Christ.” <span class="ref">— 2 Nephi 25:26</span></p>
+          <p class="card__text">Another testament of Jesus Christ—covenant teaching from Lehi to Moroni, culminating at the temple in Bountiful.</p>
+          <a class="btn" href="book-of-mormon/index.html">Enter</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule" aria-labelledby="schedule-title">
+      <h2 id="schedule-title" class="section-title">Class Schedule</h2>
+      <ul class="bullets">
+        <li>Current Week: <a href="lessons/current.html">Overview &amp; Readings</a></li>
+        <li>Archive: <a href="lessons/index.html">All Lessons</a></li>
+      </ul>
+    </section>
+
+    <section id="resources" class="resources" aria-labelledby="resources-title">
+      <h2 id="resources-title" class="section-title">Resources</h2>
+      <ul class="link-list">
+        <li><a href="https://www.churchofjesuschrist.org/study/scriptures?lang=eng" target="_blank" rel="noopener">Scriptures (online)</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/study/come-follow-me?lang=eng" target="_blank" rel="noopener">Come, Follow Me</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/media?lang=eng" target="_blank" rel="noopener">Media Library (licensed use)</a></li>
+      </ul>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About the Class</h2>
+      <p>Gospel Doctrine builds faith in Jesus Christ through diligent scripture study, guided by living prophets and the Holy Ghost. Lessons emphasize covenant doctrine, context, and application.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <p>© <span id="year"></span> Gospel Doctrine Class. Unofficial class resource site.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

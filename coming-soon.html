@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Coming Soon – Gospel Doctrine Presentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Placeholder page for upcoming Gospel Doctrine presentation slides." />
+
+  <!-- Fonts + Shared Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    :root{
+      --bg:#0A2230; --accent:#C6A86B; --ink:#E9E4DB;
+      --btn:#005175; --btnHover:#063A52;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; display:flex; flex-direction:column;
+      background:var(--bg); color:var(--ink);
+      font-family:"Open Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    main{
+      flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:24px; gap:1rem;
+    }
+
+    /* ✅ SHRINK-WRAP: let the frame size to the image; no background/box look */
+    .frame{
+      display:inline-flex; align-items:center; justify-content:center;
+      max-width:100%; max-height:82vh; /* guard rails */
+      padding:0; border-radius:0; background:transparent; box-shadow:none; overflow:visible;
+    }
+
+    /* ✅ Image keeps native aspect ratio; scales down, no crop */
+    #randomImage{
+      display:block;
+      max-width:min(92vw, 1600px);
+      max-height:82vh;
+      width:auto; height:auto;
+      object-fit:contain; object-position:center;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(0,0,0,.45);
+      opacity:0; animation:fadeIn .6s ease forwards;
+      background:transparent; /* remove black behind transparent PNGs */
+    }
+    @keyframes fadeIn{to{opacity:1}}
+
+    h1#caption{
+      font-family:"EB Garamond", Georgia, serif; font-weight:700;
+      font-size:clamp(1.2rem, 2.4vw, 1.8rem); margin:.25rem 0 .2rem;
+      letter-spacing:.2px; opacity:0; animation:fadeIn .6s ease .1s forwards;
+    }
+    p.subtle{ margin:0; font-style:italic; color:var(--accent); font-size:clamp(.95rem, 1.7vw, 1.1rem); opacity:.95; }
+    .actions{ margin-top:1.1rem; display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; }
+    a.btn, button.btn{
+      display:inline-block; text-decoration:none; background:var(--btn); color:#fff;
+      padding:10px 16px; border-radius:10px; font-weight:700; border:1px solid var(--btnHover);
+      transition:background .2s ease, transform .05s ease; cursor:pointer;
+    }
+    a.btn:hover, button.btn:hover{ background:var(--btnHover) }
+    a.btn:active, button.btn:active{ transform:translateY(1px) }
+
+    footer.site-footer{ color:#b9c7cf; text-align:center; padding:16px 12px 24px; }
+    .footer__rule{height:1px; background:#193C50; margin:0 auto 10px; max-width:1100px}
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="frame" aria-live="polite">
+      <img id="randomImage" src="../images/coming-soon-placeholder.webp" alt="Coming soon artwork">
+    </div>
+
+    <h1 id="caption">Preparing lesson…</h1>
+    <p class="subtle">Slides are still in the oven. Please check back soon.</p>
+
+    <!-- View controls: Fit vs. Actual size -->
+    <div class="actions">
+      <button id="fitContain" class="btn" type="button">Fit to Screen</button>
+      <button id="fitActual" class="btn" type="button">Actual Size</button>
+      <a class="btn" href="../doctrine-and-covenants/index.html">← Return to Doctrine &amp; Covenants</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <p>© <span id="year"></span> Gospel Doctrine Class. Unofficial class resource site.</p>
+  </footer>
+
+  <script>
+    // Image-to-caption mapping
+    const items = [
+      { src: "../images/elder_speedy.webp", caption: "Slow but faithful servant — Elder Speedy reporting for duty." },
+      { src: "../images/hurry.webp", caption: "Hurry! Church starts in five minutes — and the lesson isn’t typed yet." },
+      { src: "../images/miracles.webp", caption: "Even miracles take preparation time." },
+      { src: "../images/missing_revalation.webp", caption: "Doctrine & Covenants 404 — The Missing Revelation." },
+      { src: "../images/printing_press.webp", caption: "Under construction at the Kirtland Printing Office." },
+      { src: "../images/self_powerpoint_pending.webp", caption: "The Spirit is willing, but the PowerPoint is pending." },
+      { src: "../images/selfie_inspiration_progress.webp", caption: "Digital revelation in progress." },
+      { src: "../images/sleep.webp", caption: "The Spirit is willing, but the flesh fell asleep on slide six." },
+      { src: "../images/steampunk.webp", caption: "Rebuilding Zion, one slide at a time." }
+    ];
+
+    // Random pick
+    const pick = items[Math.floor(Math.random() * items.length)];
+    const img = document.getElementById('randomImage');
+    const caption = document.getElementById('caption');
+
+    // Apply
+    img.src = pick.src;
+    img.alt = `Coming soon artwork: ${pick.caption}`;
+    caption.textContent = pick.caption;
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // View controls
+    const fitContainBtn = document.getElementById('fitContain');
+    const fitActualBtn  = document.getElementById('fitActual');
+
+    fitContainBtn.addEventListener('click', () => {
+      img.style.maxWidth  = 'min(92vw, 1600px)';
+      img.style.maxHeight = '82vh';
+      img.style.width     = 'auto';
+      img.style.height    = 'auto';
+      img.style.objectFit = 'contain';
+      img.style.boxShadow = '0 14px 40px rgba(0,0,0,.45)';
+    });
+
+    fitActualBtn.addEventListener('click', () => {
+      img.style.maxWidth  = 'none';
+      img.style.maxHeight = 'none';
+      img.style.width     = 'auto';
+      img.style.height    = 'auto';
+      img.style.objectFit = 'unset';
+      img.style.boxShadow = '0 14px 40px rgba(0,0,0,.45)';
+    });
+  </script>
+</body>
+</html>
