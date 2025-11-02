@@ -2,23 +2,323 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Doctrine &amp; Covenants – Nov–Dec 2025</title>
+  <title>Doctrine & Covenants — Nov–Dec 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Doctrine and Covenants 2025 — November and December weekly links." />
 
-  <!-- Fonts + Shared Stylesheet -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css" />
+  
+  <style>
+    :root {
+      /* Pantone Color Palette */
+      --tendril: #89A06B;
+      --cornflower: #7391C8;
+      --viola: #A692BA;
+      --rose-tan: #D19C97;
+      --mocha-mousse: #A47864;
+      --cobblestone: #A89A8E;
+      --willow: #9A8B4F;
+      --gardenia: #F1E9DF;
+      
+      /* Semantic color assignments */
+      --primary: #7391C8;
+      --primary-dark: #5a73a0;
+      --secondary: #89A06B;
+      --accent: #A692BA;
+      --warm-accent: #A47864;
+      --background: #F1E9DF;
+      --card-bg: #ffffff;
+      --text-dark: #3a3a3a;
+      --text-light: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'EB Garamond', 'Georgia', serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background-color: var(--background);
+    }
+    
+    /* Header Banner */
+    .text-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--text-light);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .banner-subtitle {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-bottom: 1rem;
+    }
+    
+    .banner-main-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    
+    .nav-link:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+    
+    .decorative-rule {
+      width: 100px;
+      height: 3px;
+      background: var(--gardenia);
+      margin: 1.5rem auto 0;
+      opacity: 0.7;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    /* Section Titles */
+    .section-title {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--secondary);
+    }
+    
+    .lead {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+    
+    /* Course Section */
+    .courses-section {
+      margin-bottom: 4rem;
+    }
+    
+    /* Course Grid */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    /* Course Cards */
+    .course-card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .course-card:nth-child(4n+2) {
+      border-left-color: var(--secondary);
+    }
+    
+    .course-card:nth-child(4n+3) {
+      border-left-color: var(--accent);
+    }
+    
+    .course-card:nth-child(4n+4) {
+      border-left-color: var(--warm-accent);
+    }
+    
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    
+    .course-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .course-number {
+      color: var(--warm-accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    .course-title {
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+    
+    /* CTA Buttons */
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+    
+    .cta {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding: 0.9rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .cta:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    }
+    
+    .cta.secondary {
+      background-color: var(--secondary);
+    }
+    
+    .cta.secondary:hover {
+      background-color: #6d834e;
+    }
+    
+    /* Resources Section */
+    .link-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .link-list li {
+      background-color: var(--card-bg);
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .link-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    }
+    
+    .link-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    .link-list a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(135deg, var(--cobblestone) 0%, var(--mocha-mousse) 100%);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .footer__rule {
+      width: 100px;
+      height: 2px;
+      background: var(--text-light);
+      margin: 0 auto 1rem;
+      opacity: 0.5;
+    }
+    
+    .site-footer p {
+      margin: 0.5rem 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .banner-main-title {
+        font-size: 2rem;
+      }
+      
+      .banner-subtitle {
+        font-size: 0.95rem;
+      }
+      
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .container {
+        padding: 2rem 1rem;
+      }
+      
+      .cta-row {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .banner-main-title {
+        font-size: 1.6rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="text-banner">
     <div class="banner-content">
       <p class="banner-subtitle" style="margin-bottom:6px;">
-        <a href="../index.html" class="nav-link" style="border:none;padding:6px 10px;background:rgba(255,255,255,.1);">← Home</a>
+        <a href="../index.html" class="nav-link">← Home</a>
       </p>
-      <h1 class="banner-main-title">Doctrine &amp; Covenants (Nov – Dec 2025)</h1>
+      <h1 class="banner-main-title">Doctrine & Covenants (Nov – Dec 2025)</h1>
       <p class="banner-subtitle">You teach on the 1st and 3rd Sundays — those lessons include a presentation link.</p>
       <div class="decorative-rule" aria-hidden="true"></div>
     </div>
@@ -33,34 +333,31 @@
       </p>
     </section>
 
- <section id="current" class="courses-section" aria-labelledby="current-title">
-  <h2 id="current-title" class="section-title">November 2025</h2>
-  <div class="course-grid">
+    <section id="current" class="courses-section" aria-labelledby="current-title">
+      <h2 id="current-title" class="section-title">November 2025</h2>
+      <div class="course-grid">
 
-    <!-- Oct 27 – Nov 2 (Teaching Sunday) -->
-    <article class="course-card">
-      <div class="course-icon" aria-hidden="true">🏛️</div>
-      <p class="course-number">Oct 27 – Nov 2</p>
-      <h3 class="course-title">D&amp;C 124 — “A House unto My Name”</h3>
-      <div class="cta-row">
-        <a class="cta" target="_blank"
-           href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/44-doctrine-and-covenants-124?lang=eng">
-          Study in Official Manual
-        </a>
-        <a class="cta secondary" href="/doctrine-and-covenants/lessons/2025-11-02_house-unto-my-name_dc124.html">
-          View Sunday Presentation
-        </a>
-      </div>
-    </article>
-
-  </div>
-</section>
+        <!-- Oct 27 – Nov 2 (Teaching Sunday) -->
+        <article class="course-card">
+          <div class="course-icon" aria-hidden="true">🏛️</div>
+          <p class="course-number">Oct 27 – Nov 2</p>
+          <h3 class="course-title">D&C 124 – "A House unto My Name"</h3>
+          <div class="cta-row">
+            <a class="cta" target="_blank"
+               href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/44-doctrine-and-covenants-124?lang=eng">
+              Study in Official Manual
+            </a>
+            <a class="cta secondary" href="lessons/2025-11-02_house-unto-my-name_dc124.html">
+  View Sunday Presentation
+</a>
+          </div>
+        </article>
 
         <!-- Nov 3 – 9 -->
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">📜</div>
           <p class="course-number">Nov 3 – 9</p>
-          <h3 class="course-title">D&amp;C 125–128 — “A Voice of Gladness for the Living and the Dead”</h3>
+          <h3 class="course-title">D&C 125–128 – "A Voice of Gladness for the Living and the Dead"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/45-doctrine-and-covenants-125-128?lang=eng">
@@ -73,16 +370,15 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">🗝️</div>
           <p class="course-number">Nov 10 – 16</p>
-          <h3 class="course-title">D&amp;C 129–132 — “I Have Seen Your Sacrifices in Obedience”</h3>
+          <h3 class="course-title">D&C 129–132 – "I Have Seen Your Sacrifices in Obedience"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/46-doctrine-and-covenants-129-132?lang=eng">
                Study in Official Manual
             </a>
-           </a>
-          <a class="cta secondary" href="../coming-soon.html">
-             View Sunday Presentation
-          </a>
+            <a class="cta secondary" href="../coming-soon.html">
+               View Sunday Presentation
+            </a>
           </div>
         </article>
 
@@ -90,7 +386,7 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">⏳</div>
           <p class="course-number">Nov 17 – 23</p>
-          <h3 class="course-title">D&amp;C 133–134 — “Prepare Ye for the Coming of the Bridegroom”</h3>
+          <h3 class="course-title">D&C 133–134 – "Prepare Ye for the Coming of the Bridegroom"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/47-doctrine-and-covenants-133-134?lang=eng">
@@ -103,7 +399,7 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">🕊️</div>
           <p class="course-number">Nov 24 – 30</p>
-          <h3 class="course-title">D&amp;C 135–136 — “He Has Sealed His Mission and His Works with His Own Blood”</h3>
+          <h3 class="course-title">D&C 135–136 – "He Has Sealed His Mission and His Works with His Own Blood"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/48-doctrine-and-covenants-135-136?lang=eng">
@@ -121,16 +417,15 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">🌄</div>
           <p class="course-number">Dec 1 – 7</p>
-          <h3 class="course-title">D&amp;C 137–138 — “The Vision of the Redemption of the Dead”</h3>
+          <h3 class="course-title">D&C 137–138 – "The Vision of the Redemption of the Dead"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/49-doctrine-and-covenants-137-138?lang=eng">
                Study in Official Manual
             </a>
-           </a>
-          <a class="cta secondary" href="../coming-soon.html">
-             View Sunday Presentation
-          </a>
+            <a class="cta secondary" href="../coming-soon.html">
+               View Sunday Presentation
+            </a>
           </div>
         </article>
 
@@ -138,7 +433,7 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">📜</div>
           <p class="course-number">Dec 8 – 14</p>
-          <h3 class="course-title">Articles of Faith &amp; Official Declarations 1 &amp; 2 — “We Believe”</h3>
+          <h3 class="course-title">Articles of Faith & Official Declarations 1 & 2 – "We Believe"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/50-articles-of-faith-and-official-declarations-1-2?lang=eng">
@@ -151,15 +446,15 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
           <p class="course-number">Dec 15 – 21</p>
-          <h3 class="course-title">The Family: A Proclamation to the World — “The Family Is Central to the Creator’s Plan”</h3>
+          <h3 class="course-title">The Family: A Proclamation to the World – "The Family Is Central to the Creator's Plan"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/51-the-family-a-proclamation-to-the-world?lang=eng">
                Study in Official Manual
             </a>
-          <a class="cta secondary" href="../coming-soon.html">
-             View Sunday Presentation
-          </a>
+            <a class="cta secondary" href="../coming-soon.html">
+               View Sunday Presentation
+            </a>
           </div>
         </article>
 
@@ -167,7 +462,7 @@
         <article class="course-card">
           <div class="course-icon" aria-hidden="true">⭐</div>
           <p class="course-number">Dec 22 – 28</p>
-          <h3 class="course-title">Christmas — “The Matchless Gift of God’s Divine Son”</h3>
+          <h3 class="course-title">Christmas – "The Matchless Gift of God's Divine Son"</h3>
           <div class="cta-row">
             <a class="cta" target="_blank"
                href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025/52-christmas?lang=eng">

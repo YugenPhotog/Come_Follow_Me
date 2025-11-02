@@ -1,107 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Come Follow Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gospel Doctrine Sunday School</title>
+    <style>
+        :root {
+            /* Pantone Color Palette */
+            --tendril: #89A06B;
+            --cornflower: #7391C8;
+            --viola: #A692BA;
+            --rose-tan: #D19C97;
+            --mocha-mousse: #A47864;
+            --cobblestone: #A89A8E;
+            --willow: #9A8B4F;
+            --gardenia: #F1E9DF;
+            
+            /* Semantic color assignments for readability */
+            --primary: #7391C8;        /* Cornflower Blue - main brand */
+            --primary-dark: #5a73a0;
+            --secondary: #89A06B;      /* Tendril - natural, peaceful */
+            --accent: #A692BA;         /* Viola - spiritual */
+            --warm-accent: #A47864;    /* Mocha Mousse - warm, inviting */
+            --background: #F1E9DF;     /* Gardenia - soft, warm background */
+            --card-bg: #ffffff;
+            --text-dark: #3a3a3a;
+            --text-light: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--secondary);
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            display: block;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        nav a:hover {
+            background-color: var(--tendril);
+            opacity: 0.8;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--viola) 100%);
+            color: var(--text-light);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        section h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .card:nth-child(2) {
+            border-left-color: var(--secondary);
+        }
+        
+        .card:nth-child(3) {
+            border-left-color: var(--accent);
+        }
+        
+        .card:nth-child(4) {
+            border-left-color: var(--warm-accent);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        /* Lesson Schedule */
+        .lesson-item {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .lesson-item:hover {
+            border-left-width: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+        }
+        
+        .lesson-item h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .lesson-date {
+            color: var(--warm-accent);
+            font-weight: bold;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .lesson-scripture {
+            color: var(--text-dark);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--willow) 0%, var(--mocha-mousse) 100%);
+            color: var(--text-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            font-size: 1.2rem;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 4rem;
+            opacity: 0.3;
+            display: block;
+            line-height: 0;
+            margin-bottom: 1rem;
+        }
+        
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #6d834e;
+        }
+        
+        /* Resources List */
+        .resources-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .resources-list li {
+            background-color: var(--card-bg);
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .resources-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+        }
+        
+        .resources-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .resources-list a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--cobblestone) 0%, var(--mocha-mousse) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav a {
+                padding: 0.8rem 1rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Banner -->
-  <header class="hero">
-    <div class="hero__inner">
-      <h1 class="hero__title">Gospel Doctrine</h1>
-      <p class="hero__subtitle">“Seek learning, even by study and also by faith.” <span class="ref">— D&amp;C 88:118</span></p>
-      <div class="hero__rule" aria-hidden="true"></div>
-      <nav class="topnav" aria-label="Primary">
-        <a class="topnav__link" href="#scriptures">Scripture Courses</a>
-        <a class="topnav__link" href="#schedule">Schedule</a>
-        <a class="topnav__link" href="#resources">Resources</a>
-        <a class="topnav__link" href="#about">About</a>
-      </nav>
+    <header>
+        <h1>Gospel Doctrine</h1>
+        <p>“Seek learning, even by study and also by faith.” — D&C 88:118</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#lessons">Lessons</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero">
+        <h2>Welcome to Our Class</h2>
+        <p>This site gathers weekly materials for our Gospel Doctrine class. You’ll find readings, handouts, and lesson links for the Doctrine and Covenants, Old Testament, New Testament, and the Book of Mormon.</p>
     </div>
-  </header>
-
-  <main id="main" class="container">
-    <section class="welcome" aria-labelledby="welcome-title">
-      <h2 id="welcome-title" class="section-title">Welcome</h2>
-      <p class="lead">
-        This site gathers weekly materials for our Gospel Doctrine class. You’ll find readings, handouts, and lesson links for the <em>Doctrine and Covenants</em>, <em>Old Testament</em>, <em>New Testament</em>, and the <em>Book of Mormon</em>.
-      </p>
-    </section>
-
-    <section id="scriptures" class="cards" aria-labelledby="scriptures-title">
-      <h2 id="scriptures-title" class="section-title">Scripture Courses</h2>
-      <div class="card-grid">
-        <article class="card card--dc" aria-labelledby="dc-title">
-          <div class="card__eyebrow">Standard Works</div>
-          <h3 id="dc-title" class="card__title">Doctrine &amp; Covenants</h3>
-          <p class="card__verse">“Whether by mine own voice or by the voice of my servants, it is the same.” <span class="ref">— D&amp;C 1:38</span></p>
-          <p class="card__text">Revelations for the latter days: restoration, priesthood keys, covenants, and the House of the Lord.</p>
-          <a class="btn" href="doctrine-and-covenants/index.html">Enter</a>
-        </article>
-
-        <article class="card card--ot" aria-labelledby="ot-title">
-          <div class="card__eyebrow">Standard Works</div>
-          <h3 id="ot-title" class="card__title">Old Testament</h3>
-          <p class="card__verse">“Hear, O Israel: The Lord our God is one Lord.” <span class="ref">— Deut. 6:4</span></p>
-          <p class="card__text">Covenant beginnings from Creation to prophets and exile—promises that point to Christ.</p>
-          <a class="btn" href="old-testament/index.html">Enter</a>
-        </article>
-
-        <article class="card card--nt" aria-labelledby="nt-title">
-          <div class="card__eyebrow">Standard Works</div>
-          <h3 id="nt-title" class="card__title">New Testament</h3>
-          <p class="card__verse">“Come, follow me.” <span class="ref">— Luke 18:22</span></p>
-          <p class="card__text">The mortal ministry of Jesus Christ, His Apostles, and the early Church—grace and discipleship.</p>
-          <a class="btn" href="new-testament/index.html">Enter</a>
-        </article>
-
-        <article class="card card--bom" aria-labelledby="bom-title">
-          <div class="card__eyebrow">Standard Works</div>
-          <h3 id="bom-title" class="card__title">Book of Mormon</h3>
-          <p class="card__verse">“And we talk of Christ, we rejoice in Christ.” <span class="ref">— 2 Nephi 25:26</span></p>
-          <p class="card__text">Another testament of Jesus Christ—covenant teaching from Lehi to Moroni, culminating at the temple in Bountiful.</p>
-            <a class="cta secondary" href="coming-soon.html">
-             Coming Soon</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="schedule" class="schedule" aria-labelledby="schedule-title">
-      <h2 id="schedule-title" class="section-title">Class Schedule</h2>
-      <ul class="bullets">
-        <li>Current Week: <a href="lessons/current.html">Overview &amp; Readings</a></li>
-        <li>Archive: <a href="lessons/index.html">All Lessons</a></li>
-      </ul>
-    </section>
-
-    <section id="resources" class="resources" aria-labelledby="resources-title">
-      <h2 id="resources-title" class="section-title">Resources</h2>
-      <ul class="link-list">
-        <li><a href="https://www.churchofjesuschrist.org/study/scriptures?lang=eng" target="_blank" rel="noopener">Scriptures (online)</a></li>
-        <li><a href="https://www.churchofjesuschrist.org/study/come-follow-me?lang=eng" target="_blank" rel="noopener">Come, Follow Me</a></li>
-        <li><a href="https://www.churchofjesuschrist.org/media?lang=eng" target="_blank" rel="noopener">Media Library (licensed use)</a></li>
-      </ul>
-    </section>
-
-    <section id="about" class="about" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About the Class</h2>
-      <p>Gospel Doctrine builds faith in Jesus Christ through diligent scripture study, guided by living prophets and the Holy Ghost. Lessons emphasize covenant doctrine, context, and application.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer__rule" aria-hidden="true"></div>
-    <p>© <span id="year"></span> Gospel Doctrine Class. Unofficial class resource site.</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    
+    <div class="container">
+        <section id="home">
+            <h2>About Our Class</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Study Together</h3>
+                    <p>We gather each Sunday to deepen our understanding of the Doctrine and Covenants through thoughtful discussion and spiritual reflection.</p>
+                </div>
+                <div class="card">
+                    <h3>Learn & Grow</h3>
+                    <p>Our class emphasizes both historical context and modern application, helping us apply eternal principles to our daily lives.</p>
+                </div>
+                <div class="card">
+                    <h3>Build Faith</h3>
+                    <p>Through scripture study and testimony sharing, we strengthen our testimonies and support one another in our spiritual journeys.</p>
+                </div>
+                <div class="card">
+                    <h3>Fellowship</h3>
+                    <p>Beyond the classroom, we're a community of believers committed to following Christ and serving one another.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="quote-box">
+            Search diligently, pray always, and be believing, and all things shall work together for your good.
+            <br><small style="opacity: 0.9;">— Doctrine & Covenants 90:24</small>
+        </div>
+        
+        <section id="lessons">
+            <h2>Scripture Course</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Doctrine & Covenants</h3>
+                    <p>“Whether by mine own voice or by the voice of my servants, it is the same.” — D&C 1:38</p>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--warm-accent);">Revelations for the latter days: restoration, priesthood keys, covenants, and the House of the Lord.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="doctrine-and-covenants/index.html" class="btn">Enter</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Old Testament</h3>
+                    <p>“Hear, O Israel: The Lord our God is one Lord.” — Deut. 6:4</p>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--warm-accent);">Covenant beginnings from Creation to prophets and exile—promises that point to Christ.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#" class="btn">Enter</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>New Testament</h3>
+                    <p>“Come, follow me.” — Luke 18:22</p>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--warm-accent);">The mortal ministry of Jesus Christ, His Apostles, and the early Church—grace and discipleship.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#" class="btn">Enter</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Book of Mormon</h3>
+                    <p>“And we talk of Christ, we rejoice in Christ.” — 2 Nephi 25:26</p>
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--warm-accent);">Another testament of Jesus Christ—covenant teaching from Lehi to Moroni, culminating at the temple in Bountiful.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#" class="btn">Enter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>Class Resources</h2>
+            <ul class="resources-list">
+                <li><a href="#">📖 Come, Follow Me Manual</a> - Weekly reading schedule and discussion questions</li>
+                <li><a href="#">📚 Church History Library</a> - Historical context and additional resources</li>
+                <li><a href="#">🎧 Gospel Library App</a> - Audio scriptures and conference talks</li>
+                <li><a href="#">✍️ Lesson Handouts</a> - Downloadable materials and study guides</li>
+                <li><a href="#">💬 Class Discussion Board</a> - Share insights and questions throughout the week</li>
+                <li><a href="#">📹 Video Resources</a> - Church videos and presentations on D&C topics</li>
+            </ul>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="#" class="btn">Download This Week's Materials</a>
+                <a href="#" class="btn btn-secondary" style="margin-left: 1rem;">View Study Guide</a>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2>Our Teaching Approach</h2>
+            <div class="card">
+                <p style="font-size: 1.1rem;">
+                    Our Gospel Doctrine class emphasizes the Socratic method of teaching—asking thoughtful questions that invite the Holy Ghost to teach and testify. We explore the historical context of revelations, examine the original challenges faced by early Saints, and discuss how these eternal principles apply to our lives today.
+                </p>
+                <p style="font-size: 1.1rem; margin-top: 1rem;">
+                    Every lesson is designed to strengthen testimonies, encourage personal revelation, and foster meaningful discussion. We believe that when we study together with humble hearts and seeking spirits, the scriptures become living documents that guide us toward Christ.
+                </p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Connect With Us</h2>
+            <div class="card">
+                <h3>Class Information</h3>
+                <p><strong>Time:</strong> Sundays, 10:00 AM - 10:50 AM</p>
+                <p><strong>Location:</strong> Relief Society Room</p>
+                <p><strong>Teacher:</strong> [Your Name]</p>
+                <p style="margin-top: 1.5rem;">
+                    <strong>Questions or Comments?</strong><br>
+                    Feel free to reach out via email or speak with us after class.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <a href="mailto:contact@example.com" class="btn">Send Email</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p><strong>Gospel Doctrine Sunday School</strong></p>
+        <p>"Seek ye out of the best books words of wisdom; seek learning, even by study and also by faith." — D&C 88:118</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">© 2025 | Design inspired by faith and community</p>
+    </footer>
 </body>
 </html>
