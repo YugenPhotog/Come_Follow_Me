@@ -1,0 +1,5 @@
+
+# large media (kept out of git)
+resources/video_lectures/
+*.mp4
+*.mov
