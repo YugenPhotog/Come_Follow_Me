@@ -394,27 +394,9 @@
     <p style="margin-top: 2em;">November 10–16, 2025</p>
     <p style="font-size: 0.9em; margin-top: 1em;">Come, Follow Me</p>
     
-    <div class="nav-container" style="position: absolute; top: 20px; right: 20px; z-index: 100;">
-        <img src="../../images/liahona.webp" alt="Navigation" onclick="toggleNav()" style="width: 80px; height: 80px; cursor: pointer; opacity: 0.8; transition: opacity 0.3s;">
-        <div id="navigation-menu" style="display: none; position: absolute; top: 0; right: 0; width: 280px; background: rgba(255, 255, 255, 0.98); padding: 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 0.75em; text-align: left;">
-            <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 1em; border-bottom: 2px solid #8B4513;">Navigation & Shortcuts</h4>
-            <p style="margin: 5px 0;"><strong>Arrow Keys:</strong> Navigate slides</p>
-            <p style="margin: 5px 0;"><strong><span class="key-shortcut">T</span>:</strong> Discussion hints</p>
-            <p style="margin: 5px 0;"><strong><span class="key-shortcut">ESC</span>:</strong> Overview mode</p>
-            <p style="margin: 5px 0;"><strong><span class="key-shortcut">F</span>:</strong> Fullscreen</p>
-        </div>
-    </div>
+	<img src="nov16-qr-code.png"</img>
     
-    <script>
-        function toggleNav() {
-            var menu = document.getElementById('navigation-menu');
-            if (menu.style.display === 'none') {
-                menu.style.display = 'block';
-            } else {
-                menu.style.display = 'none';
-            }
-        }
-    </script>
+    
 </section>
             <!-- OPENING QUESTION -->
             <section>
@@ -535,11 +517,18 @@
 			<!-- ETERNAL MARRIAGE - TEMPORAL VS ETERNAL -->
             <section>
                 <h2>The Distinction</h2>
-                <h3>Temporal vs. Eternal Marriages</h3>
+               <div class="discussion-question" data-hint="marriage-3">
+                    <span class="hint-indicator">Press T</span>
+				<h3>Temporal vs. Eternal Marriages</h3>
                 <div class="scripture-citation">
                     <strong>Let's read D&C 132:15, 19</strong>
                 </div>
                 <p><strong>Temporal marriages (v. 15):</strong> "If a man marry him a wife in the world, and he marry her not by me nor by my word... they are not bound by any law when they are out of the world"</p>
+				<ul>
+				<li><strong>Till Death Do You Part:</strong>This is the official doctrine of almost every other church</li>
+				<li><em>though perhaps not the belief of their members</em>
+					</li>
+				</ul>
                 <p><strong>Eternal marriages (v. 19):</strong> "If a man marry a wife by my word, which is my law, and by the new and everlasting covenant, and it is sealed unto them by the Holy Spirit of promise... it shall be of full force when they are out of the world"</p>
             </section>
 
@@ -549,7 +538,7 @@
                 <div class="discussion-question" data-hint="marriage-1">
                     <span class="hint-indicator">Press T</span>
                     
-                    <br>What does this teach us about the purpose of marriage? Is marriage fundamentally about this life or the next?
+                    <br>What does this teach us about the purpose of marriage? How does viewing marriage as an eternal covenant—rather than a temporal contract—change everything about how we understand it?</br>
                 </div>
             </section>
 
@@ -588,7 +577,7 @@
         </div>
         <div style="flex: 1;">
             <div style="background: var(--accent-cream); padding: 30px; border-left: 5px solid var(--secondary-gold); border-radius: 12px;">
-                <p style="margin: 0; font-size: 64px; line-height: 1.5;">Before we dive into D&C 132:20-24, let's understand the historical significance of this doctrine.</p>
+                <p style="margin: 0; font-size: 64px; line-height: 1.5;">Before we discuss D&C 132:20-24 and the doctrine of theosis (or deification), let's understand the historical significance of this doctrine.</p>
             </div>
         </div>
     </div>
@@ -897,7 +886,23 @@
         <div class="close-hint">Press T to close</div>
     </div>
 
-    <div class="hint-popup" id="hint-bible-verses">
+	<div class="hint-popup" id="hint-marriage-3">
+        <h4>Discussion Guide: Eternal Marriage</h4>
+        <div class="hint-popup-content">
+            <p><strong>What Makes LDS Doctrine Unique</strong></p>
+        <p>The LDS Church is virtually the only Christian denomination with a fully developed, authoritative, covenant-based theology of eternal marriage that includes:</p>
+			<ul>
+			<li>Sealing authority (priesthood keys necessary)</li>
+<li>Temple ordinances (specific ceremony required)</li>
+<li>Exaltation theology (marriage tied to becoming gods)</li>
+<li>Eternal increase (continuation of procreation)</li>
+<li>Proxy work (sealings for the dead)</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+    
+	<div class="hint-popup" id="hint-bible-verses">
         <h4>Discussion Guide: Biblical Teaching</h4>
         <div class="hint-popup-content">
             <p><strong>Why most Christians don't interpret these passages this way:</strong></p>
