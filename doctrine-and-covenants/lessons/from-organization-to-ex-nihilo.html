@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2nd Century Shift to Creation Ex Nihilo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <style>
+        :root {
+            --primary-blue: #2C5F8D;
+            --secondary-gold: #B8860B;
+            --accent-cream: #F5F5DC;
+            --text-dark: #2C3E50;
+            --text-light: #FFFFFF;
+            --highlight-burgundy: #800020;
+        }
+
+        .reveal {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%);
+            font-size: 38px;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Cinzel', 'Georgia', serif;
+            color: var(--primary-blue);
+            text-transform: none;
+            font-weight: 600;
+        }
+
+        .reveal h1 {
+            font-size: 68px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .reveal h2 {
+            font-size: 54px;
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--secondary-gold);
+            padding-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .reveal h3 {
+            font-size: 44px;
+            color: var(--highlight-burgundy);
+        }
+
+        .reveal section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 80px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        .reveal .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--highlight-burgundy) 100%);
+            color: var(--text-light);
+        }
+
+        .reveal .title-slide h1,
+        .reveal .title-slide h3 {
+            color: var(--text-light);
+        }
+
+        .scripture-citation {
+            background: var(--accent-cream);
+            padding: 40px;
+            border-left: 5px solid var(--secondary-gold);
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 15px;
+            font-size: 38px;
+            line-height: 1.7;
+        }
+
+        .historical-context {
+            background: linear-gradient(to right, #E3F2FD, #BBDEFB);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .key-point {
+            background: linear-gradient(to right, #FFF9E6, #FFFEF0);
+            padding: 40px;
+            border-left: 8px solid var(--highlight-burgundy);
+            margin: 30px 0;
+            border-radius: 12px;
+            font-size: 36px;
+            line-height: 1.6;
+        }
+
+        .philosopher-box {
+            background: var(--accent-cream);
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 8px solid var(--primary-blue);
+            border-radius: 12px;
+        }
+
+        .philosopher-box .name {
+            font-weight: bold;
+            color: var(--highlight-burgundy);
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .philosopher-box .dates {
+            font-size: 32px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .philosopher-box .contribution {
+            font-size: 36px;
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .comparison-box {
+            padding: 30px;
+            border-radius: 12px;
+            min-height: 200px;
+        }
+
+        .comparison-box.before {
+            background: #E8F5E9;
+            border-left: 8px solid #2E7D32;
+        }
+
+        .comparison-box.after {
+            background: #FFEBEE;
+            border-left: 8px solid #C62828;
+        }
+
+        .comparison-box h4 {
+            color: var(--highlight-burgundy);
+            font-size: 36px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .comparison-box p {
+            font-size: 32px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        blockquote {
+            background: var(--accent-cream);
+            border-left: 8px solid var(--secondary-gold);
+            padding: 40px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 38px;
+            line-height: 1.7;
+            border-radius: 12px;
+        }
+
+        ul, ol {
+            margin-left: 1.5em;
+            font-size: 38px;
+            line-height: 1.7;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 25px 0;
+            font-size: 38px;
+        }
+
+        strong {
+            color: var(--highlight-burgundy);
+        }
+
+        .reveal .slides section {
+            overflow-y: auto !important;
+            max-height: 1080px;
+        }
+
+        .reveal .slides {
+            overflow: visible !important;
+        }
+
+        .highlight-box {
+            background: #FFF3E0;
+            padding: 30px;
+            border-left: 8px solid #FF6F00;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- TITLE SLIDE -->
+            <section class="title-slide">
+                <h1>The 2nd Century Shift to Creation Ex Nihilo</h1>
+                <h3>How Greek Philosophy Changed Christian Theology</h3>
+                <p style="margin-top: 2em; font-size: 0.9em;">Understanding a Pivotal Theological Development</p>
+            </section>
+
+            <!-- INTRODUCTION -->
+            <section>
+                <h2>What We'll Explore</h2>
+                <p>This presentation examines one of the most consequential theological shifts in Christian history:</p>
+                <ol>
+                    <li>What early Christians believed about Creation</li>
+                    <li>How Greek philosophy influenced 2nd-century theology</li>
+                    <li>Why creation <em>ex nihilo</em> became dominant</li>
+                    <li>The theological consequences of this shift</li>
+                    <li>How this relates to LDS restored doctrine</li>
+                </ol>
+            </section>
+
+            <!-- EARLY CHRISTIAN VIEW -->
+            <section>
+                <h2>Early Christian View</h2>
+                <h3>1st - Early 2nd Century</h3>
+                <div class="historical-context">
+                    <p><strong>Christians inherited Jewish cosmology from Genesis:</strong></p>
+                    <ul>
+                        <li>Genesis 1:2 describes God organizing pre-existing matter: "the earth was without form, and void"</li>
+                        <li>Early Christians taught God was a <strong>divine craftsman</strong> who organized chaos into cosmos</li>
+                        <li>This paralleled <strong>Plato's <em>Timaeus</em></strong> where the Demiurge shapes pre-existing matter</li>
+                        <li>God was seen as organizer, not creator from absolute nothing</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- THE SHIFT -->
+            <section style="font-size: 0.8em;">
+                <h2 style="font-size: 54px;">The Shift Begins</h2>
+                <h3 style="font-size: 42px;">Mid-2nd Century Onward</h3>
+                <div class="key-point" style="padding: 30px; font-size: 32px;">
+                    <p style="margin: 10px 0; font-size: 32px;"><strong>The Context:</strong></p>
+                    <ul style="font-size: 32px; line-height: 1.5; margin: 10px 0;">
+                        <li style="margin: 8px 0;">Church theologians encountered <strong>Greek philosophical schools</strong> (Platonism, Stoicism, Gnosticism)</li>
+                        <li style="margin: 8px 0;">They needed to distinguish Christianity from competing philosophies</li>
+                        <li style="margin: 8px 0;">Creation <em>ex nihilo</em> emerged as a way to emphasize God's absolute transcendence</li>
+                        <li style="margin: 8px 0;">Goal: Show God is utterly unique and different from all creation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- PHILOSOPHICAL INFLUENCE 1: MIDDLE PLATONISM -->
+            <section style="font-size: 0.75em;">
+                <h2 style="font-size: 50px;">Philosophical Influence #1</h2>
+                <h3 style="font-size: 40px;">Middle Platonism</h3>
+                <div class="philosopher-box" style="padding: 25px;">
+                    <p style="font-size: 32px; line-height: 1.5; margin: 10px 0;"><strong>Greek Philosophical Beliefs:</strong></p>
+                    <ul style="font-size: 32px; line-height: 1.4; margin: 10px 0;">
+                        <li style="margin: 8px 0;">An <strong>eternal, unchanging ultimate reality</strong> exists</li>
+                        <li style="margin: 8px 0;">Matter was seen as inherently inferior to spirit</li>
+                        <li style="margin: 8px 0;">To elevate God above all competitors, God must be <strong>utterly different</strong> from creation</li>
+                    </ul>
+                    <p style="font-size: 32px; margin: 15px 0;"><strong>The Solution:</strong></p>
+                    <p style="font-size: 32px; line-height: 1.5;">God didn't work with existing materials—He created from <strong>absolute nothingness</strong>. This made God completely transcendent and unique.</p>
+                </div>
+            </section>
+
+            <!-- PHILOSOPHICAL INFLUENCE 2: ANTI-GNOSTIC -->
+            <section style="font-size: 0.75em;">
+                <h2 style="font-size: 50px;">Philosophical Influence #2</h2>
+                <h3 style="font-size: 40px;">Anti-Gnostic Polemic</h3>
+                <div class="highlight-box" style="padding: 25px;">
+                    <p style="font-size: 32px; margin: 10px 0;"><strong>The Gnostic Problem:</strong></p>
+                    <ul style="font-size: 32px; line-height: 1.4; margin: 10px 0;">
+                        <li style="margin: 8px 0;"><strong>Gnostics</strong> taught that an inferior deity (Demiurge) created the material world from flawed matter</li>
+                        <li style="margin: 8px 0;">They viewed matter as <strong>inherently evil</strong></li>
+                        <li style="margin: 8px 0;">This contradicted Genesis 1:31: "God saw everything... and behold, it was very good"</li>
+                    </ul>
+                    <p style="font-size: 32px; margin: 15px 0;"><strong>Orthodox Christian Response:</strong></p>
+                    <p style="font-size: 32px; line-height: 1.5;">To affirm that <strong>creation is good</strong> and that the same God who is Father is also Creator, they argued creation <em>ex nihilo</em>: God alone created everything, and it was inherently good.</p>
+                </div>
+            </section>
+
+            <!-- PHILOSOPHICAL INFLUENCE 3: DIVINE SOVEREIGNTY -->
+            <section style="font-size: 0.75em;">
+                <h2 style="font-size: 50px;">Philosophical Influence #3</h2>
+                <h3 style="font-size: 40px;">Defending Divine Sovereignty</h3>
+                <div class="key-point" style="padding: 25px; font-size: 32px;">
+                    <p style="font-size: 32px; margin: 10px 0;"><strong>The Concern:</strong></p>
+                    <ul style="font-size: 32px; line-height: 1.4; margin: 10px 0;">
+                        <li style="margin: 8px 0;">If God worked with pre-existing matter, it suggested <strong>limitations</strong> on God's power</li>
+                        <li style="margin: 8px 0;">Philosophers asked: "If matter existed independently, isn't it co-eternal with God?"</li>
+                        <li style="margin: 8px 0;">This seemed to compromise God's uniqueness and supremacy</li>
+                    </ul>
+                    <p style="font-size: 32px; margin: 15px 0;"><strong>The Solution:</strong></p>
+                    <p style="font-size: 32px; line-height: 1.5;">Ex nihilo doctrine made God the <strong>sole ultimate reality</strong>. Nothing exists independently of God's creative act. This preserved divine sovereignty and uniqueness.</p>
+                </div>
+            </section>
+
+            <!-- KEY FIGURES -->
+            <section style="font-size: 0.7em;">
+                <h2 style="font-size: 50px;">Key Figures in the Shift</h2>
+                
+                <div class="philosopher-box" style="padding: 20px; margin: 15px 0;">
+                    <div class="name" style="font-size: 36px;">Theophilus of Antioch</div>
+                    <div class="dates" style="font-size: 28px;">Late 2nd Century</div>
+                    <div class="contribution" style="font-size: 30px; line-height: 1.4;">
+                        First Christian writer to explicitly use the phrase <em>ex nihilo</em>. Argued that God's power is shown in creating from nothing, not just shaping existing materials.
+                    </div>
+                </div>
+
+                <div class="philosopher-box" style="padding: 20px; margin: 15px 0;">
+                    <div class="name" style="font-size: 36px;">Irenaeus of Lyon</div>
+                    <div class="dates" style="font-size: 28px;">ca. 180 AD</div>
+                    <div class="contribution" style="font-size: 30px; line-height: 1.4;">
+                        Wrote against Gnostic heresies. Emphasized God alone is Creator, not a lesser being working with flawed matter.
+                    </div>
+                </div>
+
+                <div class="philosopher-box" style="padding: 20px; margin: 15px 0;">
+                    <div class="name" style="font-size: 36px;">Tertullian</div>
+                    <div class="dates" style="font-size: 28px;">ca. 200 AD</div>
+                    <div class="contribution" style="font-size: 30px; line-height: 1.4;">
+                        Developed the doctrine further in Latin theology. Made <em>ex nihilo</em> normative in Western Christianity.
+                    </div>
+                </div>
+            </section>
+
+            <!-- THEOLOGICAL CONSEQUENCES - NATURE OF GOD -->
+            <section style="font-size: 0.8em;">
+                <h2 style="font-size: 50px;">Theological Consequences</h2>
+                <h3 style="font-size: 40px;">1. Nature of God</h3>
+                
+                <div class="comparison-table">
+                    <div class="comparison-box before">
+                        <h4 style="font-size: 32px;">Before</h4>
+                        <p style="font-size: 28px;">God as master craftsman, organizer, Father</p>
+                    </div>
+                    <div class="comparison-box after">
+                        <h4 style="font-size: 32px;">After</h4>
+                        <p style="font-size: 28px;">God as absolutely transcendent, wholly other, infinite</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THEOLOGICAL CONSEQUENCES - NATURE OF HUMANS -->
+            <section style="font-size: 0.8em;">
+                <h2 style="font-size: 50px;">Theological Consequences</h2>
+                <h3 style="font-size: 40px;">2. Nature of Humans</h3>
+                
+                <div class="comparison-table">
+                    <div class="comparison-box before">
+                        <h4 style="font-size: 32px;">Before</h4>
+                        <p style="font-size: 28px;">Humans as God's literal offspring with divine potential</p>
+                    </div>
+                    <div class="comparison-box after">
+                        <h4 style="font-size: 32px;">After</h4>
+                        <p style="font-size: 28px;">Humans as God's creatures, fundamentally different in kind</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 32px; text-align: center;">The gap between Creator and creature became <strong>ontological</strong> (being itself), not just developmental</p>
+            </section>
+
+            <!-- THEOLOGICAL CONSEQUENCES - DEIFICATION -->
+            <section style="font-size: 0.8em;">
+                <h2 style="font-size: 50px;">Theological Consequences</h2>
+                <h3 style="font-size: 40px;">3. Possibility of Deification</h3>
+                
+                <div class="comparison-table">
+                    <div class="comparison-box before">
+                        <h4 style="font-size: 32px;">Before</h4>
+                        <p style="font-size: 28px;">Humans could become like God (partakers of divine nature - 2 Peter 1:4)</p>
+                    </div>
+                    <div class="comparison-box after">
+                        <h4 style="font-size: 32px;">After</h4>
+                        <p style="font-size: 28px;">Humans could be saved by God but never become like God</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 32px; text-align: center;">Deification persisted in Eastern Orthodoxy but faded in the West</p>
+            </section>
+
+            <!-- THEOLOGICAL CONSEQUENCES - SOUL -->
+            <section style="font-size: 0.8em;">
+                <h2 style="font-size: 50px;">Theological Consequences</h2>
+                <h3 style="font-size: 40px;">4. Eternity of the Soul</h3>
+                
+                <div class="key-point" style="padding: 30px; font-size: 32px;">
+                    <ul style="font-size: 32px; line-height: 1.5;">
+                        <li style="margin: 10px 0;">If everything was created from nothing, <strong>souls were created too</strong></li>
+                        <li style="margin: 10px 0;">This undermined the doctrine of <strong>pre-existence</strong> (that we existed as spirits before birth)</li>
+                        <li style="margin: 10px 0;">Made <strong>eternal progression</strong> conceptually impossible</li>
+                        <li style="margin: 10px 0;">Humans have a beginning in time, not eternal existence</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- THE IRONY -->
+            <section>
+                <h2>The Irony</h2>
+                <div class="highlight-box">
+                    <p><strong>The 2nd-century shift was meant to elevate God's power and uniqueness, but it had unintended consequences:</strong></p>
+                    <ul>
+                        <li>Made God seem <strong>distant and alien</strong> rather than a loving Father</li>
+                        <li>Replaced the intimate <strong>parent-child</strong> relationship with a <strong>master-servant</strong> dynamic</li>
+                        <li>Lost the early Christian doctrine that we can become "partakers of the divine nature"</li>
+                    </ul>
+                    <p style="margin-top: 1em;"><strong>What seemed like a win for divine transcendence became a loss for divine relationship and human potential.</strong></p>
+                </div>
+            </section>
+
+            <!-- LDS RESTORATION - INTRO -->
+            <section>
+                <h2>Joseph Smith's Restoration</h2>
+                <h3>Challenging Ex Nihilo</h3>
+                <p>Joseph Smith's revelations directly challenged the doctrine of creation <em>ex nihilo</em> and recovered ancient truths that had been lost.</p>
+            </section>
+
+            <!-- LDS SCRIPTURE 1 -->
+            <section>
+                <h2>D&C 93:29</h2>
+                <div class="scripture-citation">
+                    "Man was also in the beginning with God. Intelligence, or the light of truth, was not created or made, neither indeed can be."
+                </div>
+                <p><strong>Key Teaching:</strong> Human intelligence is eternal and was not created from nothing. We have always existed in some form.</p>
+            </section>
+
+            <!-- LDS SCRIPTURE 2 -->
+            <section>
+                <h2>Abraham 3:22-23</h2>
+                <div class="scripture-citation">
+                    "Now the Lord had shown unto me, Abraham, the intelligences that were organized before the world was; and among all these there were many of the noble and great ones; And God saw these souls that they were good, and he stood in the midst of them, and he said: These I will make my rulers"
+                </div>
+                <p><strong>Key Teaching:</strong> Intelligences existed before creation and were <strong>organized</strong>, not created from nothing.</p>
+            </section>
+
+            <!-- JOSEPH SMITH TEACHING -->
+            <section>
+                <h2>Joseph Smith's Teaching</h2>
+                <blockquote>
+                    "God never had the power to create the spirit of man at all. God himself could not create himself... Intelligence is eternal and exists upon a self-existent principle."
+                    <br><br><em>—King Follett Discourse, April 1844</em>
+                </blockquote>
+            </section>
+
+            <!-- WHAT THE RESTORATION RECOVERED -->
+            <section style="font-size: 0.85em;">
+                <h2 style="font-size: 50px;">What the Restoration Recovered</h2>
+                <ul style="font-size: 34px; line-height: 1.6;">
+                    <li style="margin: 15px 0;">God as <strong>organizer</strong>, not creator from nothing</li>
+                    <li style="margin: 15px 0;"><strong>Eternal nature</strong> of intelligence/spirit</li>
+                    <li style="margin: 15px 0;">Humans as God's <strong>literal offspring</strong></li>
+                    <li style="margin: 15px 0;">Potential for <strong>eternal progression</strong></li>
+                    <li style="margin: 15px 0;"><strong>Deification</strong> as actual destiny, not metaphor</li>
+                    <li style="margin: 15px 0;">God as <strong>Father</strong> in the most literal sense</li>
+                    <li style="margin: 15px 0;">The doctrine of <strong>pre-existence</strong></li>
+                </ul>
+            </section>
+
+            <!-- CONCLUSION -->
+            <section>
+                <h2>Conclusion</h2>
+                <div class="key-point">
+                    <p><strong>Understanding this historical shift helps us appreciate:</strong></p>
+                    <ol>
+                        <li>Why most Christians today don't believe in deification</li>
+                        <li>How well-intentioned theological developments can obscure truth</li>
+                        <li>The profound significance of Joseph Smith's revelations</li>
+                        <li>Why the Restoration literally restored ancient Christian doctrines</li>
+                    </ol>
+                    <p style="margin-top: 1em;"><strong>The 2nd-century shift from organization to creation <em>ex nihilo</em> fundamentally changed Christianity's understanding of God, humanity, and our divine potential.</strong></p>
+                </div>
+            </section>
+
+            <!-- FINAL SLIDE -->
+            <section class="title-slide">
+                <h2>The Big Picture</h2>
+                <p style="font-size: 1.2em; line-height: 1.6;">
+                    What seemed like a way to elevate God<br>
+                    ended up distancing Him from His children.
+                    <br><br>
+                    What was meant to protect divine sovereignty<br>
+                    obscured our divine parentage.
+                    <br><br>
+                    The Restoration brought back truths<br>
+                    that early Christians once knew.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'fade',
+            backgroundTransition: 'fade',
+            center: false,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+</html>

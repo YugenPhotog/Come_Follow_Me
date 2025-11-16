@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"Build a House to My Name" — D&C 124</title>
+  
+  <!-- Reveal.js Core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+  
+  <style>
+    :root {
+      /* Pantone Color Palette */
+      --tendril: #89A06B;
+      --cornflower: #7391C8;
+      --viola: #A692BA;
+      --rose-tan: #D19C97;
+      --mocha-mousse: #A47864;
+      --cobblestone: #A89A8E;
+      --willow: #9A8B4F;
+      --gardenia: #F1E9DF;
+      
+      /* Semantic colors */
+      --primary: #7391C8;
+      --primary-dark: #5a73a0;
+      --secondary: #89A06B;
+      --accent: #A692BA;
+      --warm-accent: #A47864;
+      --text-dark: #2a2a2a;
+    }
+    
+    /* Base styles */
+    .reveal {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 38px;
+      color: var(--text-dark);
+    }
+    
+    .reveal .slides {
+      text-align: left;
+    }
+    
+    /* Backgrounds */
+    .reveal .slides section {
+      background-color: var(--gardenia);
+      padding: 60px 80px;
+    }
+    
+    /* Typography - Large fonts for 60+ audience */
+    .reveal h1 {
+      font-size: 68px;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .reveal h2 {
+      font-size: 54px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 40px;
+      line-height: 1.3;
+      border-bottom: 4px solid var(--secondary);
+      padding-bottom: 15px;
+    }
+    
+    .reveal h3 {
+      font-size: 44px;
+      font-weight: 600;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    
+    .reveal p {
+      font-size: 38px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .reveal ul {
+      font-size: 38px;
+      line-height: 1.7;
+    }
+    
+    .reveal li {
+      margin-bottom: 20px;
+    }
+    
+    /* Scripture box */
+    .scripture-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin: 30px 0;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    .scripture-box p {
+      font-size: 42px;
+      line-height: 1.7;
+      margin: 0;
+      font-style: italic;
+    }
+    
+    .scripture-box strong {
+      color: white;
+      font-weight: 900;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .scripture-ref {
+      font-size: 32px;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 15px;
+      display: block;
+      opacity: 0.95;
+    }
+    
+    /* Quote styling */
+    .reveal blockquote {
+      background: linear-gradient(135deg, var(--willow) 0%, var(--mocha-mousse) 100%);
+      color: white;
+      padding: 50px;
+      border-radius: 15px;
+      border-left: 8px solid var(--gardenia);
+      font-size: 42px;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 40px 0;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    .reveal blockquote footer {
+      font-size: 32px;
+      margin-top: 20px;
+      font-style: normal;
+      opacity: 0.95;
+    }
+    
+    /* Question box */
+    .question-box {
+      background: linear-gradient(135deg, var(--rose-tan) 0%, #e8d5d2 100%);
+      padding: 40px;
+      border-radius: 12px;
+      border-left: 8px solid var(--accent);
+      margin: 30px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .question-box p {
+      font-size: 36px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+    
+    .question-box strong {
+      color: var(--primary);
+      font-weight: 900;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+    }
+    
+    /* Invitation to read */
+    .invitation {
+      font-size: 40px;
+      color: var(--primary);
+      font-weight: 700;
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    /* Content box */
+    .content-box {
+      background: linear-gradient(135deg, var(--cobblestone) 0%, #d4cec7 100%);
+      padding: 40px;
+      border-radius: 12px;
+      border-left: 8px solid var(--secondary);
+      margin: 30px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Emphasis */
+    .reveal strong {
+      color: white;
+      font-weight: 900;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .reveal em {
+      color: var(--accent);
+      font-style: italic;
+    }
+    
+    /* Center content for title slides */
+    .center-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    
+    /* Title slide specific */
+    section.title-slide {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+    }
+    
+    section.title-slide h1 {
+      color: white;
+      font-size: 72px;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    }
+    
+    section.title-slide h3 {
+      color: var(--gardenia);
+      font-size: 48px;
+    }
+    
+    /* Principle header slides */
+    section.principle-slide {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--viola) 100%);
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    section.principle-slide h2 {
+      color: white;
+      border: none;
+      font-size: 64px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    /* Video container */
+    .video-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+    
+    .video-link {
+      display: inline-block;
+      padding: 20px 40px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 36px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .video-link:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    
+    /* Image placeholder style */
+    .image-placeholder {
+      background-color: white;
+      border: 3px dashed var(--secondary);
+      padding: 40px;
+      text-align: center;
+      color: var(--secondary);
+      font-size: 28px;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+    
+    /* Fragment animations */
+    .reveal .fragment.highlight-current-blue {
+      opacity: 1;
+      visibility: inherit;
+    }
+    
+    .reveal .fragment.highlight-current-blue.current-fragment {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    /* Small text for secondary info */
+    small {
+      font-size: 28px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      
+      <!-- TITLE SLIDE -->
+      <section class="title-slide">
+        <div class="center-content">
+          <h1>"Build a House to My Name"</h1>
+          <h3>Doctrine and Covenants 124</h3>
+          <p style="font-size: 42px; margin-top: 30px; font-style: italic;">The Purpose of the Temple</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: God's People Always Build Temples -->
+      <section>
+        <h2>God's People Are Always Commanded to Build Temples</h2>
+        <div class="scripture-box">
+          <span class="scripture-ref">D&C 124:39</span>
+          <p>"My people are <strong>always</strong> commanded to build [temples] unto my holy name."</p>
+        </div>
+        <div class="video-container fragment">
+          <a href="https://www.youtube.com/embed/VbpwGrnKcA0?si=oQhYIt3Y4J9MJXJw" target="_blank" class="video-link">
+            ▶ Watch Video: The Purpose of Temples
+          </a>
+        </div>
+        <!-- IMAGE PLACEHOLDER: Temple exterior
+             Location: images/lds-temple-exterior.jpg
+             Search Terms: "LDS temple beautiful exterior Mormon temple grounds"
+             AI Prompt: "Majestic LDS temple exterior with beautiful grounds, blue sky, peaceful setting, warm natural lighting, architectural beauty, sacred building"
+             Recommended size: 1920x1080 -->
+      </section>
+
+      <!-- SLIDE 3: Proving Our Faith -->
+      <section>
+        <h2>Proving Our Faith Through Sacred Labor</h2>
+        <div class="scripture-box">
+          <span class="scripture-ref">D&C 124:55</span>
+          <p>"That you may <strong>prove yourselves</strong> unto me that ye are <strong>faithful in all things</strong>."</p>
+        </div>
+        <div class="question-box">
+          <p class="fragment">🤔 <strong>Reflection:</strong> When have you been asked to build when you felt least capable?</p>
+          <p class="fragment">💭 <strong>Consider:</strong> What does God's consistent temple command teach about covenant identity across dispensations?</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Principle Header - Sacred Ordinances -->
+      <section class="principle-slide">
+        <h2>Sacred Ordinances Revealed in His House</h2>
+      </section>
+
+      <!-- SLIDE 5: Ordinances Revealed -->
+      <section>
+        <h2>Sacred Ordinances Revealed in His House</h2>
+        <div class="scripture-box">
+          <span class="scripture-ref">D&C 124:40</span>
+          <p>"That I may <strong>reveal</strong> mine ordinances therein unto my people."</p>
+        </div>
+        <div class="content-box">
+          <p style="font-size: 40px; margin-bottom: 25px;"><strong>Ordinances Include:</strong></p>
+          <ul>
+            <li class="fragment">Baptisms for the dead</li>
+            <li class="fragment">Washings and anointings</li>
+            <li class="fragment">Endowments and sealings</li>
+          </ul>
+        </div>
+        <!-- IMAGE PLACEHOLDER: Nauvoo Temple historical drawing
+             Location: images/nauvoo-temple-drawing.jpg
+             Search Terms: "Nauvoo Temple historical drawing 1840s LDS Church History"
+             AI Prompt: "Historical architectural drawing of Nauvoo Temple, 1840s period style, detailed sketch, sepia tones, architectural plans, historical document aesthetic"
+             Recommended size: 1200x800 -->
+      </section>
+
+      <!-- SLIDE 6: Ordinances Are Revelatory -->
+      <section>
+        <h2>Ordinances Are Revelatory—Not Just Ritual</h2>
+        <div class="question-box">
+          <p class="fragment">📖 <strong>Discuss:</strong> How have temple ordinances helped you understand doctrine rather than just perform it?</p>
+          <p class="fragment">💡 <strong>Ponder:</strong> Why might the Lord reveal His highest teachings through symbolic action?</p>
+        </div>
+        <div class="image-placeholder fragment">
+          <p><em>Image: Clasping hands — covenant fellowship</em></p>
+          <p style="font-size: 32px; margin-top: 20px;">"The Covenant of Fellowship — unity and eternal promise; the clasped hands represent covenant, trust, and reunion beyond the veil."</p>
+        </div>
+        <!-- IMAGE PLACEHOLDER: Clasping hands covenant symbol
+             Location: images/covenant-hands.jpg
+             Search Terms: "clasped hands covenant symbol friendship eternal family LDS"
+             AI Prompt: "Artistic representation of two hands clasping in covenant, warm lighting, symbolic of unity and eternal promises, sacred trust, soft focus background, meaningful connection"
+             Recommended size: 1200x800 -->
+      </section>
+
+      <!-- SLIDE 7: Principle Header - Ritual and Symbolism -->
+      <section class="principle-slide">
+        <h2>Ritual and Symbolism: The Language of Covenant</h2>
+        <p style="font-size: 40px; margin-top: 30px; font-style: italic;">Symbols teach "line upon line—what the Spirit is ready to reveal."</p>
+      </section>
+
+      <!-- SLIDE 8: Why Symbols? -->
+      <section>
+        <h2>Why Does the Lord Use Symbols?</h2>
+        <blockquote>
+          "The temple endowment is so richly symbolic that only through the Holy Spirit can it be fully understood."
+          <footer>— Ezra Taft Benson, April 1988</footer>
+        </blockquote>
+        <div class="question-box fragment">
+          <p><strong>Reflection:</strong> Symbols meet us where we are; repeated attendance reveals more. How have you experienced that?</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: The Temple Journey -->
+      <section>
+        <h2>The Temple Dramatizes Our Journey to God</h2>
+        <div class="content-box">
+          <p style="font-size: 40px; margin-bottom: 25px;"><strong>Themes:</strong></p>
+          <ul>
+            <li class="fragment"><strong>Washing and anointing</strong> recall priestly consecration <small>(Exodus 40:12–15)</small></li>
+            <li class="fragment"><strong>Progression through rooms of increasing light</strong><br/>
+              <span style="font-size: 34px;">Creation → Fall → Redemption → Glory</span></li>
+            <li class="fragment"><strong>The veil</strong> symbolizes passing into God's presence <small>(Hebrews 10:19–22)</small></li>
+          </ul>
+        </div>
+        <div class="question-box fragment">
+          <p><strong>Consider:</strong> How does this progression mirror our mortal journey?</p>
+        </div>
+        <!-- IMAGE PLACEHOLDER: Temple veil room
+             Location: images/temple-veil-room.jpg
+             Search Terms: "temple veil celestial room sacred LDS temple interior symbolism"
+             AI Prompt: "Artistic representation of a temple veil with soft ethereal lighting, white fabric, sacred space, peaceful atmosphere, symbolic of entering God's presence"
+             Recommended size: 1920x1080 -->
+      </section>
+
+      <!-- SLIDE 10: Principle Header - Becoming Temple People -->
+      <section class="principle-slide">
+        <h2>Becoming a Temple People</h2>
+        <p style="font-size: 42px; margin-top: 30px; font-style: italic;">"Holiness to the Lord" written in our habits, not only on a facade.</p>
+      </section>
+
+      <!-- SLIDE 11: Symbolism and Personal Revelation -->
+      <section>
+        <h2>Symbolism and Personal Revelation</h2>
+        <div class="content-box">
+          <p style="font-size: 40px; margin-bottom: 25px;"><strong>Principles:</strong></p>
+          <ul>
+            <li class="fragment">Symbols are mirrors—revealing what the Spirit wills to teach</li>
+            <li class="fragment"><strong>Repetition deepens insight</strong></li>
+            <li class="fragment">Universal forms, personal interpretation</li>
+          </ul>
+        </div>
+        <div class="question-box fragment">
+          <p><strong>Reflection:</strong> How has temple symbolism opened new understanding for you?</p>
+        </div>
+        <!-- IMAGE PLACEHOLDER: Mirror infinity illustration
+             Location: images/mirror-infinity.jpg
+             Search Terms: "mirror reflection infinity spiritual symbolism light"
+             AI Prompt: "Artistic representation of mirrors reflecting infinite light, symbolic of deepening spiritual understanding, layers of meaning, ethereal and contemplative mood"
+             Recommended size: 1200x800 -->
+      </section>
+
+      <!-- SLIDE 12: Ancient Pattern Restored -->
+      <section>
+        <h2>Ancient Pattern Restored</h2>
+        <div class="scripture-box">
+          <span class="scripture-ref">Acts 2:46</span>
+          <p>"They, continuing daily with one accord in the temple…"</p>
+        </div>
+        <div class="content-box fragment">
+          <span class="scripture-ref">3 Nephi 19</span>
+          <p style="font-size: 38px;">Prayer circle around the resurrected Christ</p>
+          <p style="font-size: 34px; margin-top: 20px; font-style: italic;">Early Christian texts likewise describe <strong>circular worship with Christ at the center</strong>.</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Holiness to the Lord -->
+      <section class="principle-slide">
+        <h2>"Holiness to the Lord"</h2>
+        <p style="font-size: 44px; margin-top: 40px; line-height: 1.7;">
+          House of prayer, fasting, faith, learning, glory, and order.
+        </p>
+        <p style="font-size: 36px; margin-top: 40px; font-style: italic; opacity: 0.95;">
+          D&C 88:119
+        </p>
+      </section>
+
+      <!-- CLOSING SLIDE -->
+      <section class="title-slide">
+        <div class="center-content">
+          <h2 style="color: white; border: none; font-size: 56px; margin-bottom: 40px;">May We Build His House</h2>
+          <p style="font-size: 42px; line-height: 1.7; font-style: italic; text-align: center;">
+            In our hearts, in our homes,<br/>
+            and through our covenant faithfulness
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      center: false,
+      width: 1920,
+      height: 1080,
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
+      controls: true,
+      progress: true,
+      history: true,
+      keyboard: true,
+      overview: true,
+      touch: true,
+      loop: false,
+      rtl: false,
+      fragments: true,
+      embedded: false,
+      help: true,
+      showNotes: false,
+      autoSlide: 0,
+      autoSlideStoppable: true,
+      mouseWheel: false,
+      hideAddressBar: true,
+      previewLinks: false,
+      fragmentInURL: true,
+      viewDistance: 3,
+      display: 'block'
+    });
+  </script>
+</body>
+</html>

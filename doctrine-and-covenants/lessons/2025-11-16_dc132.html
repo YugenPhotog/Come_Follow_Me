@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Have Seen Your Sacrifices in Obedience | D&C 129-132</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <style>
+        :root {
+            --primary-blue: #2C5F8D;
+            --secondary-gold: #B8860B;
+            --accent-cream: #F5F5DC;
+            --text-dark: #2C3E50;
+            --text-light: #FFFFFF;
+            --highlight-burgundy: #800020;
+        }
+
+        .reveal {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%);
+            font-size: 38px;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Cinzel', 'Georgia', serif;
+            color: var(--primary-blue);
+            text-transform: none;
+            font-weight: 600;
+        }
+
+        .reveal h1 {
+            font-size: 68px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .reveal h2 {
+            font-size: 54px;
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--secondary-gold);
+            padding-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .reveal h3 {
+            font-size: 44px;
+            color: var(--highlight-burgundy);
+        }
+
+        .reveal section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 80px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        .reveal .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--highlight-burgundy) 100%);
+            color: var(--text-light);
+        }
+
+        .reveal .title-slide h1,
+        .reveal .title-slide h3 {
+            color: var(--text-light);
+        }
+
+        .scripture-citation {
+            background: var(--accent-cream);
+            padding: 40px;
+            border-left: 5px solid var(--secondary-gold);
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 15px;
+            font-size: 38px;
+            line-height: 1.7;
+        }
+
+        .discussion-question {
+            background: linear-gradient(to right, #FFF9E6, #FFFEF0);
+            padding: 40px;
+            border-left: 8px solid var(--highlight-burgundy);
+            margin: 30px 0;
+            font-weight: 600;
+            border-radius: 12px;
+            position: relative;
+            font-size: 36px;
+            line-height: 1.6;
+        }
+
+        .discussion-question::before {
+            content: "💭 Discussion";
+            display: block;
+            font-size: 32px;
+            color: var(--highlight-burgundy);
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hint-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--highlight-burgundy);
+            color: white;
+            padding: 0.2em 0.5em;
+            border-radius: 3px;
+            font-size: 0.7em;
+            font-weight: normal;
+        }
+
+       .hint-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #FFFEF0 0%, #FFF9E6 100%);
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 15px 60px rgba(0,0,0,0.4);
+    max-width: 700px;
+    max-height: 80vh;
+    z-index: 1000;
+    border: 4px solid var(--secondary-gold);
+    font-size: 0.55em;
+    overflow: hidden;
+}
+
+.hint-popup.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.hint-popup h4 {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--highlight-burgundy) 100%);
+    color: white;
+    margin: 0;
+    padding: 0.8em 1.2em;
+    font-size: 1.3em;
+    border-radius: 11px 11px 0 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hint-popup-content {
+    padding: 1.2em 1.5em;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.hint-popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.hint-popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.hint-popup-content::-webkit-scrollbar-thumb {
+    background: var(--secondary-gold);
+    border-radius: 4px;
+}
+
+.hint-popup-content::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-blue);
+}
+
+.hint-popup ul {
+    margin: 0.6em 0;
+    padding-left: 1.8em;
+    line-height: 1.5;
+}
+
+.hint-popup li {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+}
+
+.hint-popup p {
+    margin: 0.6em 0;
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+.hint-popup strong {
+    color: var(--highlight-burgundy);
+}
+
+.hint-popup .close-hint {
+    background: var(--accent-cream);
+    text-align: center;
+    padding: 0.7em;
+    font-size: 1em;
+    color: var(--primary-blue);
+    font-weight: 600;
+    border-top: 2px solid var(--secondary-gold);
+    margin: 0;
+}
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        .historical-context {
+            background: linear-gradient(to right, #E3F2FD, #BBDEFB);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #D3D3D3 0%, #A9A9A9 100%);
+            border: 3px dashed var(--secondary-gold);
+            padding: 40px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-style: italic;
+            color: #555;
+            font-size: 34px;
+        }
+
+        .church-fathers-container {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 1em;
+        }
+
+        .church-father-quote {
+            background: var(--accent-cream);
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 8px solid var(--primary-blue);
+            border-radius: 12px;
+        }
+
+        .church-father-quote .name {
+            font-weight: bold;
+            color: var(--highlight-burgundy);
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .church-father-quote .dates {
+            font-size: 32px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .church-father-quote .quote {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 38px;
+            line-height: 1.7;
+        }
+
+        .navigation-menu {
+            background: rgba(255,255,255,0.9);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 2px solid var(--secondary-gold);
+            font-size: 34px;
+        }
+
+        .navigation-menu h4 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            font-size: 40px;
+        }
+
+        .key-shortcut {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.2em 0.5em;
+            border-radius: 3px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .transition-text {
+            font-style: italic;
+            color: var(--primary-blue);
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(44, 95, 141, 0.1);
+            border-radius: 12px;
+            font-size: 36px;
+            line-height: 1.6;
+        }
+
+        blockquote {
+            background: var(--accent-cream);
+            border-left: 8px solid var(--secondary-gold);
+            padding: 40px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 38px;
+            line-height: 1.7;
+            border-radius: 12px;
+        }
+
+        .pastoral-note {
+            background: #FFF3E0;
+            padding: 40px;
+            border-left: 8px solid #FF6F00;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-size: 36px;
+        }
+
+       .pastoral-note::before {
+    content: "🤍 When Beautiful Doctrine Meets Mortality's Challenges";
+    display: block;
+    font-weight: bold;
+    color: #FF6F00;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+        .reveal .slides section {
+            overflow-y: auto !important;
+            max-height: 1080px;
+        }
+
+        .reveal .slides {
+            overflow: visible !important;
+        }
+
+        strong {
+            color: var(--highlight-burgundy);
+        }
+
+        /* Scrollbar styling for church fathers section */
+        .church-fathers-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .church-fathers-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .church-fathers-container::-webkit-scrollbar-thumb {
+            background: var(--secondary-gold);
+            border-radius: 5px;
+        }
+
+        .church-fathers-container::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-blue);
+        }
+
+        ul, ol {
+            margin-left: 1.5em;
+            font-size: 38px;
+            line-height: 1.7;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 25px 0;
+            font-size: 38px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+          <!-- TITLE SLIDE -->
+<section class="title-slide">
+    <h1>"I Have Seen Your Sacrifices in Obedience"</h1>
+    <h3>Doctrine and Covenants 129–132</h3>
+    <p style="margin-top: 2em;">November 10–16, 2025</p>
+    <p style="font-size: 0.9em; margin-top: 1em;">Come, Follow Me</p>
+    
+    <div class="nav-container" style="position: absolute; top: 20px; right: 20px; z-index: 100;">
+        <img src="../../images/liahona.webp" alt="Navigation" onclick="toggleNav()" style="width: 80px; height: 80px; cursor: pointer; opacity: 0.8; transition: opacity 0.3s;">
+        <div id="navigation-menu" style="display: none; position: absolute; top: 0; right: 0; width: 280px; background: rgba(255, 255, 255, 0.98); padding: 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 0.75em; text-align: left;">
+            <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 1em; border-bottom: 2px solid #8B4513;">Navigation & Shortcuts</h4>
+            <p style="margin: 5px 0;"><strong>Arrow Keys:</strong> Navigate slides</p>
+            <p style="margin: 5px 0;"><strong><span class="key-shortcut">T</span>:</strong> Discussion hints</p>
+            <p style="margin: 5px 0;"><strong><span class="key-shortcut">ESC</span>:</strong> Overview mode</p>
+            <p style="margin: 5px 0;"><strong><span class="key-shortcut">F</span>:</strong> Fullscreen</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleNav() {
+            var menu = document.getElementById('navigation-menu');
+            if (menu.style.display === 'none') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+    </script>
+</section>
+            <!-- OPENING QUESTION -->
+            <section>
+                <h2>Opening Reflection</h2>
+                <div class="discussion-question" data-hint="opening">
+                    <span class="hint-indicator">Press T</span>
+                    "Through Joseph Smith, the Lord took some of the mystery out of eternity." 
+                    <br><br>What mysteries about eternity matter most to you?
+                </div>
+                <div class="transition-text">
+                    
+                    <ol>
+						<p><strong>Today we'll explore three interconnected questions:</strong></p>
+                        <li>How does God's universe work? (The law of blessings)</li>
+                        <li>What is the purpose of eternal marriage?</li>
+                        <li>What does exaltation actually mean?</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- HISTORICAL CONTEXT 
+            <section>
+                <h2>Historical Context</h2>
+                <div class="historical-context">
+                    <h3>Three Revelations, One Period</h3>
+                    <p><strong>D&C 130:</strong> April 2, 1843, Ramus, Illinois—Joseph Smith corrects theological misunderstandings about God's nature and eternal law</p>
+                    <p><strong>D&C 132:</strong> July 12, 1843, Nauvoo—Revelation on eternal marriage and the new and everlasting covenant, received in response to Joseph's questions about Old Testament plural marriage</p>
+                    <p><strong>Context:</strong> The Saints were building the Nauvoo Temple and receiving increased instruction about temple ordinances and the nature of exaltation</p>
+                    <p><strong>Trial of Faith:</strong> Section 132 was "a severe trial of faith for Joseph Smith, his wife Emma, and almost everyone who received it" (CFM). Verse 51 acknowledges this was given "to prove you all, as I did Abraham"</p>
+                </div>
+            </section>
+	-->
+
+            <!-- PART 1: ETERNAL LAWS - INTRO 
+            <section>
+                <h2>Part 1: The Foundation</h2>
+                <h3>Eternal Laws & Obedience</h3>
+                <div class="image-placeholder">
+                    📷 Image Placeholder
+                    <br>Search terms: "scales of justice eternal law" OR "ancient covenant tablets" OR "celestial order universe stars"
+                </div>
+            </section>
+		-->
+
+            <!-- ETERNAL LAWS - SCRIPTURE -->
+            <section>
+                <h2>The Law of Blessings</h2>
+                <div class="scripture-citation">
+                    <strong>Let's read D&C 130:20-21</strong>
+                    <br><br>"There is a law, irrevocably decreed in heaven before the foundations of this world..."
+                </div>
+                <div class="scripture-citation">
+                    <strong>Also D&C 132:5</strong>
+                    <br><br>"For all who will have a blessing at my hands shall abide the law..."
+                </div>
+            </section>
+
+            <!-- ETERNAL LAWS - DISCUSSION 1 -->
+            <section>
+                <h2>Understanding Eternal Law</h2>
+                <div class="discussion-question" data-hint="laws-1">
+                    <span class="hint-indicator">Press T</span>
+                    What does it mean that these laws were "decreed before the foundations of this world"? 
+                    <br><br>How does this change our understanding of God's commandments?
+                </div>
+            </section>
+
+            <!-- ETERNAL LAWS - DELAYED BLESSINGS -->
+            <section>
+                <h2>The Challenge: Delayed Blessings</h2>
+                <p>We're promised that obedience brings blessings, but sometimes we obey and the blessings don't come—at least not immediately.</p>
+                <blockquote>
+                    Elder D. Todd Christofferson taught that understanding this principle helps us maintain faith when promised blessings are delayed. The law remains true; the timing is the Lord's.
+                    <br><br><em>—"Our Relationship with God," April 2022</em>
+                </blockquote>
+                <div class="discussion-question" data-hint="laws-2">
+                    <span class="hint-indicator">Press T</span>
+                    How have you navigated the tension between faithful obedience and delayed blessings? What has helped you maintain faith during those waiting periods?
+                </div>
+            </section>
+
+            <!-- TRANSITION TO PART 2 -->
+            <section>
+                <h2>Transition</h2>
+                <div class="transition-text">
+                    Now that we understand how God's universe operates on eternal law, let's explore the specific law that leads to the highest blessing—exaltation.
+                </div>
+            </section>
+
+            <!-- PART 2: ETERNAL MARRIAGE - INTRO -->
+            <section>
+                <h2>Part 2: The Covenant</h2>
+                <h3>Eternal Marriage</h3>
+				<img src="../../images/payson-utah-temple-sealing-room-1449559.jpg"</img>
+            </section>
+
+        <!-- PASTORAL SENSITIVITY -->
+<section style="font-size: .65em;">
+    <h2 style="font-size: 48px; margin-bottom: 25px;">A Word of Hope</h2>
+    <div class="pastoral-note" style="padding: 25px; margin: 20px 0;">
+        <p style="margin: 10px 0; font-size: 32px;">Many face difficult family situations:</p>
+        <ul style="margin: 10px 0; font-size: 32px; line-height: 1.4;">
+            <li style="margin: 8px 0;">Faithful members whose spouses are unfaithful or leave the covenant</li>
+            <li style="margin: 8px 0;">Those who never had the opportunity to marry</li>
+            <li style="margin: 8px 0;">Parents with children outside the covenant</li>
+            <li style="margin: 8px 0;">Members in complex family configurations</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 32px;"><strong>Let's read John 15:11</strong></p>
+        <blockquote style="margin-top: 15px; padding: 20px; font-size: 32px; line-height: 1.5;">
+            "You just live worthy of the celestial kingdom, and the family arrangements will be more wonderful than you can imagine."
+            <br><br><em>—President Henry B. Eyring, April 2019</em>
+        </blockquote>
+        <p style="margin-top: 15px; font-size: 32px; line-height: 1.4;">The Lord is perfectly just and perfectly merciful. No faithful member will lose promised blessings because of circumstances beyond their control.</p>
+    </div>
+</section>
+			
+			
+			<!-- ETERNAL MARRIAGE - TEMPORAL VS ETERNAL -->
+            <section>
+                <h2>The Distinction</h2>
+                <h3>Temporal vs. Eternal Marriages</h3>
+                <div class="scripture-citation">
+                    <strong>Let's read D&C 132:15, 19</strong>
+                </div>
+                <p><strong>Temporal marriages (v. 15):</strong> "If a man marry him a wife in the world, and he marry her not by me nor by my word... they are not bound by any law when they are out of the world"</p>
+                <p><strong>Eternal marriages (v. 19):</strong> "If a man marry a wife by my word, which is my law, and by the new and everlasting covenant, and it is sealed unto them by the Holy Spirit of promise... it shall be of full force when they are out of the world"</p>
+            </section>
+
+            <!-- ETERNAL MARRIAGE - DISCUSSION -->
+            <section>
+                <h2>Purpose of Marriage</h2>
+                <div class="discussion-question" data-hint="marriage-1">
+                    <span class="hint-indicator">Press T</span>
+                    
+                    <br>What does this teach us about the purpose of marriage? Is marriage fundamentally about this life or the next?
+                </div>
+            </section>
+
+            <!-- ETERNAL MARRIAGE - THE PROMISE -->
+            <section>
+                <h2>The Promise</h2>
+                <h3>What Eternal Marriage Leads To</h3>
+                <div class="scripture-citation">
+                    <strong>Let's read D&C 132:19-20</strong>
+                    <br><br>(Among the most glorious verses in scripture)
+                </div>
+                <p>What does Verses 19 and 20 promise those who are sealed by proper authority and who remain faithful?</p>
+                
+            </section>
+
+            <!-- ETERNAL MARRIAGE - CONTINUATION -->
+            <section>
+                <h2>Eternal Increase</h2>
+                <div class="discussion-question" data-hint="marriage-2">
+                    <span class="hint-indicator">Press T</span>
+                   Look at verse 19—"continuation of the seeds forever and ever." 
+				  <br> Verse 20 reads "because they continue"  
+					<br>What does this teach us about the nature of exaltation and why eternal marriage is essential to it?
+                    
+                </div>
+            </section>
+
+          
+       <!-- PART 3: DEIFICATION - INTRO -->
+<section style="font-size: 0.75em;">
+    <h2 style="font-size: 48px; margin-bottom: 20px;">Part 3: The Vision</h2>
+    <h3 style="font-size: 38px; margin-bottom: 25px;">The Doctrine of Deification</h3>
+    <div style="display: flex; align-items: center; gap: 30px; margin-top: 1em;">
+        <div style="flex: 0 0 40%;">
+            <img src="../../images/Jesus-Christ-from-Hagia-Sophia.jpg" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" alt="Christ Pantocrator from Hagia Sophia">
+        </div>
+        <div style="flex: 1;">
+            <div style="background: var(--accent-cream); padding: 30px; border-left: 5px solid var(--secondary-gold); border-radius: 12px;">
+                <p style="margin: 0; font-size: 64px; line-height: 1.5;">Before we dive into D&C 132:20-24, let's understand the historical significance of this doctrine.</p>
+            </div>
+        </div>
+    </div>
+</section>
+            <!-- BIBLICAL FOUNDATION -->
+<section style="font-size: 0.75em;">
+    <h2 style="font-size: 50px; margin-bottom: 20px;">What the Bible Teaches</h2>
+    <h3 style="font-size: 40px; margin-bottom: 25px;">The Biblical Foundation for Deification</h3>
+    <div class="scripture-citation" style="padding: 30px; font-size: 32px; line-height: 1.5;">
+        <strong>Genesis 1:26-27</strong> — Created in God's image and likeness
+        <br><br><strong>Genesis 3:22</strong> — "Become as one of us"
+        <br><br><strong>Psalm 82:6</strong> — "I have said, Ye are gods"
+        <br><br><strong>John 10:33-34</strong> — Jesus quotes Psalm 82 in His defense
+        <br><br><strong>Matthew 5:48</strong> — "Be ye therefore perfect, even as your Father"
+        <br><br><strong>2 Peter 1:4</strong> — "Partakers of the divine nature"
+        <br><br><strong>Romans 8:16-17</strong> — "Joint-heirs with Christ"
+        <br><br><strong>Revelation 3:21</strong> — Sit with Christ in His throne
+    </div>
+</section>
+
+            <!-- BIBLICAL DISCUSSION 
+            <section>
+                <h2>A Question About Scripture</h2>
+                <div class="discussion-question" data-hint="bible-verses">
+                    <span class="hint-indicator">Press T</span>
+                    How many of you knew these passages were in the Bible? 
+                    <br><br>Why do you think most Christians today don't interpret them as teaching that humans can become like God?
+                </div>
+            </section>
+-->
+
+            <!-- EARLY CHRISTIAN DOCTRINE - SCROLLABLE -->
+            <section>
+                <h2>Early Christian Doctrine</h2>
+                <h3>"The Ubiquity of Deification"</h3>
+                <p>The doctrine of deification was <strong>widespread and accepted in the first centuries after Christ's death</strong>.</p>
+				<p>This is clearly one of the lost plain and precious truths restored by Joseph Smith!</p>
+                <p style="margin-top: 1em;"><em>Scroll down to see quotes from early Church Fathers ↓</em></p>
+                
+                <div class="church-fathers-container">
+                    <div class="church-father-quote">
+                        <div class="name">Irenaeus</div>
+                        <div class="dates">(died ca. A.D. 202)</div>
+                        <div class="quote">
+                            "Jesus Christ did, through His transcendent love, become what we are, that He might bring us to be what He is Himself."
+                        </div>
+                    </div>
+
+                    <div class="church-father-quote">
+                        <div class="name">Clement of Alexandria</div>
+                        <div class="dates">(ca. A.D. 150–215)</div>
+                        <div class="quote">
+                            "The Word of God became man, that thou mayest learn from man how man may become God."
+                        </div>
+                    </div>
+
+                    <div class="church-father-quote">
+                        <div class="name">Basil the Great</div>
+                        <div class="dates">(A.D. 330–379)</div>
+                        <div class="quote">
+                            Celebrated not just "being made like to God," but "highest of all, the being made God."
+                        </div>
+                    </div>
+
+                    <div class="church-father-quote" style="background: #E8F5E9; border-left-color: #2E7D32;">
+                        <div class="name" style="color: #2E7D32;">Historical Reality</div>
+                        <div class="quote" style="font-style: normal;">
+                            For the first 200-300 years after Christ, Christian teachers openly taught that humans could become like God. This wasn't considered heretical or strange—it was <strong>mainstream Christian doctrine</strong>.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHAT CHANGED -->
+<section>
+    <h2>What Changed?</h2>
+    <h3>The Doctrine of Creation Ex Nihilo</h3>
+    <p>The Gospel Topics essay explains that changing views on Creation contributed to the loss of deification doctrine:</p>
+    <ol>
+        <li><strong>Early teaching:</strong> God organized the world from preexisting materials</li>
+        <li><strong><a href="from-organization-to-ex-nihilo.html" target="_blank" style="color: var(--highlight-burgundy); text-decoration: underline;">2nd century shift:</a></strong> Greek philosophy influenced theology, leading to creation <em>ex nihilo</em>—"out of nothing"</li>
+        <li><strong>Consequences:</strong> To emphasize God's unique power, theologians reasoned nothing could have existed as long as God had</li>
+        <li><strong>Widening gulf:</strong> Creation ex nihilo widened the perceived distance between God and humans</li>
+    </ol>
+    <p style="margin-top: 1em;"><strong>Result:</strong> The first known objection to deification came in the <strong>fifth century</strong>. By the sixth century, teachings were limited. Deification "faded from Western Christianity" though it "remains a central tenet of Eastern Orthodoxy."</p>
+</section>
+
+            <!-- CREATION EX NIHILO DISCUSSION -->
+            <section>
+                <h2>Theological Connections</h2>
+                <div class="discussion-question" data-hint="ex-nihilo">
+                    <span class="hint-indicator">Press T</span>
+                    Why do you think the doctrine of creation ex nihilo would make it harder for Christians to accept that humans could become like God? 
+                    <br><br>What's the theological connection?
+                </div>
+            </section>
+			
+			<!-- CREATION EX NIHILO DISCUSSION -->
+            <section>
+                <h2>Theological Connections</h2>
+                <div class="discussion-question">
+                    <ul>
+            <li>If God created everything from nothing, He's fundamentally different from His creation in kind, not just degree</li>
+            <li>If humans were created from nothing, they can't have divine essence or eternal souls</li>
+            <li>If nothing existed before God's creative act, humans can't have pre-existed as His spirit children</li>
+            <li>The doctrine emphasizes God's absolute transcendence rather than His role as our Father</li>
+            <li>It makes humans "creatures" rather than "children"</li>
+        </ul>
+                </div>
+            </section>
+			
+			 
+
+            <!-- JOSEPH SMITH'S RESTORATION -->
+            <section>
+                <h2>Joseph Smith's Restoration</h2>
+                <h3>Bringing Back Lost Truth</h3>
+                <p><strong>The Context:</strong> Early Latter-day Saints knew nothing about early Christian teachings on deification. They came from Protestant backgrounds that accepted:</p>
+                <ul>
+                    <li>Creation ex nihilo</li>
+                    <li>God as "without body, parts, or passions"</li>
+                    <li>An unbridgeable gulf between Creator and creation</li>
+                </ul>
+                <p style="margin-top: 1em;"><strong>The Revelations:</strong></p>
+                <ul>
+                    <li><strong>1832 (D&C 76):</strong> Those who overcome shall be "gods, even the sons of God"</li>
+                    <li><strong>1843 (D&C 132):</strong> Sealed couples shall "be gods, because they have no end"</li>
+                    <li><strong>April 1844 (King Follett Discourse):</strong> "You have got to learn how to be a god yourself"</li>
+                </ul>
+            </section>
+
+            <!-- BACK TO D&C 132 -->
+            <section>
+                <h2>Now Back to D&C 132:20-24</h2>
+                <div class="scripture-citation">
+                    <strong>Let's read D&C 132:20</strong>
+                    <br><br>"Then shall they be gods, because they have no end; therefore shall they be from everlasting to everlasting, because they continue; then shall they be above all, because all things are subject unto them. Then shall they be gods, because they have all power, and the angels are subject unto them."
+                </div>
+                <div class="discussion-question" data-hint="deification">
+                    <span class="hint-indicator">Press T</span>
+                    Now that you understand this doctrine was taught by early Christians and lost, how does that change the way you read verse 20? 
+                    <br><br>What specific divine attributes does this verse promise to exalted beings?
+                </div>
+            </section>
+
+          <!-- DIVINE ATTRIBUTES -->
+<section style="font-size: 0.7em;">
+    <h2 style="font-size: 48px; margin-bottom: 20px;">Divine Attributes Promised</h2>
+    <p style="margin: 15px 0; font-size: 32px;">From D&C 132:20, exalted beings will possess:</p>
+    <ul style="margin: 15px 0; font-size: 32px; line-height: 1.4;">
+        <li style="margin: 8px 0;"><strong>"No end" / "everlasting to everlasting"</strong> — Eternal existence</li>
+        <li style="margin: 8px 0;"><strong>"They continue"</strong> — Eternal increase/procreation</li>
+        <li style="margin: 8px 0;"><strong>"Above all"</strong> — Cosmic authority</li>
+        <li style="margin: 8px 0;"><strong>"All things are subject unto them"</strong> — Dominion over creation</li>
+        <li style="margin: 8px 0;"><strong>"All power"</strong> — Divine power</li>
+        <li style="margin: 8px 0;"><strong>"Angels are subject unto them"</strong> — Hierarchical authority</li>
+    </ul>
+    <div class="scripture-citation" style="margin-top: 15px; padding: 25px; font-size: 32px; line-height: 1.5;">
+        <strong>Verses 23-24:</strong> Those who keep this covenant receive "all things, for all things are theirs... and they are Christ's, and Christ is God's."
+    </div>
+    <p style="margin-top: 15px; font-size: 32px; line-height: 1.4;">This isn't about replacing God—it's about becoming <strong>joint-heirs with Christ</strong> (Romans 8:17).</p>
+</section>
+			
+			
+            <!-- CONCLUSION -->
+            <section>
+                <h2>Conclusion: Thinking Celestial</h2>
+                <p>President Russell M. Nelson invites us to "think celestial"—to let eternal truths shape our daily choices.</p>
+                <h3 style="margin-top: 1em;">What We've Learned Today:</h3>
+                <ol>
+                    <li><strong>God's universe operates on eternal law</strong> (130:20-21)—blessings flow from obedience to principles decreed before the world began</li>
+                    <li><strong>Eternal marriage is the covenant that leads to exaltation</strong> (132:19)—not optional for the highest degree of glory</li>
+                    <li><strong>Exaltation means becoming like our Heavenly Parents</strong> (132:20)—a doctrine taught by early Christians, lost through theological drift, and restored through Joseph Smith</li>
+                </ol>
+            </section>
+
+            <!-- FINAL INVITATION -->
+            <section>
+                <h2>Final Invitation</h2>
+                <div class="transition-text">
+                    The doctrine of deification was once common Christian teaching. It was lost when Christians adopted the idea that God created everything from nothing. Through Joseph Smith, the Lord restored the ancient truth: we are literally God's children with divine potential.
+                </div>
+                <div class="discussion-question" style="border: none; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--highlight-burgundy) 100%); color: white;">
+                    What "sacrifice in obedience" might the Lord be asking of you right now? 
+                    <br><br>How can the vision of exaltation—of becoming like our Heavenly Parents—give you strength to make that sacrifice?
+                </div>
+            </section>
+
+            <!-- CLOSING -->
+            <section class="title-slide">
+                <h2>Gospel Doctrine</h2>
+                <p style="font-size: 1.2em; line-height: 1.6;">
+                    The reality of our divine parentage and potential.
+                    <br><br>
+                    Faithful Saints will receive all the Father has.
+                    <br><br>
+                    Through Jesus Christ and His Atonement, exaltation becomes possible.
+                    <br><br>
+                    The Restoration brought back truths that had been lost.
+                </p>
+            </section>
+
+            <!-- PART 4: SACRIFICES IN OBEDIENCE -->
+            <section>
+                <h2>Part 4: The Test</h2>
+                <h3>"Sacrifices in Obedience"</h3>
+                <div class="image-placeholder">
+                    📷 Image Placeholder
+                    <br>Search terms: "Nauvoo period Joseph Emma Smith" OR "early Saints sacrifice pioneer" OR "Abraham sacrifice Isaac art"
+                </div>
+            </section>
+
+            <!-- PLURAL MARRIAGE CONTEXT -->
+            <section>
+                <h2>Historical Context: Plural Marriage</h2>
+                <p>Section 132 also addresses plural marriage, practiced under divine command from the 1830s-1840s until 1890.</p>
+                <div class="scripture-citation">
+                    <strong>Jacob 2:27, 30</strong> establishes God's standard is monogamy, but "if I will... raise up seed unto me, I will command my people."
+                </div>
+                <p><strong>Verses 34-39:</strong> Abraham's plural marriages were commanded by God and essential to his exaltation.</p>
+                <p><strong>The principle:</strong> Plural marriage is acceptable to God <em>only when He commands it</em>. Otherwise it is adultery.</p>
+                <p style="margin-top: 1em;">This was an excruciating trial—<strong>verse 50</strong> calls it <strong>"sacrifices in obedience."</strong> The practice ended with Official Declaration 1, but the faithful example remains.</p>
+            </section>
+
+            <!-- OUR SACRIFICES -->
+            <section>
+                <h2>Our Own Sacrifices</h2>
+                <div class="discussion-question" data-hint="sacrifices">
+                    <span class="hint-indicator">Press T</span>
+                    We're not asked to live plural marriage, but verse 50's phrase "sacrifices in obedience" still applies. 
+                    <br><br>What kinds of "sacrifices in obedience" does the Lord ask of His people today? What makes obedience difficult even when we know the commandment is from God?
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+
+    <!-- Overlay for hints -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hint Popups -->
+    <div class="hint-popup" id="hint-opening">
+        <h4>Opening Question - Teaching Notes</h4>
+        <div class="hint-popup-content">
+            <p>This is a reflective question—no discussion needed yet. Just plant the seed for what's coming.</p>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+   <div class="hint-popup" id="hint-laws-1">
+    <h4>Discussion Guide: Eternal Laws</h4>
+    <div class="hint-popup-content">
+        <p><strong>Guide discussion toward recognition that:</strong></p>
+        <ul>
+            <li>God's laws are eternal principles, not arbitrary commands</li>
+            <li>They're designed to transform us into celestial beings capable of living in His presence</li>
+            <li>God Himself operates within these laws—they're not just rules He imposes on us</li>
+            <li>The phrase "before the foundations of this world" suggests these are fundamental to how the universe operates</li>
+        </ul>
+    </div>
+    <div class="close-hint">Press T to close</div>
+</div>
+
+    <div class="hint-popup" id="hint-laws-2">
+        <h4>Discussion Guide: Delayed Blessings</h4>
+        <div class="hint-popup-content">
+            <p><strong>This is personal—let people share real experiences if comfortable.</strong></p>
+        <p>Possible discussion points:</p>
+        <ul>
+            <li>Faith that God's timing is perfect even when we don't understand</li>
+            <li>Recognizing that some blessings may not come until the next life</li>
+            <li>Understanding that the law is true; the delay doesn't invalidate the promise</li>
+            <li>President Eyring's counsel: "Just live worthy of the celestial kingdom, and the arrangements will be more wonderful than you can imagine"</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <div class="hint-popup" id="hint-marriage-1">
+        <h4>Discussion Guide: Purpose of Marriage</h4>
+        <div class="hint-popup-content">
+            <p><strong>Guide discussion toward:</strong></p>
+        <ul>
+            <li>Marriage is designed for eternity, not just mortality</li>
+            <li>Temple sealing isn't "bonus points"—it's essential for exaltation</li>
+            <li>President Uchtdorf's contrast between eternal relationships and "disposable" worldly things</li>
+            <li>This is the Lord's pattern—families are meant to be eternal units</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <div class="hint-popup" id="hint-marriage-2">
+        <h4>Discussion Guide: Continuation of Seeds</h4>
+        <div class="hint-popup-content">
+            <p><strong>This should generate rich discussion:</strong></p>
+        <ul>
+            <li>Eternal increase means spirit children in the eternities</li>
+            <li>Why single individuals cannot receive this blessing alone—it requires the partnership of marriage</li>
+            <li>The pattern of Heavenly Parents—we're following Their model</li>
+            <li>Marriage as partnership in creation, not just companionship</li>
+            <li>This is why the power to create spirit children is reserved for the highest degree of the celestial kingdom</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <div class="hint-popup" id="hint-bible-verses">
+        <h4>Discussion Guide: Biblical Teaching</h4>
+        <div class="hint-popup-content">
+            <p><strong>Why most Christians don't interpret these passages this way:</strong></p>
+        <ul>
+            <li>Creation ex nihilo theology created an unbridgeable gulf between God and humans</li>
+            <li>Emphasis on human depravity rather than divine potential</li>
+            <li>Loss of knowledge about early Christian teachings on deification</li>
+            <li>These passages are often interpreted metaphorically rather than literally</li>
+            <li>Without modern revelation and the clarifying lens of Joseph Smith's teachings, the meaning isn't clear</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <div class="hint-popup" id="hint-ex-nihilo">
+        <h4>Discussion Guide: Creation Ex Nihilo</h4>
+        <div class="hint-popup-content">
+            <p><strong>Guide toward understanding the theological connection:</strong></p>
+        <ul>
+            <li>If God created everything from nothing, He's fundamentally different from His creation in kind, not just degree</li>
+            <li>If humans were created from nothing, they can't have divine essence or eternal souls</li>
+            <li>If nothing existed before God's creative act, humans can't have pre-existed as His spirit children</li>
+            <li>The doctrine emphasizes God's absolute transcendence rather than His role as our Father</li>
+            <li>It makes humans "creatures" rather than "children"</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <div class="hint-popup" id="hint-deification">
+        <h4>Discussion Guide: Divine Attributes</h4>
+        <div class="hint-popup-content">
+            <p><strong>List these attributes from verse 20:</strong></p>
+        <ul>
+            <li>"No end" / "everlasting to everlasting" — Eternal existence</li>
+            <li>"They continue" — Eternal increase/procreation</li>
+            <li>"Above all" — Cosmic authority</li>
+            <li>"All things are subject unto them" — Dominion over creation</li>
+            <li>"All power" — Divine power (not just some power)</li>
+            <li>"Angels are subject unto them" — Hierarchical authority</li>
+        </ul>
+        <p><strong>Key point:</strong> These are functional descriptions of beings who are, in essence, like our Heavenly Parents. Understanding this as actual destiny (not metaphor) should transform how we approach covenants today.</p>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <div class="hint-popup" id="hint-sacrifices">
+        <h4>Discussion Guide: Our Sacrifices</h4>
+        <div class="hint-popup-content">
+            <p><strong>Modern "sacrifices in obedience" might include:</strong></p>
+        <ul>
+            <li>Living the law of chastity in a world that doesn't</li>
+            <li>Paying tithing when finances are tight</li>
+            <li>Serving in difficult callings</li>
+            <li>Forgiving when it's hard</li>
+            <li>Keeping covenants when family members don't</li>
+            <li>Following living prophets on matters we don't fully understand yet</li>
+        </ul>
+        <p><strong>What makes obedience difficult:</strong></p>
+        <ul>
+            <li>We can't always see the end from the beginning</li>
+            <li>Sometimes commandments require sacrifice of things we value</li>
+            <li>Cultural pressure to conform to worldly standards</li>
+            <li>The test is whether we trust God more than our own understanding</li>
+        </ul>
+        </div>
+        <div class="close-hint">Press T to close</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'fade',
+            backgroundTransition: 'fade',
+            center: false,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+
+        // Hint popup functionality - wait for Reveal to be ready
+        Reveal.on('ready', function() {
+            const overlay = document.getElementById('overlay');
+            let currentHint = null;
+
+            // Get all discussion questions with hint data
+            const discussionQuestions = document.querySelectorAll('[data-hint]');
+            
+            // Map each discussion to its hint popup
+            const hintMap = {};
+            discussionQuestions.forEach(element => {
+                const hintId = element.getAttribute('data-hint');
+                hintMap[hintId] = document.getElementById(`hint-${hintId}`);
+            });
+
+            // T key handler (T for Teaching hints)
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 't' || e.key === 'T') {
+                    e.preventDefault();
+                    console.log('T key pressed');
+                    
+                    // If a hint is open, close it
+                    if (currentHint) {
+                        currentHint.classList.remove('active');
+                        overlay.classList.remove('active');
+                        currentHint = null;
+                        console.log('Hint closed');
+                        return;
+                    }
+                    
+                    // Find which slide we're on
+                    const currentSlide = Reveal.getCurrentSlide();
+                    console.log('Current slide:', currentSlide);
+                    const discussionOnSlide = currentSlide.querySelector('[data-hint]');
+                    console.log('Discussion element found:', discussionOnSlide);
+                    
+                    if (discussionOnSlide) {
+                        const hintId = discussionOnSlide.getAttribute('data-hint');
+                        console.log('Hint ID:', hintId);
+                        const hintPopup = hintMap[hintId];
+                        console.log('Hint popup element:', hintPopup);
+                        
+                        if (hintPopup) {
+                            hintPopup.classList.add('active');
+                            overlay.classList.add('active');
+                            currentHint = hintPopup;
+                            console.log('Hint popup activated');
+                        } else {
+                            console.log('ERROR: Hint popup not found for ID:', hintId);
+                        }
+                    } else {
+                        console.log('No discussion question on this slide');
+                        // Optional: Show a brief message to user
+                        alert('No hints available on this slide. Navigate to a slide with a discussion question (marked "Press T").');
+                    }
+                }
+            });
+
+            // Close hint when clicking overlay
+            overlay.addEventListener('click', function() {
+                if (currentHint) {
+                    currentHint.classList.remove('active');
+                    overlay.classList.remove('active');
+                    currentHint = null;
+                }
+            });
+
+            // Close hint when navigating slides
+            Reveal.on('slidechanged', function() {
+                if (currentHint) {
+                    currentHint.classList.remove('active');
+                    overlay.classList.remove('active');
+                    currentHint = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
