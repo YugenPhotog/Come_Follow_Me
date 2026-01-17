@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Testament - Come Follow Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --parchment: #f4e8d0;
+            --warm-earth: #8b6f47;
+            --deep-bronze: #5c4a2f;
+            --covenant-gold: #d4a574;
+            --sacred-crimson: #8b2f2f;
+            --olive-shadow: #4a5a3a;
+            --stone-gray: #6b6b5f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--parchment) 0%, #e8d9b8 100%);
+            color: var(--deep-bronze);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative background texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 111, 71, 0.03) 2px,
+                    rgba(139, 111, 71, 0.03) 4px
+                );
+            pointer-events: none;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        /* Animated corner flourishes */
+        .corner-flourish {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .corner-flourish.top-left {
+            top: 0;
+            left: 0;
+            border-top: 3px solid var(--covenant-gold);
+            border-left: 3px solid var(--covenant-gold);
+            border-top-left-radius: 5px;
+            animation: flourishFadeIn 2s ease-out;
+        }
+
+        .corner-flourish.bottom-right {
+            bottom: 0;
+            right: 0;
+            border-bottom: 3px solid var(--covenant-gold);
+            border-right: 3px solid var(--covenant-gold);
+            border-bottom-right-radius: 5px;
+            animation: flourishFadeIn 2s ease-out 0.3s backwards;
+        }
+
+        @keyframes flourishFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 0.15;
+                transform: scale(1);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .site-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--stone-gray);
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            color: var(--deep-bronze);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(139, 111, 71, 0.1);
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--warm-earth);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .decorative-line {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--covenant-gold), transparent);
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '◆';
+            position: absolute;
+            top: -8px;
+            font-size: 0.8rem;
+            color: var(--covenant-gold);
+        }
+
+        .decorative-line::before {
+            left: -15px;
+        }
+
+        .decorative-line::after {
+            right: -15px;
+        }
+
+        /* Scripture Highlight */
+        .scripture-highlight {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-left: 4px solid var(--sacred-crimson);
+            border-radius: 2px;
+            box-shadow: 0 10px 40px rgba(92, 74, 47, 0.15);
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scripture-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--deep-bronze);
+            margin-bottom: 1rem;
+        }
+
+        .scripture-reference {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--sacred-crimson);
+            letter-spacing: 0.05em;
+            text-align: right;
+        }
+
+        /* Navigation Cards */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .nav-card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(244, 232, 208, 0.6));
+            border: 1px solid rgba(139, 111, 71, 0.2);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out backwards;
+            box-shadow: 0 4px 20px rgba(92, 74, 47, 0.1);
+        }
+
+        .nav-card:nth-child(1) { animation-delay: 0.4s; }
+        .nav-card:nth-child(2) { animation-delay: 0.5s; }
+        .nav-card:nth-child(3) { animation-delay: 0.6s; }
+        .nav-card:nth-child(4) { animation-delay: 0.7s; }
+        .nav-card:nth-child(5) { animation-delay: 0.8s; }
+        .nav-card:nth-child(6) { animation-delay: 0.9s; }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--covenant-gold) 0%, var(--sacred-crimson) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(92, 74, 47, 0.25);
+            border-color: var(--covenant-gold);
+        }
+
+        .nav-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .card-icon {
+            position: relative;
+            z-index: 1;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+
+        .nav-card:hover .card-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .card-title {
+            position: relative;
+            z-index: 1;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--deep-bronze);
+            transition: color 0.3s ease;
+        }
+
+        .nav-card:hover .card-title {
+            color: var(--sacred-crimson);
+        }
+
+        .card-description {
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--warm-earth);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(139, 111, 71, 0.2);
+            animation: fadeInUp 1s ease-out 1s backwards;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            color: var(--stone-gray);
+            line-height: 1.6;
+        }
+
+        .footer-text a {
+            color: var(--sacred-crimson);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-text a:hover {
+            border-bottom-color: var(--sacred-crimson);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .scripture-highlight {
+                padding: 1.5rem;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="corner-flourish top-left"></div>
+    <div class="corner-flourish bottom-right"></div>
+
+    <div class="container">
+        <header>
+            <div class="site-title">Come Follow Me</div>
+            <h1>Old Testament</h1>
+            <div class="decorative-line"></div>
+            <p class="subtitle">Ancient Covenants, Eternal Truths</p>
+        </header>
+
+        <section class="scripture-highlight">
+            <p class="scripture-text">
+                "Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me."
+            </p>
+            <p class="scripture-reference">— John 5:39</p>
+        </section>
+
+        <nav class="nav-grid">
+            <a href="lessons/" class="nav-card">
+                <div class="card-icon">📖</div>
+                <h2 class="card-title">Weekly Lessons</h2>
+                <p class="card-description">
+                    Explore each week's Come Follow Me study with contextual insights and doctrinal connections.
+                </p>
+            </a>
+
+            <a href="timeline/" class="nav-card">
+                <div class="card-icon">⏳</div>
+                <h2 class="card-title">Timeline & Context</h2>
+                <p class="card-description">
+                    Navigate the historical periods from Creation through the prophets and into the intertestamental era.
+                </p>
+            </a>
+
+            <a href="covenants/" class="nav-card">
+                <div class="card-icon">✋</div>
+                <h2 class="card-title">Covenant Patterns</h2>
+                <p class="card-description">
+                    Discover the covenantal thread from Adam to Abraham to Moses and beyond.
+                </p>
+            </a>
+
+            <a href="prophets/" class="nav-card">
+                <div class="card-icon">🗣️</div>
+                <h2 class="card-title">Prophets & Witnesses</h2>
+                <p class="card-description">
+                    Meet the prophets who testified of Christ and called Israel to repentance.
+                </p>
+            </a>
+
+            <a href="types-shadows/" class="nav-card">
+                <div class="card-icon">✨</div>
+                <h2 class="card-title">Types & Shadows</h2>
+                <p class="card-description">
+                    See how Old Testament symbols and stories point toward Jesus Christ.
+                </p>
+            </a>
+
+            <a href="resources/" class="nav-card">
+                <div class="card-icon">📚</div>
+                <h2 class="card-title">Study Resources</h2>
+                <p class="card-description">
+                    Access maps, charts, videos, and scholarly resources to deepen your understanding.
+                </p>
+            </a>
+        </nav>
+
+        <footer>
+            <p class="footer-text">
+                Part of <a href="../index.html">Seek Learning Gospel Doctrine</a><br>
+                A resource for Come Follow Me study and Sunday School teaching
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
