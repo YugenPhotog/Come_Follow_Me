@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Personal Ark</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/serif.css">
+    <style>
+        :root {
+            --parchment: #f4f1e8;
+            --deep-brown: #3d2817;
+            --warm-gold: #c9a961;
+            --olive: #6b6b47;
+            --burgundy: #6b2b2b;
+        }
+
+        .reveal {
+            font-family: 'Crimson Text', 'Garamond', 'Georgia', serif;
+            background: linear-gradient(to bottom, #2d2416, #1a1410);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Cinzel', 'Trajan Pro', serif;
+            color: var(--warm-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
+            text-transform: none;
+        }
+
+        .reveal h1 {
+            font-size: 2.2em;
+            line-height: 1.2;
+            margin-bottom: 0.3em;
+        }
+
+        .reveal h2 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h3 {
+            font-size: 1.4em;
+            color: var(--parchment);
+        }
+
+        .reveal p, .reveal li {
+            font-size: 1.3em;
+            line-height: 1.5;
+            color: var(--parchment);
+        }
+
+        .reveal .slides section {
+            text-align: left;
+            padding: 2em;
+        }
+
+        .reveal section[data-background-image] h1,
+        .reveal section[data-background-image] h2,
+        .reveal section[data-background-image] h3 {
+            background: rgba(29, 20, 16, 0.85);
+            padding: 0.3em 0.6em;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Content boxes */
+        .content-box {
+            background: rgba(244, 241, 232, 0.95);
+            border-left: 6px solid var(--warm-gold);
+            padding: 1.5em;
+            margin: 1em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .content-box p, .content-box li {
+            color: var(--deep-brown);
+            font-size: 1.2em;
+        }
+
+        .content-box ul {
+            margin-left: 1.5em;
+        }
+
+        /* Hebrew/linguistic highlight boxes */
+        .hebrew-box {
+            background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
+            border: 3px solid var(--deep-brown);
+            padding: 1.2em;
+            margin: 1em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+
+        .hebrew-box p {
+            color: var(--deep-brown);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0.3em 0;
+        }
+
+        /* Scripture invitation box */
+        .scripture-box {
+            background: rgba(107, 43, 43, 0.15);
+            border: 4px solid var(--burgundy);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .scripture-box .invitation {
+            font-size: 1.5em;
+            color: var(--warm-gold);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Discussion questions */
+        .question {
+            background: rgba(107, 107, 71, 0.2);
+            border-left: 5px solid var(--olive);
+            padding: 1em 1.5em;
+            margin: 0.8em 0;
+            font-size: 1.3em;
+            color: var(--parchment);
+            border-radius: 5px;
+        }
+
+        /* Quote styling */
+        .reveal blockquote {
+            background: rgba(244, 241, 232, 0.95);
+            border-left: 8px solid var(--burgundy);
+            padding: 1.5em 2em;
+            margin: 2em 0;
+            font-size: 1.3em;
+            color: var(--deep-brown);
+            font-style: italic;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .reveal blockquote footer {
+            font-size: 0.8em;
+            color: var(--burgundy);
+            font-weight: 600;
+            margin-top: 0.5em;
+            font-style: normal;
+        }
+
+        /* Two-column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            margin: 1em 0;
+        }
+
+        /* Title slide specific */
+        .title-slide {
+            text-align: center !important;
+        }
+
+        .title-slide h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .title-slide h3 {
+            font-size: 1.6em;
+            color: var(--warm-gold);
+            margin-top: 1em;
+        }
+
+        /* Fragment styling */
+        .reveal .fragment {
+            opacity: 0;
+        }
+
+        .reveal .fragment.visible {
+            opacity: 1;
+        }
+
+        /* List styling */
+        .reveal ul, .reveal ol {
+            margin-left: 2em;
+        }
+
+        .reveal li {
+            margin: 0.5em 0;
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: var(--warm-gold);
+            font-weight: 700;
+        }
+
+        /* Application invitation styling */
+        .application {
+            background: rgba(201, 169, 97, 0.2);
+            border: 3px dashed var(--warm-gold);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            font-size: 1.3em;
+            color: var(--parchment);
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: var(--warm-gold);
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: TITLE SLIDE -->
+            <section class="title-slide" data-background-image="images/title_slide.png">
+                
+                
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style oil painting of Noah's ark resting peacefully on Mount Ararat after the flood, warm golden light breaking through parting storm clouds, rainbow visible in distance, ark positioned like a temple on the mountain, rich earth tones, dramatic chiaroscuro lighting, sense of divine protection and covenant, landscape orientation 1920x1080.
+
+                    <strong>TEACHING NOTES:</strong>
+                    Welcome to today's lesson on Noah and the Flood. Our theme: "Building a Personal Ark."
+                    
+                    We'll explore:
+                    1) Noah's day and our day - striking parallels
+                    2) The ark as a type of temple - covenant space of safety
+                    3) Following the prophet - modern Noah pattern
+                    4) Covenant tokens that strengthen us
+                    
+                    Prayer suggestion: Ask class member to pray that we might understand how to build spiritual arks of safety for ourselves and our families in these latter days.
+                </aside>
+            </section>
+			
+			<!-- SLIDE 2: HISTORICAL CONTEXT -->
+            <section data-background-image="images/slide2-wickedness.png" data-background-opacity="0.25">
+                <h2>"As It Was in the Days of Noah..."</h2>
+                <h3 style="font-size: 1.8em; margin-bottom: 1em;">Lets Read: JST — Matthew 1:41</h3>
+
+                                               
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style painting depicting a dark, turbulent pre-flood world, crowds of people in shadowy wickedness ignoring a distant figure of Noah preaching, heavy storm clouds gathering, deep chiaroscuro with minimal light breaking through, ominous atmosphere, rich browns and blacks dominating the palette, sense of spiritual darkness and moral corruption, Dutch Golden Age painting technique, 1920x1080 landscape.
+
+                    <strong>TEACHING NOTES:</strong>
+                    Read Moses 8:22-30 together to set the scene. This isn't about fear-mongering or political commentary—it's about recognizing spiritual patterns.
+
+                    Jesus Himself said "as it was in the days of Noah, so it shall be also at the coming of the Son of Man." We are THAT generation. The parallels are striking:
+                    - Violence and corruption filling the earth
+                    - Secret combinations (see also Helaman 6:26-30)
+                    - Rejection of prophets
+                    - Hearts focused on worldly pursuits
+
+                    But here's the key: We also have what Noah had—GRACE and PROPHETIC WARNING. That's our hope.
+
+                    Let the class share what they notice. Common themes: violence, moral relativism, rejection of prophets, secret works, materialism. Don't let it become political—keep it spiritual and doctrinal.
+
+                    Transition: "In the midst of all this wickedness, Moses 8:27 gives us hope..."
+                </aside>
+            </section>
+
+
+            <section data-background-image="images/ripped_from_headlines.png" data-background-size="cover">
+</section>
+
+            <section data-background-image="images/earth_filled_with_violence.png" data-background-size="cover">
+                <aside class="notes">
+                    Ask: "Earth filled with violence - Noah's day or today?"
+                    Answer: BOTH (Genesis 6:11, 13)
+                </aside>
+            </section>
+
+            <section data-background-image="images/reject_prophets.png" data-background-size="cover">
+                <aside class="notes">
+                    Ask: "Rejecting the prophets - Noah's day or today?"
+                    Answer: BOTH (Moses 8:20 - "they believed not")
+                </aside>
+            </section>
+
+            <section data-background-image="images/hearts_setupon_evil.png" data-background-size="cover">
+                <aside class="notes">
+                    Ask: "Hearts set upon evil continually - Noah's day or today?"
+                    Answer: BOTH (Genesis 6:5)
+                </aside>
+            </section>
+
+            <section data-background-image="images/secret_combinations.png" data-background-size="cover">
+                <aside class="notes">
+                    Ask: "Secret combinations seeking power - Noah's day or today?"
+                    Answer: BOTH (Moses 8:28)
+                </aside>
+            </section>
+
+            <section>
+                <h2>The Pattern Repeats</h2>
+                
+                <div class="scripture-box">
+                    <p><strong>Let's Read:</strong></p>
+                    <ul>
+                        <li>Moses 8:28-30</li>
+                        <li>Genesis 6:11-13</li>
+                    </ul>
+                </div>
+                
+                <p class="question" style="margin-top: 1.5em;">How do we choose to be like Noah in our day?</p>
+                
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Read Moses 8:28-30 and Genesis 6:11-13 together.
+                    
+                    The parallels are striking:
+                    - Violence and corruption filling the earth
+                    - Secret combinations (see also Helaman 6:26-30)
+                    - Rejection of prophets
+                    - Hearts focused on evil continually
+                    
+                    But here's the key: We also have what Noah had—PROPHETIC WARNING and a way to build SAFETY.
+                    
+                    DISCUSSION: How do we choose to be like Noah?
+                    
+                    Possible answers:
+                    - Build our spiritual ark (prepare now, not when crisis hits)
+                    - Listen to prophets (President Oaks)
+                    - Keep covenants
+                    - Prepare our families
+                    - Walk with God despite wicked world
+                    
+                    Transition: "In all this wickedness, Noah did something remarkable. Moses 8:27 tells us what..."
+                </aside>
+            </section>
+
+            <!-- SLIDE: NOAH FOUND GRACE -->
+            <section>
+                <h2>"Noah Found Grace in the Eyes of the Lord"</h2>
+                
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read: <strong>Moses 8:27</strong></p>
+					<p>What does Grace mean?</p>
+                </div>
+
+                <div class="two-column" style="margin-top: 1.5em;">
+                    <div style="text-align: center;">
+                        <img src="images/slide3-noah-grace.png" alt="Noah illuminated by divine light" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                    </div>
+
+                    <div class="hebrew-box">
+                        <p>Hebrew: חֵן (chen)</p>
+                        <p>Favor • Acceptance • Divine Enabling Power</p>
+                        <p style="font-size: 0.9em; font-style: italic; margin-top: 0.5em;">God's power that enables us to become what we cannot become alone</p>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Read Moses 8:27 together: "And Noah found grace in the eyes of the Lord; for Noah was a just man, and perfect in his generation; and he walked with God, as did also his three sons, Shem, Ham, and Japheth."
+                    
+                    GRACE (chen) - Not just "unmerited favor" but ENABLING POWER.
+                    
+                    Bible Dictionary: "Divine means of help or strength, given through the bounteous mercy and love of Jesus Christ...through the grace of the Lord, individuals...may be strengthened to do good works that they otherwise would not be able to maintain if left to their own means."
+                    
+                    Noah needed MORE than his own strength to:
+                    - Stand alone in wicked world for 120 years
+                    - Build massive ark (450 feet long!)
+                    - Endure mockery and rejection
+                    - Preserve faith when no one listened
+                    
+                    Grace sustained him. Grace can sustain us.
+                    
+                    We access grace through:
+                    - Faith in Jesus Christ
+                    - Repentance
+                    - Covenant keeping
+                    - Obedience to prophets
+                    
+                    Click for next...
+                </aside>
+            </section>
+
+           <!-- SLIDE: GOD COMMANDED NOAH TO BUILD -->
+<!-- SLIDE: GOD COMMANDED NOAH TO BUILD -->
+<!-- SLIDE: GOD'S BLUEPRINT AND TEMPLE SYMBOLISM -->
+<section>
+    <h2>The Lord Commanded Noah: "Make Thee an Ark"</h2>
+    
+    <div class="scripture-box" style="padding: 0.8em; margin: 0.5em 0;">
+        <p><strong>Let's Read:</strong> Genesis 6:14-16, 22</p>
+    </div>
+    
+    <div class="two-column" style="margin-top: 0.5em;">
+        <div class="content-box" style="font-size: 0.8em; padding: 0.8em;">
+            <p><strong>God's Blueprint:</strong></p>
+            <ul>
+                <li>450 ft × 75 ft × 45 ft</li>
+                <li>Three stories/levels</li>
+                <li>Gopher wood, pitched</li>
+                <li>Built over 120 years</li>
+                <li>God sealed the door (Gen 7:16)</li>
+            </ul>
+        </div>
+        <div class="content-box" style="font-size: 0.8em; padding: 0.8em;">
+            <p><strong>Ark-Temple Parallels:</strong></p>
+            <ul>
+                <li><strong>Three levels</strong> - temple divisions</li>
+                <li><strong>Divine blueprint</strong> - revealed design</li>
+                <li><strong>God sealed door</strong> - covenant protection</li>
+                <li><strong>Only covenant keepers entered</strong></li>
+                <li><strong>Rested on mountain</strong> - like temples</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <aside class="notes">
+        📖 <strong>TEACHING NOTES:</strong>
+        
+        Read Genesis 6:14-16, then verse 22: "Thus did Noah; according to all that God commanded him, so did he."
+        
+        GOD'S BLUEPRINT WAS SPECIFIC:
+        - Not vague "build something" - exact measurements
+        - Three levels (temple symbolism)
+        - Materials specified
+        - Built over 120 years with NO EVIDENCE it was needed
+        
+        Noah's faith: He built BEFORE seeing rain. He obeyed when it looked foolish.
+        
+        ARK AS TEMPLE:
+        1) THREE LEVELS - Like temple has progressive sacred spaces (telestial/terrestrial/celestial)
+        
+        2) DIVINE BLUEPRINT - God revealed exact design to Noah, just as temple plans come by revelation
+        
+        3) GOD SEALED THE DOOR (Genesis 7:16) - "the LORD shut him in"
+        Once in covenant space, God Himself seals us in protection. Temple covenants work same way.
+        
+        4) ONLY COVENANT KEEPERS ENTERED - Noah's family had to choose to enter, trust the prophet. Same with temple.
+        
+        5) RESTED ON MOUNTAIN - Temples are built on mountains or heights. Ark came to rest on mountain (Ararat).
+        
+        The TEMPLE is our ark today. It's our covenant space of safety in wicked world.
+        
+        Transition: "Just as God gave Noah exact specifications, what blueprint has He given us?"
+    </aside>
+</section>
+			
+			<!-- SLIDE: OUR BLUEPRINT TODAY -->
+<section>
+    <h2>Our Blueprint Today</h2>
+    
+    <blockquote style="margin-top: 1em; font-size: 0.95em; padding: 0.8em 1em;">
+        "When it starts raining, it is too late to begin building the ark."
+        <footer>— W. Don Ladd</footer>
+    </blockquote>
+    
+    <div class="question" style="font-size: 1.05em; padding: 1.2em; margin-top: 1.5em;">
+        <p><strong>Discussion:</strong> How do we build our ark today? What are the "materials" and "dimensions" the Lord has given us?</p>
+    </div>
+    
+    <aside class="notes">
+        📖 <strong>TEACHING NOTES:</strong>
+        
+        Just as God gave Noah exact specifications, He gives us clear direction.
+        
+        We must build NOW, not wait for crisis.
+        
+        W. Don Ladd (Oct 1994): "When it starts raining, it is too late to begin building the ark."
+        
+        DISCUSSION POINTS TO DRAW OUT:
+        - What are our "gopher wood" and "pitch"? (Prayer, scripture study, sacrament, temple attendance)
+        - What are our "three levels"? (Personal righteousness, family strength, temple covenants)
+        - How long does it take to build? (Lifetime of obedience, like Noah's 120 years)
+        
+        God gives us clear direction through:
+        - Living prophets (President Oaks)
+        - Scriptures (covenant path)
+        - Temple ordinances (sacred covenants)
+        - Commandments (Word of Wisdom, tithing, Sabbath)
+        
+        Transition: "Noah built his ark. How did that ark become a place of refuge for his family?"
+    </aside>
+</section>
+			
+			
+            <!-- SLIDE: ARK AS HOME -->
+<section>
+    <h2>The Ark as Our Home</h2>
+    
+    <div class="content-box" style="padding: 1em; margin: 1em 0; font-size: 0.9em;">
+        <p><strong>Noah's Family:</strong></p>
+        <ul>
+            <li>Entered together (Genesis 7:7)</li>
+            <li>Refuge from floodwaters outside</li>
+            <li>Parents led children into safety</li>
+            <li>Sealed in by God's protection</li>
+        </ul>
+    </div>
+    
+    <div class="question" style="font-size: 1em; padding: 1em; margin-top: 1em;">
+        <p><strong>Discussion:</strong> How can we make our homes an ark of safety and refuge from the world?</p>
+    </div>
+    
+    <aside class="notes">
+        📖 <strong>TEACHING NOTES:</strong>
+        
+        Genesis 7:1 - "Come thou and all thy house into the ark."
+        
+        Our homes must be:
+        - Covenant-centered (family prayer, scripture study, FHE)
+        - Sealed against spiritual "floodwaters" (media standards, Sabbath observance)
+        - Led by covenant-keeping parents
+        - Refuges from world's wickedness
+        
+        President Nelson: "Home-centered, Church-supported"
+        
+        Transition: "Just as Noah's home was a place of safety, what other sacred space protects us today?"
+    </aside>
+</section>
+
+<!-- SLIDE: ARK AS TEMPLE -->
+<section>
+    <h2>The Ark as the Temple</h2>
+    
+    <div class="content-box" style="padding: 1em; margin: 1em 0; font-size: 0.9em;">
+        <p><strong>The Temple Today:</strong></p>
+        <ul>
+            <li>Sacred covenant space</li>
+            <li>God's presence with the faithful</li>
+            <li>Ordinances bind us to Christ</li>
+            <li>Protection through covenants</li>
+        </ul>
+    </div>
+    
+    <div class="question" style="font-size: 1em; padding: 1em; margin-top: 1em;">
+        <p><strong>Discussion:</strong> How important is temple worship in building our spiritual ark?</p>
+    </div>
+    
+    <aside class="notes">
+        📖 <strong>TEACHING NOTES:</strong>
+        
+        President Nelson (Oct 2021): "The temple lies at the center of strengthening our faith and spiritual fortitude because the Savior and His doctrine are the very heart of the temple."
+        
+        Temple covenants:
+        - Bind us to Christ's power
+        - Protect us spiritually (like ark protected physically)
+        - Give us strength beyond our own (grace/enabling power)
+        - Prepare us for celestial kingdom
+        
+        President Nelson: "If you are prepared you shall not fear."
+        
+        How are we prepared? Through temple covenants and keeping them.
+        
+        Transition: "Noah's family found safety by entering the ark. How did they KNOW to enter? They followed the prophet..."
+    </aside>
+</section>
+            <!-- SLIDE: WHO ENTERS THE ARK? -->
+            <section>
+                <h2>"Come Thou...Into the Ark"</h2>
+                <h3 style="font-size: 1.2em;">Genesis 7:1</h3>
+
+                <div class="scripture-box" style="margin-top: 0.8em; padding: 0.8em;">
+                    <p class="invitation" style="font-size: 1.2em;">"And the Lord said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation."</p>
+                </div>
+
+                <div class="content-box" style="margin-top: 0.8em; font-size: 0.9em;">
+                    <p><strong>Who Entered?</strong></p>
+                    <ul>
+                        <li>Only those who <strong>listened to the prophet</strong></li>
+                        <li>Only those who <strong>trusted God's word</strong> despite no visible evidence</li>
+                        <li>Only <strong>8 souls</strong> from entire world (Moses 8:27)</li>
+                        <li>The rest perished—even though warning was given for 120 years</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Read Genesis 7:1 together.
+                    
+                    THE INVITATION: "Come thou and all thy house into the ark."
+                    
+                    God invited Noah's FAMILY. Not just Noah individually—his whole family.
+                    
+                    WHO ENTERED? (reveal fragment)
+                    - Noah, his wife
+                    - Shem, Ham, Japheth (his sons)
+                    - Their wives
+                    - Total: 8 people
+                    
+                    That's it. Eight souls from ENTIRE WORLD.
+                    
+                    Why so few? Moses 8:20 - "they hearkened not"
+                    
+                    Noah preached for 120 years. He warned. He testified. He built the ark in plain sight. People watched. People mocked. People rejected.
+                    
+                    When rain came, it was too late.
+                    
+                    Matthew 24:37-39: "But as the days of Noah were, so shall also the coming of the Son of man be. For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noah entered into the ark, And knew not until the flood came, and took them all away; so shall also the coming of the Son of man be."
+                    
+                    THE PATTERN: Many called, few chosen (Matthew 22:14). Many hear prophet, few obey.
+                    
+                    QUESTION (reveal fragment): Will you be the 8, or the multitude?
+                    
+                    This isn't meant to be scary—it's meant to be clarifying. We have choice. We can enter the ark (make covenants, keep them, follow prophet) or we can ignore the warnings.
+                    
+                    Transition: "After flood, God established covenant with Noah and gave a visible token..."
+                </aside>
+            </section>
+
+            <!-- SLIDE: WHO ENTERS - DISCUSSION -->
+            <section>
+                <h2>"Come Thou...Into the Ark"</h2>
+<p>THE PATTERN: Many called, few chosen (Matthew 22:14). Many hear prophet, few obey.</p>
+                <p class="question" style="margin-top: 1em;">THE QUESTION: Will you be among the few who enter, or the many who ignore the warning?</p>
+            </section>
+
+            <!-- SLIDE: RAINBOW COVENANT -->
+            <section>
+                <h2>"I Do Set My Bow in the Cloud"</h2>
+                <h3 style="font-size: 1.2em; margin-bottom: 0.3em;">Genesis 9:13</h3>
+
+                <div class="scripture-box" style="padding: 0.8em; margin: 0.5em 0;">
+                    <p class="invitation">Let's Read: <strong>Genesis 9:12-17</strong></p>
+                </div>
+
+                <div class="two-column" style="margin-top: 0.5em;">
+                    <div style="text-align: center;">
+                        <img src="images/slide6-rainbow.png" alt="Rainbow after the storm" style="max-width: 90%; max-height: 420px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                    </div>
+
+                    <div class="content-box" style="font-size: 0.75em;">
+                        <p><strong>The Rainbow Covenant:</strong></p>
+                        <ul>
+                            <li>Rainbow = visible <strong>token</strong> of God's covenant</li>
+                            <li>JST Genesis 9:21-25 – Rainbow existed before, given <strong>new covenant meaning</strong></li>
+                            <li>Appears after storm – God's promises outlast trials</li>
+                            <li>Universal reminder – everyone can see it</li>
+                            <li>First covenant token given to all humanity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Read Genesis 9:12-17 together.
+                    
+                    Key word: TOKEN (verses 12, 13, 17)
+                    
+                    Hebrew: 'oth = sign, signal, memorial, reminder
+                    Same word used for:
+                    - Passover as "sign" (Exodus 13:9)
+                    - Sabbath as "sign" (Exodus 31:13, 17)
+                    
+                    THE RAINBOW AS TOKEN (reveal fragment):
+                    
+                    1) VISIBLE REMINDER - God didn't just make promise and expect Noah to remember perfectly. He gave physical, visible reminder.
+                    
+                    2) NEW COVENANT MEANING - JST clarifies: Rainbow existed before flood (it's natural phenomenon), but God sanctified it as covenant token. He took something in nature and infused it with sacred meaning.
+                    
+                    This pattern continues: Water → baptism. Bread/water → sacrament. Oil → healing. Ordinary things given sacred covenant meaning.
+                    
+                    3) APPEARS AFTER STORMS - The rainbow shows up when storm is ENDING. Symbolism: God's covenant promises outlast our trials. Beauty follows difficulty.
+                    
+                    4) UNIVERSAL - Everyone can see rainbow. It's not limited to temple-goers or baptized members. First universal covenant token for all humanity.
+                    
+                    What was the covenant? Genesis 9:11 - "never again shall there be a flood to destroy the earth"
+                    
+                    Every time we see rainbow, we should remember:
+                    - God keeps His word
+                    - Trials end
+                    - God is merciful
+                    - Beauty follows storms
+                    - We are covenant people
+                    
+                    Transition: "Rainbow is one token. What other covenant tokens do we have?"
+                </aside>
+            </section>
+
+            <!-- SLIDE: COVENANT TOKENS IN OUR LIVES -->
+            <section>
+                <h2>What Tokens Help You Remember?</h2>
+
+                <div class="two-column" style="margin-top: 0.5em;">
+                    <div>
+                        <div style="text-align: center; margin-bottom: 0.5em;">
+                            <img src="images/slide7-covenant-tokens.png" alt="Sacred covenant tokens" style="max-width: 80%; max-height: 420px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                        </div>
+                        <div class="content-box" style="padding: 0.8em; font-size: 0.9em;">
+                            <p><strong>Ancient Token:</strong></p>
+                            <ul>
+                                <li><strong>Rainbow</strong> – Noahic covenant</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-box" style="padding: 1em; font-size: 0.9em;">
+                        <p><strong>Our Covenant Tokens:</strong></p>
+                        <ul>
+                            <li><strong>Sacrament</strong> – Renew baptismal covenant weekly</li>
+                            <li><strong>Temple garment</strong> – Daily reminder of temple covenants</li>
+                            <li><strong>Scriptures</strong> – Word of God in our hands</li>
+                            <li><strong>Sabbath day</strong> – Time as covenant token</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Just as God gave Noah the rainbow as tangible reminder, He gives us covenant tokens.
+                    
+                    OUR COVENANT TOKENS:
+                    
+                    1) SACRAMENT (D&C 20:77, 79):
+                    - Weekly renewal of baptismal covenant
+                    - Bread = body of Christ; water = blood
+                    - Physical act of eating/drinking = internalizing Christ
+                    - "Always remember Him" – it's a remembrance token
+                    - Most frequent covenant renewal we have
+                    
+                    2) TEMPLE GARMENT:
+                    - For endowed members
+                    - DAILY physical reminder of temple covenants
+                    - Every morning when you dress, you remember who you are
+                    - Protection both physical and spiritual
+                    - Handle with reverence
+                    
+                    3) SCRIPTURES:
+                    - Physical book (or device) with God's word
+                    - Seeing scriptures on nightstand = prompt to read
+                    - Marking scriptures = personalizing promises
+                    - Carrying scriptures = access to divine guidance
+                    
+                    4) SABBATH DAY:
+                    - Exodus 31:13 – "sign between me and you"
+                    - TIME as covenant token (not just objects)
+                    - Weekly rhythm of rest and worship
+                    - Setting aside one day sanctifies all seven
+                    
+                    WHY PHYSICAL TOKENS?
+                    - We are embodied beings; physical helps spiritual
+                    - We forget easily; external anchors compensate
+                    - Engages multiple senses
+                    - Children learn through tangible things
+                    - Creates habits and patterns
+                    
+                    DISCUSSION (reveal fragment): Which token means most to you right now?
+                    
+                    Let them share. This is testimony moment.
+                    
+                    Transition: "Just as tokens remind us of covenants, following the prophet is our pattern of safety..."
+                </aside>
+            </section>
+
+            <!-- SLIDE: COVENANT TOKENS DISCUSSION -->
+            <section>
+                <h2>What Tokens Help You Remember?</h2>
+
+                <p class="question">Which token is most meaningful to you right now? Why?</p>
+            </section>
+
+            <!-- SLIDE: NOAH PREACHED 120 YEARS -->
+            <section>
+                <h2>Noah: Prophet and Preacher</h2>
+
+                <div class="two-column" style="margin-top: 0.8em;">
+                    <div>
+                        <div class="content-box" style="padding: 0.8em; font-size: 0.85em;">
+                            <p><strong>Noah's Prophetic Ministry:</strong></p>
+                            <ul>
+                                <li>Called by God to warn (Moses 8:16)</li>
+                                <li>Preached repentance for <strong>120 years</strong> (Moses 8:17)</li>
+                                <li>Built ark as commanded—even when it seemed strange</li>
+                                <li>Rejected and mocked (Moses 8:20)</li>
+                                <li>Saved his family through obedience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <img src="images/noah_preaching_repentance.png" alt="Noah preaching to people" style="max-width: 85%; max-height: 550px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+
+                        <blockquote style="margin-top: 0.6em; font-size: 0.85em; padding: 0.6em 1em;">
+                            "A perfect and loving Father in Heaven has chosen the pattern of revealing truth to His children through a prophet."
+                            <footer>— Elder Allen D. Haynie</footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Noah wasn't just ark-builder. He was PROPHET.
+                    
+                    NOAH'S PROPHETIC MINISTRY:
+                    
+                    1) CALLED BY GOD - Moses 8:16: "God...spake unto Noah"
+                    
+                    2) PREACHED REPENTANCE - Moses 8:17, 20: "Noah called upon the children of men that they should repent; but they hearkened not"
+                    
+                    120 YEARS of preaching. Think about that. More than a century of:
+                    - Testifying
+                    - Warning
+                    - Inviting
+                    - Building ark in public view
+                    
+                    And people watched...and mocked...and rejected.
+                    
+                    3) BUILT AS COMMANDED - Even when it looked foolish. No rain yet. No evidence flood was coming. Just faith in God's word.
+                    
+                    4) SAVED HIS FAMILY - Genesis 7:1: "thee have I seen righteous before me in this generation"
+                    
+                    Noah's family followed HIS direction because he followed GOD'S direction. That's the pattern.
+                    
+                    ELDER HAYNIE'S QUOTE: "pattern of revealing truth...through a prophet"
+                    
+                    God could reveal everything directly to each person (and He does give personal revelation), but He CHOOSES prophetic pattern. Why?
+                    - Unity (we all hear same message)
+                    - Authority (clear divine direction)
+                    - Love (Father provides guide)
+                    - Ancient pattern since Adam
+                    
+                    Transition: "Noah was the prophet for his day. Who is the prophet for our day?"
+                </aside>
+            </section>
+
+            <!-- SLIDE: FOLLOWING PRESIDENT OAKS -->
+            <section>
+                <h2>Following President Oaks</h2>
+
+                <div class="two-column">
+                    <div class="column">
+                        <img src="images/slide8-prophet.png" alt="President Dallin H. Oaks" style="width: 80%;">
+                    </div>
+
+                    <div class="column">
+                        <p class="question">How is President Oaks like Noah? What is he warning us about?</p>
+                        <p class="question" style="margin-top: 1em;">What is one prophetic invitation you're working to follow right now?</p>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    DISCUSSION QUESTION 1: How is President Oaks like Noah?
+                    
+                    Let class draw parallels:
+                    - Both called by God
+                    - Both warning of coming difficulties (Second Coming vs Flood)
+                    - Both inviting preparation (spiritual ark = temple, covenants, gathering)
+                    - Both building (President Nelson: temples worldwide; Noah: ark)
+                    - Both face skepticism from world
+                    - Both testify of Christ
+                    - Both give SPECIFIC direction, not vague advice
+                    
+                    What is President Oaks warning about?
+                    - Spiritual dangers of last days
+                    - Importance of temple covenants
+                    - Need to gather Israel now
+                    - Sabbath observance as protection
+                    - Correct use of agency
+                    - Personal revelation ("Hear Him")
+                    - Staying on covenant path
+                    
+                    Recent prophetic invitations:
+                    - Sabbath observance
+                    - Temple worship
+                    - Home-centered gospel learning
+                    - Ministering
+                    - Gathering Israel (missionary work, temple work)
+                    - Social media wisdom
+                    - Preparing for Second Coming
+                    
+                    DISCUSSION QUESTION 2: Personal application.
+                    
+                    Invite specific answers:
+                    - "I'm working on Sabbath observance—no shopping"
+                    - "I'm attending temple monthly"
+                    - "I'm doing family history for ancestors"
+                    - "I'm sharing gospel with friends"
+                    - "I'm limiting social media"
+                    - "I'm studying scriptures daily"
+                    - "I'm ministering more intentionally"
+                    
+                    This is personal commitment moment. Let them share.
+                    
+                    Transition: "Let's conclude by bringing this all together..."
+                </aside>
+            </section>
+
+            <!-- SLIDE: CONCLUSION - BUILD YOUR ARK NOW -->
+            <section data-background-image="images/slide9-conclusion.png" data-background-opacity="0.25">
+                <h2>Build Your Ark Now</h2>
+
+                <div class="content-box" style="font-size: 0.9em; margin-top: 0.8em;">
+                    <p><strong>What We've Learned:</strong></p>
+                    <ul>
+                        <li><strong>Our day = Noah's day</strong> – wickedness, violence, rejection of prophets</li>
+                        <li><strong>Grace sustains us</strong> – enabling power through Jesus Christ</li>
+                        <li><strong>The ark = temple</strong> – covenant space of safety</li>
+                        <li><strong>Build before rain comes</strong> – prepare NOW, not in crisis</li>
+                        <li><strong>Covenant tokens strengthen memory</strong> – sacrament, temple garment, scriptures, Sabbath</li>
+                        <li><strong>Follow the prophet</strong> – President Oaks is our Noah</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    This is summary. Bring it all together.
+                    
+                    RECAP (go through list briefly):
+                    
+                    1) OUR DAY = NOAH'S DAY
+                    Undeniable parallels. Jesus said it would be this way. We're not surprised; we're prepared.
+                    
+                    2) GRACE SUSTAINS US
+                    We can't do this alone. But with Christ's enabling power (grace), we can stand in wicked world just like Noah did.
+                    
+                    3) ARK = TEMPLE
+                    The temple is our covenant space of safety. Make covenants. Keep covenants. Return often.
+                    
+                    4) BUILD NOW
+                    W. Don Ladd: "When it starts raining, it is too late." Don't procrastinate spiritual preparation.
+                    
+                    5) COVENANT TOKENS
+                    God gives us physical reminders because He knows we forget. Use them. Honor them. Let them anchor you.
+                    
+                    6) FOLLOW THE PROPHET
+                    President Oaks is warning us, just as Noah warned his generation. Will we listen?
+                    
+                    President Spencer W. Kimball: "Noah's warnings were considered irrational. How foolish to build an ark on dry ground with the sun shining and life moving forward as usual! But time ran out. The ark was finished. The floods came. The disobedient and rebellious were drowned."
+                    
+                    Don't be among the disobedient. Be among the 8 who entered the ark.
+                    
+                    Click for personal invitations...
+                </aside>
+            </section>
+
+            <!-- SLIDE: PERSONAL INVITATIONS -->
+            <section data-background-image="images/slide9-conclusion.jpg" data-background-opacity="0.2">
+                <h2>Personal Invitations</h2>
+
+                <div class="application">
+                    <p style="font-size: 1.6em; margin-bottom: 0.8em;"><strong>This Week:</strong></p>
+                    <p style="font-size: 1.5em; margin: 0.6em 0;">What is one "plank" you will add to your personal ark?</p>
+                    <p style="font-size: 1.5em; margin: 0.6em 0;">What covenant token will you use more intentionally?</p>
+                    <p style="font-size: 1.5em; margin: 0.6em 0;">What prophetic counsel will you follow more fully?</p>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Give 30 seconds of silence for personal pondering. Don't rush.
+                    
+                    INVITATION 1: What "plank" will you add to your ark?
+                    
+                    Maybe:
+                    - Daily scripture study
+                    - Weekly family home evening
+                    - Monthly temple attendance
+                    - Sabbath day observance
+                    - Media standards in home
+                    - Family prayer consistency
+                    - Personal prayer depth
+                    
+                    INVITATION 2: What covenant token will you use more intentionally?
+                    
+                    Maybe:
+                    - Sacrament preparation (ponder during week, fast occasionally)
+                    - Temple garment reverence
+                    - Scripture study with marking and pondering
+                    - Sabbath observance (no shopping, more worship)
+                    - Rainbow as reminder to look for God's covenant keeping
+                    
+                    INVITATION 3: What prophetic counsel will you follow?
+                    
+                    Maybe:
+                    - Sabbath observance
+                    - Temple worship
+                    - Gathering Israel (share gospel, do temple work)
+                    - Social media wisdom
+                    - Home-centered gospel learning
+                    
+                    ==================
+                    TESTIMONY MOMENT:
+                    ==================
+                    
+                    [Teacher bears testimony]
+                    
+                    Suggested themes:
+                    - God's grace in your life
+                    - Temple as your ark of safety
+                    - Gratitude for living prophets
+                    - Testimony of covenant path
+                    
+                    Example: "I know that God provides arks of safety for His covenant people in every generation. In Noah's day, it was a physical ark. In our day, it's the temple and our covenant homes. I'm grateful for President Oaks and his prophetic warnings. I know that if we build our personal arks NOW—through temple covenants, following prophets, and honoring covenant tokens—we will be safe in the storms ahead. In the name of Jesus Christ, amen."
+                    
+                    ==================
+                    CLOSING:
+                    ==================
+                    
+                    Thank class for participation.
+                    Invite closing prayer.
+                    
+                    Prayer suggestion: Ask someone to pray that we will have courage to build our arks now and wisdom to follow the prophet.
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'fade',
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            center: false,
+            plugins: [ RevealNotes ]
+        });
+    </script>
+</body>
+</html>
