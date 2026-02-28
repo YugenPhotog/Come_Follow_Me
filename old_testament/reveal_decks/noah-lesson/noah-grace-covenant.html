@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Found Grace in the Eyes of the Lord</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/serif.css">
+    <style>
+        :root {
+            --parchment: #f4f1e8;
+            --deep-brown: #3d2817;
+            --warm-gold: #c9a961;
+            --olive: #6b6b47;
+            --burgundy: #6b2b2b;
+        }
+
+        .reveal {
+            font-family: 'Crimson Text', 'Garamond', 'Georgia', serif;
+            background: linear-gradient(to bottom, #2d2416, #1a1410);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Cinzel', 'Trajan Pro', serif;
+            color: var(--warm-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
+            text-transform: none;
+        }
+
+        .reveal h1 {
+            font-size: 2.2em;
+            line-height: 1.2;
+            margin-bottom: 0.3em;
+        }
+
+        .reveal h2 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h3 {
+            font-size: 1.4em;
+            color: var(--parchment);
+        }
+
+        .reveal p, .reveal li {
+            font-size: 1.3em;
+            line-height: 1.5;
+            color: var(--parchment);
+        }
+
+        .reveal .slides section {
+            text-align: left;
+            padding: 2em;
+        }
+
+        .reveal section[data-background-image] h1,
+        .reveal section[data-background-image] h2,
+        .reveal section[data-background-image] h3 {
+            background: rgba(29, 20, 16, 0.85);
+            padding: 0.3em 0.6em;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Content boxes */
+        .content-box {
+            background: rgba(244, 241, 232, 0.95);
+            border-left: 6px solid var(--warm-gold);
+            padding: 1.5em;
+            margin: 1em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .content-box p, .content-box li {
+            color: var(--deep-brown);
+            font-size: 1.2em;
+        }
+
+        .content-box ul {
+            margin-left: 1.5em;
+        }
+
+        /* Hebrew/linguistic highlight boxes */
+        .hebrew-box {
+            background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
+            border: 3px solid var(--deep-brown);
+            padding: 1.2em;
+            margin: 1em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+
+        .hebrew-box p {
+            color: var(--deep-brown);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0.3em 0;
+        }
+
+        /* Scripture invitation box */
+        .scripture-box {
+            background: rgba(107, 43, 43, 0.15);
+            border: 4px solid var(--burgundy);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .scripture-box .invitation {
+            font-size: 1.5em;
+            color: var(--warm-gold);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Discussion questions */
+        .question {
+            background: rgba(107, 107, 71, 0.2);
+            border-left: 5px solid var(--olive);
+            padding: 1em 1.5em;
+            margin: 0.8em 0;
+            font-size: 1.3em;
+            color: var(--parchment);
+            border-radius: 5px;
+        }
+
+        /* Quote styling */
+        .reveal blockquote {
+            background: rgba(244, 241, 232, 0.95);
+            border-left: 8px solid var(--burgundy);
+            padding: 1.5em 2em;
+            margin: 2em 0;
+            font-size: 1.3em;
+            color: var(--deep-brown);
+            font-style: italic;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .reveal blockquote footer {
+            font-size: 0.8em;
+            color: var(--burgundy);
+            font-weight: 600;
+            margin-top: 0.5em;
+            font-style: normal;
+        }
+
+        /* Two-column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            margin: 1em 0;
+        }
+
+        /* Title slide specific */
+        .title-slide {
+            text-align: center !important;
+        }
+
+        .title-slide h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .title-slide h3 {
+            font-size: 1.6em;
+            color: var(--warm-gold);
+            margin-top: 1em;
+        }
+
+        /* Fragment styling */
+        .reveal .fragment {
+            opacity: 0;
+        }
+
+        .reveal .fragment.visible {
+            opacity: 1;
+        }
+
+        /* List styling */
+        .reveal ul, .reveal ol {
+            margin-left: 2em;
+        }
+
+        .reveal li {
+            margin: 0.5em 0;
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: var(--warm-gold);
+            font-weight: 700;
+        }
+
+        /* Application invitation styling */
+        .application {
+            background: rgba(201, 169, 97, 0.2);
+            border: 3px dashed var(--warm-gold);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            font-size: 1.3em;
+            color: var(--parchment);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: TITLE SLIDE -->
+            <section class="title-slide" data-background-image="images/title_slide.png">
+                
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style oil painting of Noah and his family standing peacefully beside the ark after the flood, warm golden light breaking through dark storm clouds overhead, faces illuminated with hope and gratitude, rich earth tones, dramatic chiaroscuro lighting, 17th century Dutch master technique, emotional depth in expressions, divine light as focal point, landscape showing receding waters and new beginnings, 1920x1080 landscape orientation.
+
+                    <strong>TEACHING NOTES:</strong>
+                    Welcome to this week's study of Noah and the Flood. Our focus today will be on two profound themes: 
+                    1) Grace as God's enabling power that sustains us in wicked times
+                    2) Covenant tokens as anchors of memory and hope
+                    
+                    We're living in latter-day "Noah conditions." This lesson will help us understand how to access grace and remember our covenants just as Noah did.
+
+                    Prayer suggestion: Ask class member to pray that we might understand God's grace and be mindful of our covenant tokens.
+                </aside>
+            </section>
+
+            <!-- SLIDE 2: HISTORICAL CONTEXT -->
+            <section data-background-image="images/slide2-wickedness.png" data-background-opacity="0.25">
+                <h2>"As It Was in the Days of Noah..."</h2>
+                <h3 style="font-size: 1.8em; margin-bottom: 1em;">Joseph Smith—Matthew 1:41</h3>
+
+                
+                    <p><strong>Conditions in Noah's Day:</strong></p>
+                    <ul>
+                        <li>"The earth was corrupt before God, and...filled with violence" (Moses 8:28)</li>
+                        <li>Secret combinations and works of darkness (Moses 8:15-18)</li>
+                        <li>Hearts set only upon evil continually (Moses 8:22)</li>
+                        <li>They rejected the prophets and hardened their hearts (Moses 8:20)</li>
+                    </ul>
+                
+
+                
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style painting depicting a dark, turbulent pre-flood world, crowds of people in shadowy wickedness ignoring a distant figure of Noah preaching, heavy storm clouds gathering, deep chiaroscuro with minimal light breaking through, ominous atmosphere, rich browns and blacks dominating the palette, sense of spiritual darkness and moral corruption, Dutch Golden Age painting technique, 1920x1080 landscape.
+
+                    <strong>TEACHING NOTES:</strong>
+                    Read Moses 8:22-30 together to set the scene. This isn't about fear-mongering or political commentary—it's about recognizing spiritual patterns.
+
+                    Jesus Himself said "as it was in the days of Noah, so it shall be also at the coming of the Son of Man." We are THAT generation. The parallels are striking:
+                    - Violence and corruption filling the earth
+                    - Secret combinations (see also Helaman 6:26-30)
+                    - Rejection of prophets
+                    - Hearts focused on worldly pursuits
+
+                    But here's the key: We also have what Noah had—GRACE and PROPHETIC WARNING. That's our hope.
+
+                    Let the class share what they notice. Common themes: violence, moral relativism, rejection of prophets, secret works, materialism. Don't let it become political—keep it spiritual and doctrinal.
+
+                    Transition: "In the midst of all this wickedness, Moses 8:27 gives us hope..."
+                </aside>
+            </section>
+			
+			<!-- SLIDE 2: HISTORICAL CONTEXT -->
+            <section data-background-image="images/slide2-wickedness.png" data-background-opacity="0.25">
+                <h2>"As It Was in the Days of Noah..."</h2>
+            
+                    
+                <p <strong>Discussion:</strong> What parallels do you see between Noah's day and our own? What similarities concern you most?</p>
+			</section>
+
+            <!-- SLIDE 3A: GRACE DEFINED -->
+            <section>
+                <h2>"Noah Found Grace in the Eyes of the Lord"</h2>
+                
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read: <strong>Moses 8:27</strong></p>
+                </div>
+
+                <div class="two-column" style="margin-top: 1.5em;">
+                    <div style="text-align: center;">
+                        <img src="images/slide3-noah-grace.png" alt="Noah illuminated by divine light" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                    </div>
+
+                    <div class="hebrew-box">
+                        <p>Hebrew: חֵן (chen)</p>
+                        <p>Favor • Acceptance • Beauty • Elegance • Divine pleasure</p>
+                        <p style="font-size: 0.9em; font-style: italic; margin-top: 0.5em;">Not just "unmerited favor"—God's enabling power to become what we cannot become alone</p>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style painting of Noah's face in profile, illuminated by warm divine light from above while surrounded by darkness, expression of humble reverence and quiet strength, masterful chiaroscuro technique, golden light emphasizing wrinkles and weathered features showing age and wisdom, rich earth tones, spiritual light as metaphor for grace, emotional depth, 17th century Dutch portrait style, landscape orientation 1200x800.
+                    
+                    <strong>IMAGE LOCATION:</strong> Save as images/slide3-noah-grace.jpg
+
+                    <strong>TEACHING NOTES:</strong>
+                    This is the heart of the lesson. Let's unpack grace carefully.
+
+                    The Hebrew word "chen" (חֵן) appears throughout the Old Testament. It's related to "chanan" (to be gracious, to show favor). Noah "found" grace—he discovered it, accessed it, received it. Grace was AVAILABLE and Noah positioned himself to receive it.
+
+                    Read Moses 8:27 together, then reveal the Hebrew box.
+
+                    Let the class look at the Hebrew while you explain: Grace (chen) is not just "God forgives you when you mess up." It's deeper than that. It's God's ENABLING POWER—His divine help to do and become what we cannot do or become on our own.
+
+                    This is NEW TESTAMENT doctrine too. Read 2 Nephi 25:23 together: "It is by grace that we are saved, after all we can do." 
+
+                    Click to next slide for discussion...
+                </aside>
+            </section>
+
+            <!-- SLIDE 3B: GRACE DISCUSSION -->
+            <section>
+                 <h2>What Grace Means</h2>
+    
+    <div class="content-box">
+        <ul>
+            <li>Divine enabling power that transforms us</li>
+            <li>God's help to do and become beyond our natural abilities</li>
+            <li>Noah was "just and perfect in his generation" <em>AND</em> needed grace</li>
+            <li>Grace is not just forgiveness—it's divine strengthening</li>
+        </ul>
+        <p style="margin-top: 1em; font-size: 0.9em; color: var(--burgundy);"><strong>See 2 Nephi 25:23; Moroni 10:32</strong></p>
+    </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Now we discuss what grace means practically.
+
+                    Go through the bullet points:
+
+                    1) DIVINE ENABLING POWER - not just mercy, but POWER
+                    2) DO AND BECOME - grace helps us accomplish righteous desires
+                    3) "PERFECT IN HIS GENERATION" - this is key!
+
+                    "Perfect" (Hebrew: tamim) means complete, whole, mature, fully committed. NOT sinless. Noah was all-in with God, but he still needed grace to accomplish his mission.
+
+                    Think about Moroni 10:32: "If ye shall deny yourselves of all ungodliness, and love God with all your might, mind and strength, then is his grace sufficient for you."
+
+                    DISCUSSION QUESTION 1: Guide them to see that "perfect" here means mature/complete in commitment, not flawless. Jacob 4:7 - "None is perfect save God." Grace completes what we cannot complete ourselves. We can be fully committed AND still need divine help.
+
+                    DISCUSSION QUESTION 2: Invite personal sharing. Grace might show up as:
+                    - Strength to endure trials beyond your capacity
+                    - Courage to change when you thought you couldn't
+                    - Peace beyond understanding during crisis
+                    - Ability to forgive when it seemed impossible
+                    - Power to resist temptation you couldn't resist alone
+                    - Completing a calling you felt inadequate for
+
+                    This is where testimonies emerge. Let them share.
+
+                    Transition: "God gave Noah 120 years—120 years!—to prepare. Let's talk about that extended grace..."
+                </aside>
+            </section>
+	
+	<!-- SLIDE 3C: GRACE QUESTIONS -->
+<section>
+    <h2>Discussing Grace</h2>
+    
+    <p class="question">How can someone be "perfect" and still need grace? What does this teach us?</p>
+    
+    <p class="question" style="margin-top: 1.5em;">When have you felt God's enabling power (grace) sustain you in difficult circumstances?</p>
+</section>
+
+
+            <!-- SLIDE 4A: 120-YEAR WARNING -->
+            <section>
+                <h2>Grace Extended: 120 Years to Repent</h2>
+
+                <div class="two-column" style="margin-top: 1.5em;">
+                    <div style="text-align: center;">
+                        <img src="images/slide4-building-ark.png" alt="Noah building the ark over many years" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                    </div>
+
+                    <div class="content-box">
+                        <p><strong>God's Long-Suffering Mercy:</strong></p>
+                        <ul>
+                            <li>Moses 8:17 – Noah called to preach for <strong>120 years</strong> before the flood</li>
+                            <li>Genesis 6:3 – "My spirit shall not always strive with man"</li>
+                            <li>Moses 8:25-26 – God's <strong>grief</strong> shows His love, not just His justice</li>
+                            <li>Every generation had opportunity to repent and prepare</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style painting of Noah and his sons building the massive ark over many years, showing passage of time through changing seasons in background, warm golden hour light illuminating their patient labor, tools and timber in foreground, sense of faithful persistence, deep shadows and dramatic lighting, Dutch master technique, rich earth tones and warm light, theme of patient obedience over decades, landscape orientation 1200x800.
+                    
+                    <strong>IMAGE LOCATION:</strong> Save as images/slide4-building-ark.jpg
+
+                    <strong>TEACHING NOTES:</strong>
+                    This is one of the most overlooked details of the Noah story—the 120-YEAR warning period.
+
+                    Think about that timespan:
+                    - Longer than most of our lifetimes
+                    - Multiple generations lived and died during Noah's preaching
+                    - Noah was patient, persistent, obedient for over a century
+
+                    Genesis 6:3: "My spirit shall not always strive with man." God's Spirit was STRIVING—actively working to bring them to repentance. But there are limits to divine patience when hearts are permanently hardened.
+
+                    Moses 8:25-26: "It repented Noah, and his heart was pained that the Lord had made man on the earth, and it grieved him at the heart." This is God's grief expressed through Noah. God WANTED to save them. The flood was last resort, not first response.
+
+                    Click for discussion...
+                </aside>
+            </section>
+
+            <!-- SLIDE 4B: 120-YEAR DISCUSSION -->
+            <section>
+                <h2>What Does This Teach Us About God?</h2>
+
+                <p class="question">What does the 120-year warning period teach us about God's character and His desire to save?</p>
+
+                <div class="application" style="margin-top: 2em;">
+                    <p><strong>Modern Application:</strong></p>
+                    <p>President Nelson has been preparing us for the Second Coming since 2018. What warnings and invitations has he extended to help us prepare?</p>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    DISCUSSION QUESTION: Let them explore God's character. Listen for insights like:
+                    - He is patient beyond our comprehension
+                    - He sends prophets with ample warning
+                    - He grieves over lost children
+                    - Justice must eventually be satisfied when agency is destroyed
+                    - He gives MULTIPLE chances, not just one
+
+                    Elder Maxwell's insight: "Corruption had reached an agency-destroying point." When society becomes so wicked that children can't learn truth, that's when mercy requires intervention.
+
+                    MODERN APPLICATION: Draw the parallel carefully.
+
+                    President Nelson became an apostle in 1984 (40+ years of preparation). He's been warning and inviting us for decades. Since becoming prophet in 2018, specific invitations include:
+                    - Sabbath observance ("The Sabbath Is a Delight")
+                    - Temple worship (operating temples during COVID)
+                    - Gathering Israel (missionary work, temple and family history)
+                    - Correct name of the Church (revelation on identity)
+                    - Social media wisdom (protecting families)
+                    - Spiritual preparation for the Second Coming
+                    - Personal revelation ("Hear Him")
+
+                    We're in OUR warning period. Are we listening? Are we building our spiritual "ark"?
+
+                    Transition: "But ultimately, justice required the flood. Let's talk about how that was also an act of mercy..."
+                </aside>
+            </section>
+
+            <!-- SLIDE 5: THE FLOOD AS MERCY -->
+            <section data-background-image="images/slide5-flood-mercy.png">
+                
+                <div class="content-box fragment">
+                    <p><strong>Two-Fold Mercy:</strong></p>
+                    <ul>
+                        <li><strong>For those living:</strong> Release from corrupted world; opportunity in spirit world</li>
+                        <li><strong>For unborn spirits:</strong> Protected from environment that would destroy agency</li>
+                        <li>Genesis 6:5-13 – God's grief and pain, not just anger</li>
+                        <li>The earth needed to be cleansed for righteous habitation</li>
+                    </ul>
+                </div>
+
+                <p class="question fragment">How was the Flood an act of mercy—both for those living AND for unborn spirits?</p>
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style dramatic painting of the ark floating peacefully on turbulent flood waters, divine light breaking through dark storm clouds above, contrast between churning dark waters below and hopeful light from heaven, ark as vessel of safety illuminated by golden light, masterful chiaroscuro, sense of both judgment and mercy simultaneously, rich browns and golds, emotional weight and spiritual depth, 1920x1080 landscape.
+
+                    <strong>TEACHING NOTES:</strong>
+                    This slide addresses the hardest question about the Noah story: "How could a loving God destroy the earth?"
+
+                    Elder Neal A. Maxwell's insight is crucial: "Agency-destroying point." When wickedness becomes so pervasive that:
+                    - Children cannot learn truth
+                    - Secret combinations control society
+                    - Violence and corruption dominate
+                    - No righteous examples exist
+                    ...then premortal spirits cannot be justly sent into that environment.
+
+                    Think about it: Would it be JUST to send your spirit children into a world where they had no chance to choose good? Where every influence pushed toward evil? That would violate the whole purpose of the Plan of Salvation.
+
+                    Read Genesis 6:5-6 together: "And God saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually. And it repented the Lord that he had made man on the earth, and it grieved him at his heart."
+
+                    The word "repented" here (Hebrew: nacham) means to feel pain, to grieve deeply. God GRIEVES over His children's wickedness. The flood wasn't vindictive—it was necessary and sorrowful.
+
+                    TWO-FOLD MERCY:
+                    1) For those living: They go to the spirit world where missionary work continues (see 1 Peter 3:18-20; D&C 138). They aren't lost forever.
+                    2) For unborn spirits: Preserved from impossible conditions; can come to earth in better times.
+
+                    DISCUSSION QUESTION: Let them wrestle with this. Some may need time to feel the weight of it. Others may share insights about God's long-term view vs. our short-term perspective.
+
+                    Also note: The earth itself needed cleansing. Physical and spiritual pollution required a "reset." The flood was baptism of the earth.
+
+                    Transition: "After the flood, God established a covenant with Noah and gave a token of that covenant..."
+                </aside>
+            </section>
+
+            <!-- SLIDE 6A: RAINBOW COVENANT -->
+            <section>
+                <h2>"I Do Set My Bow in the Cloud"</h2>
+                <h3 style="font-size: 1.4em;">Genesis 9:13</h3>
+
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read: <strong>Genesis 9:12-17</strong></p>
+                </div>
+
+                <div class="two-column" style="margin-top: 1em;">
+                    <div style="text-align: center;">
+                        <img src="images/slide6-rainbow.png" alt="Rainbow after the storm" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                    </div>
+
+                    <div class="content-box">
+                        <p><strong>The Rainbow Covenant:</strong></p>
+                        <ul>
+                            <li>Rainbow = visible sign of God's covenant promise</li>
+                            <li>JST Genesis 9:21-25 – Rainbow existed before, but given <strong>NEW covenant meaning</strong></li>
+                            <li>"Token of the covenant" – something tangible to trigger memory</li>
+                            <li>Appears after storm – God keeps promises even after trials</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style luminous painting of a brilliant rainbow arcing across the sky after a storm, warm golden light breaking through retreating dark clouds, landscape below showing peaceful post-flood earth with olive trees and calm waters, divine light emphasizing the rainbow's covenant symbolism, rich color palette with emphasis on warm golds and earth tones, masterful lighting technique, sense of hope and divine promise, landscape orientation 1200x800.
+                    
+                    <strong>IMAGE LOCATION:</strong> Save as images/slide6-rainbow.jpg
+
+                    <strong>TEACHING NOTES:</strong>
+                    This begins our shift to the second major theme: Covenant Tokens.
+
+                    Read Genesis 9:12-17 together. Have someone read it aloud slowly.
+
+                    Key phrase: "TOKEN of the covenant" (v. 12, 13, 17). This word "token" (Hebrew: 'oth) means sign, signal, memorial, reminder. It's the same word used in:
+                    - Exodus 13:9 for Passover as a "sign"
+                    - Exodus 31:13, 17 for the Sabbath as a "sign"
+
+                    THE RAINBOW AS TOKEN:
+                    - Visual reminder of God's promise
+                    - Appears after storms (metaphor: God's promises outlast our trials)
+                    - Universal—everyone can see it
+                    - Beautiful—God's covenant is lovely, not burdensome
+
+                    JST Genesis 9:21-25 adds crucial detail: The rainbow EXISTED before the flood (it's a natural phenomenon), but God gave it NEW MEANING as a covenant token. He sanctified something in nature to be a spiritual reminder.
+
+                    This is profound: God takes ordinary things and infuses them with sacred meaning. Water becomes baptism. Bread and water become sacrament. A rainbow becomes covenant promise.
+
+                    Click for discussion...
+                </aside>
+            </section>
+
+            <!-- SLIDE 6B: RAINBOW DISCUSSION -->
+            <section>
+                <h2>Why Physical Tokens?</h2>
+
+                <p class="question">Why does God give us visible, physical tokens rather than just spiritual promises?</p>
+
+                <p class="question" style="margin-top: 1.5em;">When you see a rainbow, what do you feel or remember now?</p>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    DISCUSSION QUESTION 1: Why physical tokens?
+
+                    Let the class explore. Possible insights:
+                    - We are EMBODIED beings; physical reminders help spiritual memory
+                    - "Seeing is believing" – visual reinforcement is powerful
+                    - Tokens engage multiple senses (sight, touch, taste for sacrament)
+                    - They're EXTERNAL reminders when internal memory fails
+                    - Children can be taught through tangible objects
+                    - We forget easily; physical things compensate
+                    - Regular interaction creates habit and pattern
+
+                    God knows our weakness. He doesn't just say "remember me" and expect perfect recall. He gives us HELPS. Visual triggers. Physical anchors. Tangible reminders.
+
+                    DISCUSSION QUESTION 2: Personal reflection.
+
+                    After this lesson, when they see a rainbow, they should remember:
+                    - God keeps His promises
+                    - He is merciful after judgment
+                    - He will never destroy the earth by flood again
+                    - I am in covenant relationship with Him
+                    - Beauty follows storms
+                    - Trials are temporary; covenants are eternal
+
+                    This is a testimony moment. Let them share what rainbows mean to them now.
+
+                    Transition: "The rainbow is one covenant token. What other tokens do we have in our lives?"
+                </aside>
+            </section>
+
+            <!-- SLIDE 7A: COVENANT TOKENS IN OUR LIVES -->
+            <section>
+                <h2>What Tokens Help You Remember?</h2>
+
+                <div style="text-align: center; margin: 1em 0;">
+                    <img src="images/slide7-covenant-tokens.png" alt="Sacred covenant tokens" style="max-width: 40%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                </div>
+
+                <div class="two-column" style="margin-top: 1em;">
+                    <div class="content-box">
+                        <p><strong>Ancient Token:</strong></p>
+                        <ul>
+                            <li><strong>Rainbow</strong> – Noahic covenant</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-box">
+                        <p><strong>Our Covenant Tokens:</strong></p>
+                        <ul>
+                            <li><strong>Sacrament</strong> – Renew baptismal covenant</li>
+                            <li><strong>Temple garment</strong> – Temple covenants</li>
+                            <li><strong>Scriptures</strong> – Word of God</li>
+                            <li><strong>Sabbath day</strong> – Sign with God</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style still life painting featuring sacred covenant tokens arranged with reverence: sacrament tray with bread and water in soft light, open scriptures with readable text, subtle rainbow visible through a window in background, warm golden light illuminating the sacred objects from the side, rich earth tones and deep shadows, Dutch Golden Age technique, spiritual reverence and beauty in ordinary sacred things, intimate and contemplative mood, landscape orientation 1200x800.
+                    
+                    <strong>IMAGE LOCATION:</strong> Save as images/slide7-covenant-tokens.jpg
+
+                    <strong>TEACHING NOTES:</strong>
+                    This is the application slide for covenant tokens. Make it personal and practical.
+
+                    ANCIENT TOKEN – RAINBOW:
+                    We've discussed this. It was the first universal covenant token given to all humanity.
+
+                    OUR COVENANT TOKENS (briefly identify each):
+
+                    1) SACRAMENT (D&C 20:77, 79):
+                    - We renew baptismal covenant EVERY WEEK
+                    - Bread = body of Christ; water = blood of Christ
+                    - Physical act of eating/drinking = internalizing Christ
+                    - "Always remember Him" – sacrament is remembrance token
+                    - Most frequent covenant renewal we have
+
+                    2) TEMPLE GARMENT:
+                    - Worn by those who've received temple endowment
+                    - Physical reminder of temple covenants EVERY DAY
+                    - Protection both physical and spiritual
+                    - Handle with reverence
+
+                    3) SCRIPTURES:
+                    - Physical book (or device) containing God's word
+                    - Seeing scriptures on your nightstand = reminder to read
+                    - Marking scriptures = personalizing covenant promises
+                    - Carrying scriptures = accessibility to divine guidance
+
+                    4) SABBATH DAY:
+                    - Exodus 31:13 – "Sign between me and you"
+                    - Weekly rhythm of rest and worship
+                    - TIME as covenant token (not just objects)
+                    - Setting aside one day sanctifies all seven
+
+                    Click for discussion questions...
+                </aside>
+            </section>
+
+            <!-- SLIDE 7B: COVENANT TOKENS DISCUSSION -->
+            <section>
+                <h2>Making Tokens More Powerful</h2>
+
+                <p class="question">Which covenant token is most meaningful to you right now? Why?</p>
+
+                <p class="question" style="margin-top: 1.5em;">How do physical reminders strengthen spiritual memory?</p>
+
+                <p class="question" style="margin-top: 1.5em;">What can we do to make these tokens more powerful in our daily lives?</p>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    DISCUSSION QUESTION 1: Invite personal sharing. This is where testimonies emerge.
+
+                    Someone might say:
+                    - "Sacrament means everything since my repentance journey"
+                    - "Temple garment reminds me who I am when tempted"
+                    - "Scriptures saved my marriage when we were struggling"
+                    - "Sabbath transformed my family's priorities"
+
+                    Let them share. This is powerful.
+
+                    DISCUSSION QUESTION 2: Why do physical reminders work?
+                    - We forget easily; physical things compensate
+                    - Touch, sight, taste engage memory more deeply than abstract thought
+                    - Regular interaction creates habit and pattern
+                    - Children learn through tangible things
+                    - External anchors when internal faith wavers
+
+                    DISCUSSION QUESTION 3: Making tokens more powerful:
+
+                    SACRAMENT: 
+                    - Come prepared (ponder hymns, fast occasionally)
+                    - Arrive early, sit reverently
+                    - Actually think about covenants during blessing
+                    - Use as weekly spiritual reset
+
+                    GARMENT: 
+                    - Wear worthily
+                    - Remember what they represent when getting dressed
+                    - Let them influence clothing choices
+
+                    SCRIPTURES: 
+                    - Mark and study, not just read
+                    - Apply what you learn
+                    - Teach from them
+                    - Keep them visible
+
+                    SABBATH: 
+                    - Truly rest from worldly work
+                    - Worship meaningfully
+                    - Avoid shopping, entertainment
+                    - Make it a delight, not a burden
+
+                    Transition: "Just as these tokens remind us of covenants, following the prophet is our ark of safety..."
+                </aside>
+            </section>
+
+            <!-- SLIDE 8A: FOLLOWING THE PROPHET -->
+            <section>
+                <h2>There Is Spiritual Safety in Following the Lord's Prophet</h2>
+
+                <div class="two-column" style="margin-top: 1.5em;">
+                    <div style="text-align: center;">
+                        <img src="images/slide8-prophet.png" alt="Modern prophet with divine light" style="max-width: 85%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                    </div>
+
+                    <div>
+                        <div class="content-box">
+                            <p><strong>Noah as Prophet-Type:</strong></p>
+                            <ul>
+                                <li>Called by God to warn and prepare (Moses 8:16-19)</li>
+                                <li>Preached repentance for 120 years despite rejection</li>
+                                <li>Built the ark as commanded—even when it seemed strange</li>
+                                <li>His family found safety by following his prophetic direction</li>
+                            </ul>
+                        </div>
+
+                        <blockquote style="margin-top: 1em; font-size: 1.1em; padding: 1em 1.5em;">
+                            "A perfect and loving Father in Heaven has chosen the pattern of revealing truth to His children through a prophet."
+                            <footer>— Elder Allen D. Haynie</footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style portrait of a dignified elderly prophet (symbolic features, not specific person) standing with scriptures in hand, warm divine light illuminating face from above left, expression of loving concern and prophetic authority, rich earth tones with deep burgundy and gold accents, dramatic chiaroscuro lighting, background showing temple spires in soft atmospheric focus, sense of spiritual weight and divine calling, Dutch master portrait technique, vertical orientation portrait 800x1000.
+                    
+                    <strong>IMAGE LOCATION:</strong> Save as images/slide8-prophet.jpg
+
+                    <strong>TEACHING NOTES:</strong>
+                    This connects Noah's prophetic role to President Russell M. Nelson.
+
+                    NOAH AS PROPHET-TYPE:
+                    - Called by God (Moses 8:16)
+                    - Preached repentance (Moses 8:20)
+                    - Warned of coming destruction (Moses 8:17)
+                    - Was rejected and mocked (implied in Moses 8:20 – they "believed not")
+                    - Built ark as directed, even when it seemed irrational
+                    - Saved his family through obedience
+
+                    ELDER HAYNIE'S QUOTE: Read it with emphasis on "pattern."
+
+                    God could reveal truth directly to each person (and He does, through personal revelation), but He CHOOSES to also work through prophets. Why?
+                    - Unity (we hear same message)
+                    - Authority (clear divine direction)
+                    - Love (Father provides guide for His children)
+                    - Pattern established since Adam
+
+                    Click for discussion...
+                </aside>
+            </section>
+
+            <!-- SLIDE 8B: PROPHET DISCUSSION -->
+            <section>
+                <h2>Following President Oaks</h2>
+
+                <p class="question">How is President Oaks like Noah? What is he warning us about?</p>
+
+                <p class="question" style="margin-top: 2em;">What is one prophetic invitation you're working to follow right now?</p>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    DISCUSSION QUESTION 1: How is President Oaks like Noah?
+
+                    Let the class draw parallels:
+                    - Both called by God
+                    - Both warning of coming difficulties (Second Coming vs Flood)
+                    - Both inviting preparation (spiritual ark = temple covenants, gathering Israel)
+                    - Both building something (Nelson: temples worldwide; Noah: physical ark)
+                    - Both face skepticism from world
+                    - Both testify of Christ
+
+                    What is President Nelson warning about?
+                    - Spiritual dangers of the last days
+                    - Importance of temple covenants as protection
+                    - Need to gather Israel before it's too late
+                    - Sabbath observance as spiritual safety
+                    - Correct use of agency (social media, etc.)
+                    - Personal revelation ("Hear Him")
+
+                    DISCUSSION QUESTION 2: Personal application. Invite specific answers:
+                    - "I'm working on Sabbath observance"
+                    - "I'm doing temple work for ancestors"
+                    - "I'm sharing the gospel with friends"
+                    - "I'm limiting social media"
+                    - "I'm ministering more intentionally"
+                    - "I'm studying scriptures daily"
+
+                    ============================================
+                    ELDER HAYNIE'S FULL STORY (if time permits):
+                    ============================================
+
+                    One day Elder Haynie walked into the cafeteria at Church headquarters to have lunch. After getting his food, he entered the dining area and noticed a table where all three members of the First Presidency were seated—with one empty chair.
+
+                    His insecurities caused him to make a quick detour away from that table, but then he heard the voice of President Russell M. Nelson saying, "Allen, there's an empty chair right here. Come and sit down with us." And so he did.
+
+                    Near the end of lunch, Elder Haynie was surprised to hear a loud crunching noise. Looking up, he saw that President Nelson had stood his plastic water bottle straight up and then flattened it completely, replacing the lid.
+
+                    President Dallin H. Oaks then asked the question Elder Haynie wanted to ask: "President Nelson, why did you flatten your plastic water bottle?"
+
+                    President Nelson replied, "It makes it easier for those who are handling recyclable materials because it doesn't take up as much space in the recycling container."
+
+                    While Elder Haynie was pondering that response, he heard the same crunching sound again. Looking to his right, President Oaks had flattened his plastic water bottle just like President Nelson.
+
+                    Then he heard some noise to his left—President Henry B. Eyring was flattening his bottle, although he had adopted a different strategy by doing it while the bottle was horizontal, which took more effort. Noticing this, President Nelson kindly showed him the bottle-straight-up technique to more easily flatten it.
+
+                    At that point, Elder Haynie leaned over to President Oaks and quietly asked, "Is flattening your plastic water bottle a new recycling requirement of the cafeteria?"
+
+                    President Oaks responded, with a smile on his face, "Well, Allen, you need to follow the prophet."
+
+                    ============================================
+
+                    Point of the story: Even in small things, the pattern is to follow the prophet. President Oaks and President Eyring didn't debate or question—they simply followed.
+
+                    We're not declaring "recycling doctrine." But we ARE learning about the pattern of prophetic following—immediate, trusting, complete.
+
+                    Transition: "Let's bring this all together in conclusion..."
+                </aside>
+            </section>
+
+            <!-- SLIDE 9A: CONCLUSION - SUMMARY -->
+            <section data-background-image="images/slide9-conclusion.png" data-background-opacity="0.25">
+                <h2>Like Noah, We Can Walk with God</h2>
+
+                <div class="scripture-box">
+                    <p class="invitation" style="font-size: 1.8em;">"And Noah found grace in the eyes of the Lord...Noah was a just man and perfect in his generation, and he walked with God."</p>
+                    <p style="font-size: 1.4em; color: var(--warm-gold); margin-top: 0.5em;">— Moses 8:27</p>
+                </div>
+
+               
+                <aside class="notes">
+                    <strong>AI IMAGE PROMPT:</strong> Rembrandt-style painting of a peaceful family walking together on a covenant path toward warm golden light on the horizon, post-storm sky with subtle rainbow visible, sense of journey and covenant relationship with God, figures bathed in divine light from above, rich earth tones and warm golds, emotional depth showing hope and determination, Dutch master technique, theme of walking with God through mortality, landscape orientation 1920x1080.
+                    
+                    <strong>IMAGE LOCATION:</strong> Save as images/slide9-conclusion.jpg
+
+                    <strong>TEACHING NOTES:</strong>
+                    Bring it home. This is summary.
+
+                    RE-READ Moses 8:27: "Noah found grace...Noah was a just man and perfect in his generation, and he walked with God."
+
+                    Notice the progression:
+                    1) Found grace (accessed divine power)
+                    2) Was just and perfect (faithfully committed)
+                    3) Walked with God (ongoing relationship)
+
+                    That's the pattern for us too.
+
+                    SUMMARY POINTS (go through each briefly):
+
+                    1) GRACE sustains us:
+                    We live in latter-day "Noah conditions." Wickedness, violence, confusion. BUT—grace is available. God's enabling power helps us do what we cannot do alone. We access grace through:
+                    - Faith in Jesus Christ
+                    - Repentance
+                    - Covenant keeping
+                    - Following prophets
+
+                    2) COVENANT TOKENS strengthen memory:
+                    Rainbow, sacrament, temple garment, scriptures, Sabbath—these are tangible reminders that we are in covenant with God. Use them. Honor them. Let them anchor you when spiritual memory fades.
+
+                    3) FOLLOWING THE PROPHET brings safety:
+                    Noah's family was saved by following his direction. Our families are saved by following President Nelson's direction. Don't pick and choose. Don't delay. Trust and obey.
+
+                    4) CHRIST'S ATONEMENT is the source:
+                    All grace flows from Jesus Christ. All covenants point to Him. All prophetic direction leads us to Him. He is the way, the truth, and the life. No other name given whereby we can be saved.
+
+                    Click for personal invitations...
+                </aside>
+            </section>
+
+            <!-- SLIDE 9B: CONCLUSION - PERSONAL INVITATIONS -->
+            <section data-background-image="images/slide9-conclusion.jpg" data-background-opacity="0.2">
+                <h2>Personal Invitations</h2>
+
+                <div class="application">
+                    <p style="font-size: 2em; margin-bottom: 1em;"><strong>As You Leave Today:</strong></p>
+                    <p style="font-size: 1.8em; margin: 0.8em 0;">What is one way you will seek grace this week?</p>
+                    <p style="font-size: 1.8em; margin: 0.8em 0;">What covenant token will you use to remember?</p>
+                </div>
+
+                <aside class="notes">
+                    <strong>TEACHING NOTES:</strong>
+                    Give time for silent personal reflection. Don't rush this.
+
+                    PERSONAL INVITATION (give 30 seconds of silence for pondering):
+
+                    Question 1: "What is one way you will seek grace this week?"
+
+                    Maybe it's:
+                    - Praying for enabling power in a specific trial
+                    - Studying the Atonement in scriptures
+                    - Asking for grace to forgive someone
+                    - Relying on God rather than self in a challenge
+                    - Exercising faith in Christ for healing
+                    - Seeking grace to change a habit
+                    - Trusting God's timing instead of forcing your own
+
+                    Question 2: "What covenant token will you use to remember?"
+
+                    Maybe it's:
+                    - Coming to sacrament more prepared (ponder during week, fast occasionally)
+                    - Reading scriptures daily with new intentionality
+                    - Observing the Sabbath more fully (no shopping, more worship)
+                    - Noticing rainbows as covenant reminders
+                    - Wearing temple garment with renewed purpose
+                    - Setting phone reminder for daily covenant remembrance
+
+                    ==================
+                    TESTIMONY MOMENT:
+                    ==================
+
+                    [Teacher bears personal testimony of God's grace, covenant tokens, and prophetic guidance]
+
+                    Suggested themes for your testimony:
+                    - When you felt grace sustain you beyond your capacity
+                    - How a covenant token strengthened you in crisis
+                    - Why you trust President Nelson as prophet
+                    - Gratitude for Christ's Atonement and enabling power
+
+                    Example testimony structure:
+                    "I know that God's grace is real. I've felt it in [specific experience]. I'm grateful for covenant tokens that help me remember—especially [specific token]. I sustain President Russell M. Nelson as a prophet of God. I know that Jesus Christ lives and that His Atonement provides all the grace we need to return home. In the name of Jesus Christ, amen."
+
+                    ==================
+                    CLOSING:
+                    ==================
+
+                    Thank class for participation and spiritual insights shared.
+
+                    Invite closing prayer.
+
+                    Prayer suggestion: Ask someone to pray that we might access God's grace this week and remain faithful to our covenants.
+
+                    ==================
+                    POST-LESSON:
+                    ==================
+
+                    If anyone wants to continue discussion, be available.
+
+                    Some may want to share personal experiences with grace or covenant tokens that they didn't feel comfortable sharing in class.
+
+                    Direct them to:
+                    - Come Follow Me manual for further study
+                    - Elder Haynie's full conference talk (April 2023)
+                    - President Nelson's recent addresses about prophetic preparation
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'fade',
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            center: false,
+            plugins: [ RevealNotes ]
+        });
+    </script>
+</body>
+</html>

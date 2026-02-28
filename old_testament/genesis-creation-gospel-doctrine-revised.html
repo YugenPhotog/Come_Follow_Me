@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gospel Doctrine - "In the Beginning God Created the Heaven and the Earth"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+   /* ============================================================
+   Sacred Jewel Tones Color Palette
+   (Font sizes increased ~25% across the board)
+   ============================================================ */
+:root {
+  --antique-gold: #D4AF37;      /* Headers, slide numbers */
+  --deep-teal: #2C7873;         /* Borders, callouts, bullets */
+  --rich-purple: #6B4C9A;       /* Key terms, accents */
+  --ruby-crimson: #9B2C2C;      /* Emphasis, warnings */
+  --dark-charcoal: #1A1A1A;     /* Background */
+  --pure-white: #FAFAFA;        /* Body text */
+  --soft-cream: #F5F1E8;        /* Pop-up backgrounds */
+  --bronze-accent: #8B6F47;     /* Subtle borders */
+  --misty-sky: #B8D4E8;         /* For title slide subtitle */
+}
+
+.reveal {
+  font-family: 'Lora', serif;
+  font-size: 1.4em;
+  color: var(--pure-white);
+  background: var(--dark-charcoal);
+}
+
+.reveal .slides section {
+  background: transparent !important;
+}
+
+.reveal .slides section[data-background-image] h1,
+.reveal .slides section[data-background-image] h2,
+.reveal .slides section[data-background-image] h3 {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Headings */
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 700;
+  color: var(--antique-gold);
+  text-transform: none;
+  background: transparent;
+}
+
+.reveal h1 { font-size: 2.8em; margin-bottom: 0.5em; }
+.reveal h2 { font-size: 2.2em; margin-bottom: 0.5em; }
+.reveal h3 { font-size: 1.6em; color: var(--deep-teal); }
+
+/* Body text */
+.reveal p {
+  font-size: 1.3em;
+  line-height: 1.5;
+  margin-bottom: 0.8em;
+}
+
+/* Lists */
+.reveal ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reveal ul li {
+  margin-bottom: 0.8em;
+  font-size: 1.3em;
+}
+
+.reveal ul li:before {
+  content: "◆ ";
+  color: var(--deep-teal);
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+/* Scripture reading box */
+.scripture-box {
+  background: rgba(44, 120, 115, 0.15);
+  border-left: 5px solid var(--deep-teal);
+  padding: 1.2em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 8px;
+}
+
+.invitation {
+  font-size: 1.5em;
+  color: var(--antique-gold);
+  font-weight: 600;
+  font-family: 'Crimson Pro', serif;
+}
+
+.invitation strong {
+  color: var(--pure-white);
+}
+
+/* Sacred text quotations */
+.sacred-text {
+  background: rgba(212, 175, 55, 0.1);
+  border-left: 4px solid var(--antique-gold);
+  padding: 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+  font-size: 1.35em;
+}
+
+/* Pause and Reflect styling */
+.pause-reflect-box {
+  background: rgba(107, 76, 154, 0.15);
+  border: 3px solid var(--rich-purple);
+  padding: 1.5em 2em;
+  margin: 1.5em 0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.pause-reflect-box .question {
+  color: var(--pure-white);
+  font-weight: 500;
+  font-size: 1.35em;
+  margin: 1em 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.pause-reflect-box .instruction {
+  color: var(--antique-gold);
+  font-size: 1.1em;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+/* Key term highlighting */
+.key-term {
+  color: var(--rich-purple);
+  font-weight: 600;
+}
+
+/* Emphasis */
+.reveal strong {
+  color: var(--antique-gold);
+  font-weight: 700;
+}
+
+.reveal em {
+  color: var(--deep-teal);
+  font-style: italic;
+}
+
+/* Principle box */
+.principle {
+  background: rgba(212, 175, 55, 0.15);
+  padding: 1.2em 1.5em;
+  border-radius: 10px;
+  border: 2px solid var(--antique-gold);
+  margin: 1em 0;
+}
+
+.principle p {
+  margin: 0;
+  font-size: 1.35em;
+}
+
+/* Content box */
+.content-box {
+  padding: 1.5em;
+  background: rgba(44, 120, 115, 0.1);
+  border-radius: 10px;
+  border: 2px solid var(--deep-teal);
+}
+
+/* Two-column layout */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  text-align: left;
+  align-items: start;
+}
+
+.two-column img {
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* Slide counter */
+.slide-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(26, 26, 26, 0.9);
+  color: var(--antique-gold);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-family: 'Crimson Pro', serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  border: 2px solid var(--deep-teal);
+  z-index: 100;
+}
+
+/* Pop-up definitions */
+.popup-trigger {
+  color: var(--deep-teal);
+  border-bottom: 2px dotted var(--deep-teal);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.popup-trigger:hover {
+  color: var(--antique-gold);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--soft-cream);
+  color: var(--dark-charcoal);
+  padding: 2em;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  max-width: 600px;
+  z-index: 1000;
+  border: 3px solid var(--bronze-accent);
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--ruby-crimson);
+}
+
+.definition-term {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--rich-purple);
+  margin-bottom: 0.5em;
+  font-family: 'Crimson Pro', serif;
+}
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- TITLE SLIDE -->
+            <section 
+              data-background-image="images/cosmic_creation.png"
+              data-background-size="cover"
+              data-background-position="center"
+              data-background-opacity="0.32"
+            >
+                <!-- Content wrapper -->
+                <div style="
+                  display: flex;
+                  height: 100%;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding: 0 5vw;
+                ">
+                    <!-- Title card -->
+                    <div style="
+                      display: inline-block;
+                      max-width: 900px;
+                      text-align: left;
+                      background: rgba(10, 10, 10, 0.55);
+                      border: 2px solid rgba(44, 120, 115, 0.45);
+                      border-radius: 18px;
+                      padding: 1.6em 1.8em;
+                      box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+                      backdrop-filter: blur(4px);
+                    ">
+                        <h1 style="
+                          font-size: 2.6em;
+                          line-height: 1.08;
+                          margin: 0 0 0.35em 0;
+                          background: none !important;
+                          padding: 0 !important;
+                          border: none !important;
+                          box-shadow: none !important;
+                          display: inline;
+                        ">
+                            "In the Beginning<br>
+                            God Created the Heaven<br>
+                            and the Earth"
+                        </h1>
+                        <div style="height: 0.6em;"></div>
+                        <h3 style="
+                          margin: 0;
+                          color: var(--misty-sky);
+                          background: none !important;
+                          padding: 0 !important;
+                          border: none !important;
+                          box-shadow: none !important;
+                        ">
+                            Genesis 1–2 · Moses 2–3 · Abraham 4–5
+                        </h3>
+                        <p style="
+                          font-size: 1.0em;
+                          margin: 1.3em 0 0 0;
+                          color: var(--antique-gold);
+                          font-weight: 600;
+                          background: none !important;
+                        ">
+                            January 12–18, 2026
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Welcome to our lesson on the Creation. This week we study three accounts: Genesis, Moses, and Abraham—each offering unique insights into why God created the earth and what it means for us.
+                </aside>
+            </section>
+
+            <!-- THREE WITNESSES -->
+            <section>
+                <h2>Three Witnesses of Creation</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/three_witnesses.png" alt="Three Witnesses - sacred scrolls radiating divine light" style="width: 100%; height: 60vh; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="content-box">
+                            <ul>
+                                <li><strong>Genesis</strong> — The biblical account, preserved through Moses</li>
+                                <li><strong>Moses 2–3</strong> — Restored vision given to Moses (June 1830)</li>
+                                <li><strong>Abraham 4–5</strong> — Abraham's vision of the pre-mortal council</li>
+                            </ul>
+                        </div>
+                        <p style="font-size: 0.95em; margin-top: 1.2em;">
+                            Each witness adds unique insights to help us understand <em>why</em> we were created.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Point out that having three accounts follows the scriptural pattern of establishing truth through multiple witnesses. Moses received his vision shortly after the Church was organized. Abraham's account gives us the pre-mortal perspective—the Gods counseling together.
+                </aside>
+            </section>
+
+            <!-- ========== PRINCIPLE 1: CHRIST AS CREATOR ========== -->
+            
+            <!-- Scripture & Doctrine Slide -->
+            <section>
+                <h2>1. Jesus Christ Created the Earth</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/the_creator.png" alt="The Creator - divine figure creating worlds">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Moses 2:1</strong></p>
+                        </div>
+                        <div class="principle">
+                            <p>"By mine <strong>Only Begotten</strong> I created these things"</p>
+                        </div>
+                        <p style="font-size: 1.1em; margin-top: 1.5em;">
+                            The Creator and the Redeemer are the same person. He who made the mountains also descended below all things.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Read Moses 2:1 together. Emphasize: This is a profound truth unique to Restoration scripture. The Creator and the Redeemer are the same person. He who separated light from darkness also descended into spiritual darkness in Gethsemane. This connects Creation to Atonement in a deeply personal way.
+                </aside>
+            </section>
+
+            <!-- Pause and Reflect Slide -->
+            <section>
+                <h2>Pause and Reflect</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div>
+                        <img src="images/pause_reflect.png" alt="Person reflecting quietly" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <div class="pause-reflect-box">
+                            <p class="question">
+                                What does it mean to you that Christ is both your Creator and your Redeemer?
+                            </p>
+                            <p class="instruction">
+                                ⏱ Take 60 seconds to write down your answer before we discuss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Give students 60 seconds of silent reflection to write in their study guides. Then invite 2-3 people to share briefly (one sentence each). This prevents monopolization and ensures more voices are heard.
+                </aside>
+            </section>
+
+            <!-- ========== PRINCIPLE 2: ORDER FROM CHAOS ========== -->
+            
+            <!-- Scripture & Doctrine Slide -->
+            <section>
+                <h2>2. God Creates Order from Chaos</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/order_from_chaos.png" alt="Primordial chaos transforming into order">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 1:2</strong> and <strong>Abraham 4:2</strong></p>
+                        </div>
+                        <div class="principle">
+                            <p>The earth was "<strong>without form, and void</strong>" ... "<strong>empty and desolate</strong>"</p>
+                            <p style="margin-top: 0.5em;">Yet God transformed it into something magnificent.</p>
+                        </div>
+                        <p style="font-size: 1.0em; margin-top: 1.2em;">
+                            The Hebrew <span class="key-term">tohu va-vohu</span> (formless and void) describes primordial chaos. God organized existing matter into beauty.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Read both scriptures together. Explain: The Hebrew "tohu va-vohu" describes primordial chaos. God didn't create from nothing but organized existing matter. Similarly, He doesn't discard us when we're chaotic—He works with what exists to create something beautiful.
+                </aside>
+            </section>
+
+            <!-- Pause and Reflect Slide -->
+            <section>
+                <h2>Pause and Reflect</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div>
+                        <img src="images/pause_reflect.png" alt="Person reflecting quietly" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <div class="pause-reflect-box">
+                            <p class="question">
+                                When has your life felt chaotic? How did (or could) the Lord bring order?
+                            </p>
+                            <p class="instruction">
+                                ⏱ Take 60 seconds to write down your answer before we discuss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    60 seconds of silent writing. Then invite 2-3 brief shares. Be ready to share your own example if needed to get discussion started.
+                </aside>
+            </section>
+
+            <!-- ========== PRINCIPLE 3: CREATED IN GOD'S IMAGE ========== -->
+            
+            <!-- Scripture & Doctrine Slide -->
+            <section>
+                <h2>3. Created in God's Image</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/image_of_god.png" alt="Human figure emerging from divine light">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 1:26–27</strong></p>
+                        </div>
+                        <div class="principle">
+                            <p>"So God created man in his own <strong>image</strong>, in the image of God created he him"</p>
+                        </div>
+                        <p style="font-size: 1.1em; margin-top: 1.2em;">
+                            We are <em>literally</em> created in God's image. This gives every person inherent worth and divine potential.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Read Genesis 1:26-27 together. This is one of the most distinctive LDS doctrines. We believe God has a glorified, physical body and that we are literally created in His image—not merely metaphorically. This doctrine (Imago Dei) gives every human being inherent worth and divine potential.
+                </aside>
+            </section>
+
+            <!-- Pause and Reflect Slide -->
+            <section>
+                <h2>Pause and Reflect</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div>
+                        <img src="images/pause_reflect.png" alt="Person reflecting quietly" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <div class="pause-reflect-box">
+                            <p class="question">
+                                How does knowing you're created in God's image affect how you see yourself and others?
+                            </p>
+                            <p class="instruction">
+                                ⏱ Take 60 seconds to write down your answer before we discuss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Silent reflection time. Ask: How should this affect how we treat others? How we see ourselves when we struggle? Invite responses from people who haven't shared yet.
+                </aside>
+            </section>
+
+            <!-- VIDEO SLIDE -->
+            <section>
+                <h2>God's Greatest Creation</h2>
+                <video controls style="max-width: 90%; max-height: 70vh;">
+                    <source src="videos/god-s-greatest-creation-eng-1080p.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="font-size: 0.9em; margin-top: 1em;">
+                    While you watch, listen for themes of <strong>identity</strong> and <strong>worth</strong>.
+                </p>
+                
+                <aside class="notes">
+                    After the video: invite 2–3 quick responses (one sentence each). What line or image stood out? How does this reinforce Genesis 1:26–27?
+                </aside>
+            </section>
+
+            <!-- PRINCIPLE STATEMENT -->
+            <section>
+                <div style="text-align: center; padding: 2em;">
+                    <div class="principle" style="font-size: 1.3em; padding: 2em;">
+                        <p style="font-size: 1.3em; line-height: 1.6; margin: 0;">
+                            <strong>I am not an accident of nature.</strong><br>
+                            I am a deliberate creation of God,<br>
+                            with divine worth and divine potential.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Read this slowly. Pause for 5-7 seconds. Let it sink in. This is the heart of the Creation doctrine for us personally.
+                </aside>
+            </section>
+
+            <!-- ========== PRINCIPLE 4: EZER KENEGDO ========== -->
+            
+            <!-- Scripture & Doctrine Slide -->
+            <section>
+                <h2>4. Marriage: Equal Partners</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/ezer-kenegdo.png" alt="Adam and Eve as equal partners">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 2:18</strong></p>
+                        </div>
+                        <p style="font-size: 1.1em; margin: 1.2em 0;">
+                            "I will make him an help meet [<span class="key-term">ezer kenegdo</span>]"
+                        </p>
+                        <div class="content-box">
+                            <p><strong>Ezer</strong> = "strong helper" (used for <em>God</em> helping His people)</p>
+                            <p><strong>Kenegdo</strong> = "equal partner, corresponding to him"</p>
+                        </div>
+                        <p style="font-size: 0.95em; margin-top: 1em; font-style: italic;">
+                            "Fathers and mothers are obligated to help one another as <strong>equal partners</strong>." — Family Proclamation
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    The phrase "help meet" has been tragically misunderstood. Eve is not Adam's subordinate—she's his powerful ally who brings essential capacities he lacks. Ezer is used most often for GOD helping His people (Psalm 121). God said it was "not good" for Adam to be alone—Eve isn't a nice addition, she's ESSENTIAL.
+                </aside>
+            </section>
+
+            <!-- Pause and Reflect Slide -->
+            <section>
+                <h2>Pause and Reflect</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div>
+                        <img src="images/pause_reflect.png" alt="Person reflecting quietly" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <div class="pause-reflect-box">
+                            <p class="question">
+                                How does <em>ezer kenegdo</em> change your understanding of marriage?
+                            </p>
+                            <p class="instruction">
+                                ⏱ Take 60 seconds to write down your answer before we discuss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Silent reflection. Then ask: What difference does it make to understand Eve as Adam's "strong helper who is his equal" rather than subordinate? How does this challenge cultural assumptions?
+                </aside>
+            </section>
+
+            <!-- ========== PRINCIPLE 5: STEWARDSHIP ========== -->
+            
+            <!-- Scripture & Doctrine Slide -->
+            <section>
+                <h2>5. Stewards of God's Creations</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/earthly_stewardship.png" alt="Hands cradling earth">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 1:28</strong></p>
+                        </div>
+                        <div class="principle">
+                            <p>"<strong>Replenish</strong> the earth, and <strong>subdue</strong> it: and have <strong>dominion</strong>"</p>
+                        </div>
+                        <p style="font-size: 1.0em; margin-top: 1.2em;">
+                            The Hebrew <span class="key-term">radah</span> implies caring governance—like a shepherd, not a tyrant. We are <strong>stewards</strong>, not owners.
+                        </p>
+                        <p style="font-size: 0.95em; margin-top: 1em; font-style: italic;">
+                            D&C 121: dominion by "persuasion, long-suffering, gentleness, meekness, and love"
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Elder Gérald Caussé spoke on "Our Earthly Stewardship" (Oct 2022). Radah means to rule, but in context of God's character, it implies caring governance. This applies to the environment, animals, and all of God's creations.
+                </aside>
+            </section>
+
+            <!-- Pause and Reflect Slide -->
+            <section>
+                <h2>Pause and Reflect</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div>
+                        <img src="images/pause_reflect.png" alt="Person reflecting quietly" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <div class="pause-reflect-box">
+                            <p class="question">
+                                What does righteous "dominion" look like vs. exploitation? Give one example.
+                            </p>
+                            <p class="instruction">
+                                ⏱ Take 60 seconds to write down your answer before we discuss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Silent writing time. Look for concrete examples: how we treat animals, care for the environment, use natural resources, etc.
+                </aside>
+            </section>
+
+            <!-- ========== PRINCIPLE 6: SABBATH ========== -->
+            
+            <!-- Scripture & Doctrine Slide -->
+            <section>
+                <h2>6. God Blessed the Sabbath Day</h2>
+                <div class="two-column" style="align-items: start; margin-top: 1em;">
+                    <div>
+                        <img src="images/sabbath_rest.png" alt="Peaceful rest in golden light">
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 2:2–3</strong></p>
+                        </div>
+                        <div class="principle">
+                            <p>"God ... <strong>rested</strong> on the seventh day ... and <strong>sanctified</strong> it"</p>
+                        </div>
+                        <p style="font-size: 1.1em; margin-top: 1.2em;">
+                            God didn't rest because He was tired—He rested to establish a pattern for us. The Sabbath is a <strong>gift</strong>, not a burden.
+                        </p>
+                        <p style="font-size: 0.95em; margin-top: 1em; font-style: italic;">
+                            President Nelson invites us to make it a "delight"
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    The Hebrew "shabbat" means "to cease" or "to rest." The Sabbath was "made for man" (Mark 2:27). Ask: What specific practices make it delightful for you?
+                </aside>
+            </section>
+
+            <!-- Pause and Reflect Slide -->
+            <section>
+                <h2>Pause and Reflect</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div>
+                        <img src="images/pause_reflect.png" alt="Person reflecting quietly" style="max-width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <div class="pause-reflect-box">
+                            <p class="question">
+                                What makes the Sabbath "blessed" or delightful to you personally?
+                            </p>
+                            <p class="instruction">
+                                ⏱ Take 60 seconds to write down your answer before we discuss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Silent reflection. Invite people to share specific practices that make the Sabbath meaningful. This is very personal—honor different approaches.
+                </aside>
+            </section>
+
+            <!-- CLOSING INVITATION -->
+            <section>
+                <h2>This Week's Invitation</h2>
+                <div style="text-align: center; padding: 2em;">
+                    <div class="principle" style="font-size: 1.2em; padding: 2em; margin-bottom: 1.5em;">
+                        <p style="font-size: 1.3em; line-height: 1.6;">
+                            <strong>I am not an accident of nature.</strong><br>
+                            I am a deliberate creation of God,<br>
+                            with divine worth and divine potential.
+                        </p>
+                    </div>
+                    <div class="pause-reflect-box">
+                        <p class="question">
+                            Because I know I am created in God's image,<br>
+                            this week I choose to __________________.
+                        </p>
+                        <p class="instruction">
+                            Complete this sentence in your study guide.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Invite class members to silently complete the sentence in their study guides. If time permits, invite a few to share. Close with your testimony of the Creation—that we are not accidents, that life has purpose, and that God is actively working to help us become like Him.
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Slide counter -->
+    <div class="slide-counter"></div>
+
+    <!-- Pop-up overlay (for any pop-up definitions) -->
+    <div id="popup-overlay" class="popup">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <div id="popup-content"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            transition: 'fade',
+            plugins: [ RevealNotes ]
+        });
+
+        // Slide counter
+        function updateSlideCounter() {
+            const indices = Reveal.getIndices();
+            const totalSlides = Reveal.getTotalSlides();
+            document.querySelector('.slide-counter').textContent = 
+                `${indices.h + 1} / ${totalSlides}`;
+        }
+
+        Reveal.on('slidechanged', updateSlideCounter);
+        Reveal.on('ready', updateSlideCounter);
+
+        // Pop-up functions
+        function showPopup(term, definition) {
+            const popup = document.getElementById('popup-overlay');
+            const content = document.getElementById('popup-content');
+            content.innerHTML = `
+                <div class="definition-term">${term}</div>
+                <p>${definition}</p>
+            `;
+            popup.classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').classList.remove('active');
+        }
+
+        // Close popup on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePopup();
+        });
+
+        // Close popup on click outside
+        document.getElementById('popup-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closePopup();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Lessons - Old Testament 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --parchment: #f4e8d0;
+            --warm-earth: #8b6f47;
+            --deep-bronze: #5c4a2f;
+            --covenant-gold: #d4a574;
+            --sacred-crimson: #8b2f2f;
+            --olive-shadow: #4a5a3a;
+            --stone-gray: #6b6b5f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--parchment) 0%, #e8d9b8 100%);
+            color: var(--deep-bronze);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 111, 71, 0.03) 2px,
+                    rgba(139, 111, 71, 0.03) 4px
+                );
+            pointer-events: none;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .corner-flourish {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .corner-flourish.top-left {
+            top: 0;
+            left: 0;
+            border-top: 3px solid var(--covenant-gold);
+            border-left: 3px solid var(--covenant-gold);
+            border-top-left-radius: 5px;
+        }
+
+        .corner-flourish.bottom-right {
+            bottom: 0;
+            right: 0;
+            border-bottom: 3px solid var(--covenant-gold);
+            border-right: 3px solid var(--covenant-gold);
+            border-bottom-right-radius: 5px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            color: var(--stone-gray);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .breadcrumb a {
+            color: var(--warm-earth);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            border-bottom-color: var(--warm-earth);
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            opacity: 0.5;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: var(--deep-bronze);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic;
+            color: var(--warm-earth);
+            margin-bottom: 2rem;
+        }
+
+        .decorative-line {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--covenant-gold), transparent);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '◆';
+            position: absolute;
+            top: -8px;
+            font-size: 0.8rem;
+            color: var(--covenant-gold);
+        }
+
+        .decorative-line::before { left: -15px; }
+        .decorative-line::after { right: -15px; }
+
+        .controls {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(139, 111, 71, 0.2);
+            border-radius: 8px;
+            color: var(--deep-bronze);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--covenant-gold);
+            box-shadow: 0 4px 20px rgba(212, 165, 116, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: var(--stone-gray);
+            opacity: 0.6;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(139, 111, 71, 0.2);
+            border-radius: 25px;
+            color: var(--warm-earth);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--covenant-gold);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--covenant-gold), var(--warm-earth));
+            color: white;
+            border-color: var(--covenant-gold);
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .lesson-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(244, 232, 208, 0.6));
+            border: 1px solid rgba(139, 111, 71, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out backwards;
+            box-shadow: 0 4px 20px rgba(92, 74, 47, 0.08);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--covenant-gold) 0%, var(--sacred-crimson) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(92, 74, 47, 0.2);
+            border-color: var(--covenant-gold);
+        }
+
+        .lesson-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .lesson-week {
+            position: relative;
+            z-index: 1;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sacred-crimson);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .lesson-date {
+            position: relative;
+            z-index: 1;
+            font-size: 0.9rem;
+            color: var(--stone-gray);
+            margin-bottom: 1rem;
+        }
+
+        .lesson-title {
+            position: relative;
+            z-index: 1;
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--deep-bronze);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .lesson-scripture {
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--warm-earth);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .lesson-links {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .lesson-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.03em;
+        }
+
+        .lesson-link.church {
+            background: var(--sacred-crimson);
+            color: white;
+            border: 2px solid var(--sacred-crimson);
+        }
+
+        .lesson-link.church:hover {
+            background: white;
+            color: var(--sacred-crimson);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 47, 47, 0.3);
+        }
+
+        .lesson-link.reveal {
+            background: transparent;
+            color: var(--deep-bronze);
+            border: 2px solid var(--covenant-gold);
+        }
+
+        .lesson-link.reveal:hover {
+            background: var(--covenant-gold);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+        }
+
+        .lesson-link.reveal.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .lesson-period {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            background: rgba(139, 47, 47, 0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--sacred-crimson);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--stone-gray);
+            font-size: 1.2rem;
+            font-style: italic;
+            display: none;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(139, 111, 71, 0.2);
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            color: var(--stone-gray);
+            line-height: 1.6;
+        }
+
+        .footer-text a {
+            color: var(--sacred-crimson);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-text a:hover {
+            border-bottom-color: var(--sacred-crimson);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .lesson-links {
+                flex-direction: column;
+            }
+
+            .lesson-link {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="corner-flourish top-left"></div>
+    <div class="corner-flourish bottom-right"></div>
+
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html">Old Testament</a>
+            <span>›</span>
+            <span>Weekly Lessons</span>
+        </nav>
+
+        <header>
+            <h1>Weekly Lessons 2026</h1>
+            <div class="decorative-line"></div>
+            <p class="page-subtitle">Come Follow Me Old Testament Study Guide</p>
+        </header>
+
+        <section class="controls">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="Search lessons by title, scripture, or theme..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Lessons</button>
+                <button class="filter-btn" data-filter="pentateuch">Pentateuch</button>
+                <button class="filter-btn" data-filter="history">History</button>
+                <button class="filter-btn" data-filter="wisdom">Wisdom</button>
+                <button class="filter-btn" data-filter="prophets">Prophets</button>
+            </div>
+        </section>
+
+        <div class="lessons-grid" id="lessonsGrid">
+            <!-- Week 1 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 1</div>
+                <div class="lesson-date">December 29, 2025–January 4, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Introduction to the Old Testament</h2>
+                <p class="lesson-scripture">Overview and Context</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/01?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 2</div>
+                <div class="lesson-date">January 5–11, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Moses 1; Abraham 3</h2>
+                <p class="lesson-scripture">The Vision of Moses and the Universe</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/02?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 3</div>
+                <div class="lesson-date">January 12–18, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 1–2; Moses 2–3; Abraham 4–5</h2>
+                <p class="lesson-scripture">The Creation</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/03?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="../genesis-creation-gospel-doctrine.html" class="lesson-link reveal">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 4</div>
+                <div class="lesson-date">January 19–25, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 3–4; Moses 4–5</h2>
+                <p class="lesson-scripture">The Fall and Atonement</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/04?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 5 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 5</div>
+                <div class="lesson-date">January 26–February 1, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 5; Moses 6</h2>
+                <p class="lesson-scripture">The Generations of Adam</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/05?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 6 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 6</div>
+                <div class="lesson-date">February 2–8, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Moses 7</h2>
+                <p class="lesson-scripture">Enoch and Zion</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/06?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 7 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 7</div>
+                <div class="lesson-date">February 9–15, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 6–11; Moses 8</h2>
+                <p class="lesson-scripture">Noah and the Flood</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/07?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 8 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 8</div>
+                <div class="lesson-date">February 16–22, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 12–17; Abraham 1–2</h2>
+                <p class="lesson-scripture">The Abrahamic Covenant</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/08?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 9 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 9</div>
+                <div class="lesson-date">February 23–March 1, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 18–23</h2>
+                <p class="lesson-scripture">Abraham and Isaac</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/09?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 10 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 10</div>
+                <div class="lesson-date">March 2–8, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 24–33</h2>
+                <p class="lesson-scripture">Isaac, Jacob, and Esau</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/10?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 11 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 11</div>
+                <div class="lesson-date">March 9–15, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 37–41</h2>
+                <p class="lesson-scripture">Joseph in Egypt</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/11?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 12 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 12</div>
+                <div class="lesson-date">March 16–22, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Genesis 42–50</h2>
+                <p class="lesson-scripture">Joseph Reunited with His Family</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/12?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 13 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 13</div>
+                <div class="lesson-date">March 23–29, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Exodus 1–6</h2>
+                <p class="lesson-scripture">Moses and the Burning Bush</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/13?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 14 - Easter -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 14</div>
+                <div class="lesson-date">March 30–April 5, 2026</div>
+                <span class="lesson-period">Special</span>
+                <h2 class="lesson-title">Easter</h2>
+                <p class="lesson-scripture">He Is Risen</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/14?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 15 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 15</div>
+                <div class="lesson-date">April 6–12, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Exodus 7–13</h2>
+                <p class="lesson-scripture">The Plagues and the Passover</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/15?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 16 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 16</div>
+                <div class="lesson-date">April 13–19, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Exodus 14–18</h2>
+                <p class="lesson-scripture">The Red Sea</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/16?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 17 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 17</div>
+                <div class="lesson-date">April 20–26, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Exodus 19–20; 24; 31–34</h2>
+                <p class="lesson-scripture">The Ten Commandments</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/17?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 18 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 18</div>
+                <div class="lesson-date">April 27–May 3, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Exodus 35–40; Leviticus 1; 4; 16; 19</h2>
+                <p class="lesson-scripture">The Tabernacle and Sacrifice</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/18?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 19 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 19</div>
+                <div class="lesson-date">May 4–10, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Numbers 11–14; 20–24; 27</h2>
+                <p class="lesson-scripture">Wilderness Wanderings</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/19?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 20 -->
+            <div class="lesson-card" data-period="pentateuch">
+                <div class="lesson-week">Week 20</div>
+                <div class="lesson-date">May 11–17, 2026</div>
+                <span class="lesson-period">Pentateuch</span>
+                <h2 class="lesson-title">Deuteronomy 6–8; 15; 18; 29–30; 34</h2>
+                <p class="lesson-scripture">Moses's Final Words</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/20?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 21 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 21</div>
+                <div class="lesson-date">May 18–24, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">Joshua 1–8; 23–24</h2>
+                <p class="lesson-scripture">The Conquest of Canaan</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/21?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 22 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 22</div>
+                <div class="lesson-date">May 25–31, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">Judges 2–4; 6–8; 13–16</h2>
+                <p class="lesson-scripture">Deborah, Gideon, and Samson</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/22?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 23 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 23</div>
+                <div class="lesson-date">June 1–7, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">Ruth; 1 Samuel 1–7</h2>
+                <p class="lesson-scripture">Ruth and Hannah</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/23?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 24 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 24</div>
+                <div class="lesson-date">June 8–14, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">1 Samuel 8–10; 13; 15–16</h2>
+                <p class="lesson-scripture">Saul Becomes King</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/24?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 25 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 25</div>
+                <div class="lesson-date">June 15–21, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">1 Samuel 17–18; 24–26; 2 Samuel 5–7</h2>
+                <p class="lesson-scripture">David and Goliath</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/25?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 26 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 26</div>
+                <div class="lesson-date">June 22–28, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">2 Samuel 11–12; 1 Kings 3; 6–9; 11</h2>
+                <p class="lesson-scripture">Solomon's Temple</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/26?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 27 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 27</div>
+                <div class="lesson-date">June 29–July 5, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">1 Kings 12–13; 17–22</h2>
+                <p class="lesson-scripture">Elijah the Prophet</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/27?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 28 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 28</div>
+                <div class="lesson-date">July 6–12, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">2 Kings 2–7</h2>
+                <p class="lesson-scripture">Elisha and Naaman</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/28?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 29 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 29</div>
+                <div class="lesson-date">July 13–19, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">2 Kings 16–25</h2>
+                <p class="lesson-scripture">The Babylonian Captivity</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/29?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 30 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 30</div>
+                <div class="lesson-date">July 20–26, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">2 Chronicles 14–20; 26; 30</h2>
+                <p class="lesson-scripture">Kings of Judah</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/30?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 31 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 31</div>
+                <div class="lesson-date">July 27–August 2, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">Ezra 1; 3–7; Nehemiah 2; 4–6; 8</h2>
+                <p class="lesson-scripture">Rebuilding Jerusalem</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/31?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 32 -->
+            <div class="lesson-card" data-period="history">
+                <div class="lesson-week">Week 32</div>
+                <div class="lesson-date">August 3–9, 2026</div>
+                <span class="lesson-period">History</span>
+                <h2 class="lesson-title">Esther</h2>
+                <p class="lesson-scripture">For Such a Time as This</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/32?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 33 -->
+            <div class="lesson-card" data-period="wisdom">
+                <div class="lesson-week">Week 33</div>
+                <div class="lesson-date">August 10–16, 2026</div>
+                <span class="lesson-period">Wisdom</span>
+                <h2 class="lesson-title">Job 1–3; 12–14; 19; 21–24; 38–40; 42</h2>
+                <p class="lesson-scripture">The Trials of Job</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/33?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 34 -->
+            <div class="lesson-card" data-period="wisdom">
+                <div class="lesson-week">Week 34</div>
+                <div class="lesson-date">August 17–23, 2026</div>
+                <span class="lesson-period">Wisdom</span>
+                <h2 class="lesson-title">Psalms 1–2; 8; 19–33; 40; 46</h2>
+                <p class="lesson-scripture">The Lord Is My Shepherd</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/34?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 35 -->
+            <div class="lesson-card" data-period="wisdom">
+                <div class="lesson-week">Week 35</div>
+                <div class="lesson-date">August 24–30, 2026</div>
+                <span class="lesson-period">Wisdom</span>
+                <h2 class="lesson-title">Psalms 49–51; 61–66; 69–72; 77–78; 85–86</h2>
+                <p class="lesson-scripture">Songs of Praise</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/35?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 36 -->
+            <div class="lesson-card" data-period="wisdom">
+                <div class="lesson-week">Week 36</div>
+                <div class="lesson-date">August 31–September 6, 2026</div>
+                <span class="lesson-period">Wisdom</span>
+                <h2 class="lesson-title">Psalms 102–3; 110; 116–19; 127–28; 135–39; 146–50</h2>
+                <p class="lesson-scripture">Praise Ye the Lord</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/36?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 37 -->
+            <div class="lesson-card" data-period="wisdom">
+                <div class="lesson-week">Week 37</div>
+                <div class="lesson-date">September 7–13, 2026</div>
+                <span class="lesson-period">Wisdom</span>
+                <h2 class="lesson-title">Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12</h2>
+                <p class="lesson-scripture">Wisdom and Understanding</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/37?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 38 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 38</div>
+                <div class="lesson-date">September 14–20, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Isaiah 1–12</h2>
+                <p class="lesson-scripture">Isaiah's Call</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/38?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 39 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 39</div>
+                <div class="lesson-date">September 21–27, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Isaiah 13–14; 22; 24–30; 35</h2>
+                <p class="lesson-scripture">Prophecies of Judgment</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/39?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 40 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 40</div>
+                <div class="lesson-date">September 28–October 4, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Isaiah 40–49</h2>
+                <p class="lesson-scripture">Comfort Ye My People</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/40?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 41 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 41</div>
+                <div class="lesson-date">October 5–11, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Isaiah 50–57</h2>
+                <p class="lesson-scripture">The Suffering Servant</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/41?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 42 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 42</div>
+                <div class="lesson-date">October 12–18, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Isaiah 58–66</h2>
+                <p class="lesson-scripture">New Heavens and New Earth</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/42?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 43 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 43</div>
+                <div class="lesson-date">October 19–25, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Jeremiah 1–3; 7; 16–18; 20</h2>
+                <p class="lesson-scripture">The Weeping Prophet</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/43?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 44 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 44</div>
+                <div class="lesson-date">October 26–November 1, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Jeremiah 31–33; 36–38; Lamentations 1; 3</h2>
+                <p class="lesson-scripture">A New Covenant</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/44?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 45 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 45</div>
+                <div class="lesson-date">November 2–8, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Ezekiel 1–3; 33–34; 36–37; 47</h2>
+                <p class="lesson-scripture">The Valley of Dry Bones</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/45?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 46 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 46</div>
+                <div class="lesson-date">November 9–15, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Daniel 1–7</h2>
+                <p class="lesson-scripture">Daniel in Babylon</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/46?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 47 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 47</div>
+                <div class="lesson-date">November 16–22, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Hosea 1–6; 10–14; Joel</h2>
+                <p class="lesson-scripture">I Will Betroth Thee unto Me</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/47?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 48 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 48</div>
+                <div class="lesson-date">November 23–29, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Amos; Obadiah; Jonah</h2>
+                <p class="lesson-scripture">The Minor Prophets</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/48?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 49 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 49</div>
+                <div class="lesson-date">November 30–December 6, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Micah; Nahum; Habakkuk; Zephaniah</h2>
+                <p class="lesson-scripture">The Day of the Lord</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/49?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 50 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 50</div>
+                <div class="lesson-date">December 7–13, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Haggai 1–2; Zechariah 1–4; 7–14</h2>
+                <p class="lesson-scripture">Rebuild the Temple</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/50?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 51 -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 51</div>
+                <div class="lesson-date">December 14–20, 2026</div>
+                <span class="lesson-period">Prophets</span>
+                <h2 class="lesson-title">Malachi</h2>
+                <p class="lesson-scripture">Before the Great and Dreadful Day</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/51?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+
+            <!-- Week 52 - Christmas -->
+            <div class="lesson-card" data-period="prophets">
+                <div class="lesson-week">Week 52</div>
+                <div class="lesson-date">December 21–27, 2026</div>
+                <span class="lesson-period">Special</span>
+                <h2 class="lesson-title">Christmas</h2>
+                <p class="lesson-scripture">A Child Is Born</p>
+                <div class="lesson-links">
+                    <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/52?lang=eng" 
+                       class="lesson-link church" target="_blank">📖 Church Manual</a>
+                    <a href="#" class="lesson-link reveal disabled">🎯 Reveal Deck</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            No lessons found matching your search.
+        </div>
+
+        <footer>
+            <p class="footer-text">
+                Part of <a href="../../index.html">Seek Learning Gospel Doctrine</a><br>
+                A resource for Come Follow Me study and Sunday School teaching
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const lessonsGrid = document.getElementById('lessonsGrid');
+        const noResults = document.getElementById('noResults');
+        const lessonCards = document.querySelectorAll('.lesson-card');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        let currentFilter = 'all';
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            filterLessons(searchTerm, currentFilter);
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                const searchTerm = searchInput.value.toLowerCase();
+                filterLessons(searchTerm, currentFilter);
+            });
+        });
+
+        function filterLessons(searchTerm, filter) {
+            let visibleCount = 0;
+
+            lessonCards.forEach(card => {
+                const title = card.querySelector('.lesson-title').textContent.toLowerCase();
+                const scripture = card.querySelector('.lesson-scripture').textContent.toLowerCase();
+                const period = card.dataset.period;
+                
+                const matchesSearch = title.includes(searchTerm) || scripture.includes(searchTerm);
+                const matchesFilter = filter === 'all' || period === filter;
+                
+                if (matchesSearch && matchesFilter) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.add('visible');
+                lessonsGrid.style.display = 'none';
+            } else {
+                noResults.classList.remove('visible');
+                lessonsGrid.style.display = 'grid';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gospel Doctrine - "In the Beginning God Created the Heaven and the Earth"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Sacred Jewel Tones Color Palette */
+        :root {
+            --antique-gold: #D4AF37;      /* Headers, slide numbers */
+            --deep-teal: #2C7873;          /* Borders, callouts, bullets */
+            --rich-purple: #6B4C9A;        /* Key terms, accents */
+            --ruby-crimson: #9B2C2C;       /* Emphasis, warnings */
+            --dark-charcoal: #1A1A1A;      /* Background */
+            --pure-white: #FAFAFA;         /* Body text */
+            --soft-cream: #F5F1E8;         /* Pop-up backgrounds */
+            --bronze-accent: #8B6F47;      /* Subtle borders */
+        }
+        
+        .reveal {
+            font-family: 'Lora', serif;
+            font-size: 1.4em;
+            color: var(--pure-white);
+            background: var(--dark-charcoal);
+        }
+        
+        .reveal .slides section {
+            background: var(--dark-charcoal);
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            color: var(--antique-gold);
+            text-transform: none;
+        }
+        
+        .reveal h1 { font-size: 2.8em; margin-bottom: 0.5em; }
+        .reveal h2 { font-size: 2.2em; margin-bottom: 0.5em; }
+        .reveal h3 { font-size: 1.6em; color: var(--deep-teal); }
+        
+        .reveal p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 0.8em;
+        }
+        
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .reveal ul li {
+            margin-bottom: 0.8em;
+            font-size: 1.1em;
+        }
+        
+        .reveal ul li:before {
+            content: "◆ ";
+            color: var(--deep-teal);
+            font-weight: bold;
+            margin-right: 0.5em;
+        }
+        
+        /* Scripture reading box */
+        .scripture-box {
+            background: rgba(44, 120, 115, 0.15);
+            border-left: 5px solid var(--deep-teal);
+            padding: 1.2em 1.5em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+        }
+        
+        .invitation {
+            font-size: 1.3em;
+            color: var(--antique-gold);
+            font-weight: 600;
+            margin: 0;
+            font-family: 'Crimson Pro', serif;
+        }
+        
+        .invitation strong {
+            color: var(--pure-white);
+        }
+        
+        /* Sacred text quotations */
+        .sacred-text {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--antique-gold);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            font-style: italic;
+            font-size: 1.15em;
+        }
+        
+        .sacred-text footer {
+            text-align: right;
+            color: var(--antique-gold);
+            margin-top: 0.8em;
+            font-style: normal;
+            font-size: 0.9em;
+        }
+        
+        /* Question styling */
+        .question {
+            color: var(--pure-white);
+            font-weight: 500;
+            font-size: 1.1em;
+            margin: 1em 0;
+            padding: 1em 1.2em;
+            background: rgba(107, 76, 154, 0.2);
+            border-radius: 8px;
+            border-left: 4px solid var(--rich-purple);
+        }
+        
+        .question-box {
+            margin: 1.5em 0;
+            text-align: left;
+        }
+        
+        .question-box p {
+            margin: 0.8em 0;
+        }
+        
+        /* Key term highlighting */
+        .key-term {
+            color: var(--rich-purple);
+            font-weight: 600;
+        }
+        
+        /* Emphasis */
+        .reveal strong {
+            color: var(--antique-gold);
+            font-weight: 700;
+        }
+        
+        .reveal em {
+            color: var(--deep-teal);
+            font-style: italic;
+        }
+        
+        /* Principle box */
+        .principle {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 1.2em 1.5em;
+            border-radius: 10px;
+            border: 2px solid var(--antique-gold);
+            margin: 1em 0;
+        }
+        
+        .principle p {
+            margin: 0;
+            font-size: 1.15em;
+        }
+        
+        /* Content box */
+        .content-box {
+            padding: 1.5em;
+            background: rgba(44, 120, 115, 0.1);
+            border-radius: 10px;
+            border: 2px solid var(--deep-teal);
+        }
+        
+        /* Fragment animations */
+        .reveal .fragment {
+            transition: all 0.3s ease;
+        }
+        
+        /* Two-column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            text-align: left;
+        }
+        
+        /* Slide counter */
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(26, 26, 26, 0.9);
+            color: var(--antique-gold);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            font-size: 0.9em;
+            border: 2px solid var(--deep-teal);
+            z-index: 100;
+        }
+        
+        /* Pop-up definitions */
+        .popup-trigger {
+            color: var(--deep-teal);
+            border-bottom: 2px dotted var(--deep-teal);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .popup-trigger:hover {
+            color: var(--antique-gold);
+        }
+        
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--soft-cream);
+            color: var(--dark-charcoal);
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            max-width: 600px;
+            z-index: 1000;
+            border: 3px solid var(--bronze-accent);
+        }
+        
+        .popup.active {
+            display: block;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2em;
+            cursor: pointer;
+            color: var(--ruby-crimson);
+        }
+        
+        .definition-term {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--rich-purple);
+            margin-bottom: 0.5em;
+            font-family: 'Crimson Pro', serif;
+        }
+        
+        /* Image placeholder */
+        .img-placeholder {
+            background: rgba(44, 120, 115, 0.15);
+            border: 2px dashed var(--deep-teal);
+            padding: 1.5em;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--pure-white);
+            font-size: 0.7em;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .img-placeholder strong {
+            color: var(--antique-gold);
+        }
+        
+        .img-placeholder em {
+            color: var(--deep-teal);
+            display: block;
+            margin-top: 0.8em;
+            text-align: left;
+            line-height: 1.5;
+        }
+        
+        /* Keyboard shortcuts box */
+        .shortcuts-box {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background: rgba(44, 120, 115, 0.2);
+            padding: 1em;
+            border-radius: 10px;
+            border: 2px solid var(--deep-teal);
+            font-size: 0.5em;
+            text-align: left;
+        }
+        
+        .shortcuts-box p {
+            margin: 0.3em 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- SLIDE 1: TITLE SLIDE -->
+            <section>
+                <div class="two-column" style="align-items: center;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Cosmic Creation"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of cosmic creation, swirling galaxies and emerging earth in bold brushstrokes, deep blues and fiery oranges, dramatic divine light breaking through primordial darkness, style of Emil Nolde and Franz Marc, emotional and transcendent, rich jewel tones"
+                    </div>
+                    <div style="text-align: left;">
+                        <h1 style="font-size: 2.4em;">"In the Beginning<br>God Created the Heaven<br>and the Earth"</h1>
+                        <h3>Genesis 1–2 · Moses 2–3 · Abraham 4–5</h3>
+                        <p style="font-size: 0.9em; margin-top: 1.5em; color: var(--deep-teal);">
+                            January 12–18, 2026
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="shortcuts-box">
+                    <p style="color: var(--antique-gold); font-weight: 600; margin-bottom: 0.5em;">
+                        ⌨️ Keyboard Shortcuts
+                    </p>
+                    <p>→ / Space: Next slide</p>
+                    <p>← : Previous slide</p>
+                    <p>F: Fullscreen</p>
+                    <p>B: Blank screen</p>
+                    <p>ESC: Overview</p>
+                </div>
+                
+                <aside class="notes">
+                    Welcome to our lesson on the Creation. This week we study three accounts: Genesis, Moses, and Abraham—each offering unique insights into why God created the earth and what it means for us.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 2: THREE ACCOUNTS -->
+            <section>
+                <h2>Three Witnesses of Creation</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Three Witnesses"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of three ancient scrolls or sacred books radiating divine light, bold angular forms, deep purple and gold tones, mystical atmosphere, style of Emil Nolde, emotional brushwork, representing scripture witnesses"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="content-box">
+                            <ul>
+                                <li><strong>Genesis</strong> — The biblical account, preserved through Moses</li>
+                                <li><strong>Moses 2–3</strong> — Restored vision given to Moses (June 1830)</li>
+                                <li><strong>Abraham 4–5</strong> — Abraham's vision of the pre-mortal council</li>
+                            </ul>
+                        </div>
+                        <p style="font-size: 0.95em; margin-top: 1.2em;">
+                            Each witness adds unique insights to help us understand <em>why</em> we were created.
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Point out that having three accounts follows the scriptural pattern of establishing truth through multiple witnesses. Moses received his vision shortly after the Church was organized. Abraham's account gives us the pre-mortal perspective—the Gods counseling together.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 3: JESUS CHRIST AS CREATOR -->
+            <section>
+                <h2>Jesus Christ Created the Earth</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "The Creator"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of divine figure with outstretched hands creating worlds, cosmic energy flowing outward, bold sweeping brushstrokes, deep teal and brilliant gold, no facial features visible, style of Emil Nolde and Franz Marc, transcendent and powerful"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Moses 2:1</strong></p>
+                        </div>
+                        <div>
+                            <p class="question">What does it teach us that <em>Jesus Christ</em>—the same being who would later suffer for our sins—was the one who created this world for us?</p>
+                        </div>
+                        <p style="font-size: 1.1em; margin-top: 1em;">
+                            "By mine <strong>Only Begotten</strong> I created these things"
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    This is a profound truth unique to Restoration scripture. The Creator and the Redeemer are the same person. He who made the mountains also descended below all things. He who separated light from darkness also descended into spiritual darkness in Gethsemane. This connects Creation to Atonement in a deeply personal way.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 4: CREATED IN GOD'S IMAGE -->
+            <section>
+                <h2>Created in God's Image</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Image of God"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of human figure emerging from divine light, reflection and likeness theme, bold colors with rich purple and gold, angular dramatic forms, faceless silhouette reaching upward toward radiant source, style of Emil Nolde, spiritual transcendence"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 1:26–27</strong></p>
+                        </div>
+                        <div class="question-box">
+                            <p class="question">📖 What does it mean to be created in God's <span class="popup-trigger" data-popup="image-def">"image"</span> and "likeness"?</p>
+                            <p class="question">💭 How does knowing this truth affect the way you see yourself—and others?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="image-def" class="popup">
+                    <span class="popup-close">&times;</span>
+                    <div class="definition-term">Image of God (Imago Dei)</div>
+                    <p>The doctrine that humans are created to reflect God's nature—physically (He has a glorified body) and spiritually (we have divine potential). In LDS theology, this is literal: we are spirit children of heavenly parents.</p>
+                </div>
+                
+                <aside class="notes">
+                    This is one of the most distinctive LDS doctrines. We believe God has a glorified, physical body and that we are literally created in His image—not merely metaphorically. This gives every human being inherent worth and divine potential. Ask: How should this affect how we treat others? How we see ourselves when we struggle?
+                </aside>
+            </section>
+            
+            <!-- SLIDE 5: FROM CHAOS TO CREATION -->
+            <section>
+                <h2>God Creates Order from Chaos</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Order from Chaos"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of primordial chaos transforming into order, swirling dark void on one side transitioning to structured beauty on other, bold angular brushstrokes, deep charcoal and emerging vibrant colors, style of Franz Marc and Emil Nolde, dramatic transformation"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 1:2</strong> and <strong>Abraham 4:2</strong></p>
+                        </div>
+                        <div class="principle">
+                            <p>The earth was "<strong>without form, and void</strong>" ... "<strong>empty and desolate</strong>"<br>
+                            Yet God transformed it into something magnificent.</p>
+                        </div>
+                        <div>
+                            <p class="question">When has your life felt "without form" or chaotic? How did the Lord bring order and purpose?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    This is a beautiful pattern that applies to our lives. The Hebrew "tohu va-vohu" (formless and void) describes primordial chaos. God didn't create ex nihilo (from nothing) but organized existing matter. Similarly, He doesn't discard us when we're chaotic—He works with what exists to create something beautiful. Invite personal sharing here.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 6: HIS CREATIVE WORK CONTINUES -->
+            <section>
+                <h2>His Creative Work Continues</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Divine Potter"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of divine hands shaping clay or light into human form, ongoing creation theme, warm gold and teal tones, bold emotional brushwork, unfinished sculpture emerging into beauty, style of Emil Nolde, intimate and hopeful"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="sacred-text">
+                            <p>"God can, over time, make something magnificent out of something unorganized. ... Heavenly Father and Jesus Christ are Creators, and Their creative work <strong>with us</strong> is not finished."</p>
+                            <footer>— Come, Follow Me Manual</footer>
+                        </div>
+                        <div class="question-box">
+                            <p class="question">💡 How is the Lord currently "creating" in your life—bringing light to darkness, filling emptiness with life?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Emphasize the phrase "with us"—God doesn't create us like objects; He co-creates with us. We have agency in the process. The Creation wasn't instantaneous—it happened over periods of time. Likewise, our transformation is gradual. Patience with ourselves and the process is part of faith.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 7: MARRIAGE ORDAINED OF GOD -->
+            <section>
+                <h2>Marriage Is Ordained of God</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Sacred Union"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of two figures becoming one, intertwined hands or embracing silhouettes in garden setting, bold romantic colors with deep teal and gold, angular emotional forms, style of Emil Nolde, sacred union theme, no faces visible"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 2:18, 24</strong></p>
+                        </div>
+                        <p style="font-size: 1.05em;">
+                            "It is <strong>not good</strong> that the man should be alone"
+                        </p>
+                        <p style="font-size: 1.05em;">
+                            "Therefore shall a man ... <strong>cleave unto his wife</strong>: and they shall be <strong>one flesh</strong>"
+                        </p>
+                        <div>
+                            <p class="question">What does it teach us that the very first human relationship God established was marriage?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    President Nelson has taught that Adam and Eve were sealed by God Himself—the first temple marriage. The word "cleave" in Hebrew (davak) means to cling, adhere, be joined together. This wasn't an afterthought; it was integral to God's plan from the beginning. For those not married, emphasize that every blessing will be available to the faithful.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 8: STEWARDSHIP -->
+            <section>
+                <h2>Stewards of God's Creations</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Earthly Stewardship"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of hands gently cradling the earth or nurturing animals and plants, stewardship and care theme, rich greens and earth tones with gold accents, bold protective gesture, style of Franz Marc, reverent and tender, dramatic brushwork"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 1:28</strong></p>
+                        </div>
+                        <p style="font-size: 1.05em;">
+                            "<strong>Replenish</strong> the earth, and <strong>subdue</strong> it: and have <strong>dominion</strong>"
+                        </p>
+                        <div class="question-box">
+                            <p class="question">📖 What does righteous <span class="popup-trigger" data-popup="dominion-def">"dominion"</span> look like compared to exploitation?</p>
+                            <p class="question">💡 How can we better honor God through the way we care for His creations?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="dominion-def" class="popup">
+                    <span class="popup-close">&times;</span>
+                    <div class="definition-term">Dominion (Hebrew: radah)</div>
+                    <p>Often translated "rule" or "have dominion," but implies responsible stewardship rather than exploitation. D&C 121 teaches that dominion should be maintained by "persuasion, long-suffering, gentleness, meekness, and love unfeigned."</p>
+                </div>
+                
+                <aside class="notes">
+                    Elder Gérald Caussé spoke on "Our Earthly Stewardship" (Oct 2022). The Hebrew "radah" can mean to rule, but in context of God's character, it implies caring governance—like a shepherd, not a tyrant. We are stewards, not owners. This applies to the environment, animals, and all of God's creations.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 9: THE SABBATH -->
+            <section>
+                <h2>God Blessed the Sabbath Day</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Sabbath Rest"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of peaceful rest and sacred stillness, figure in contemplative repose bathed in warm golden light, seventh day theme, deep blues transitioning to radiant gold, style of Emil Nolde, serene and holy atmosphere, bold restful brushwork"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Genesis 2:2–3</strong></p>
+                        </div>
+                        <p style="font-size: 1.05em;">
+                            God <strong>rested</strong> ... and <strong>sanctified</strong> it
+                        </p>
+                        <div class="principle">
+                            <p>God <em>made</em> the Sabbath holy.<br>He asks us to <em>keep</em> it holy.</p>
+                        </div>
+                        <div>
+                            <p class="question">What makes the Sabbath "blessed" to you personally?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    The Hebrew "shabbat" comes from a root meaning "to cease" or "to rest." God didn't rest because He was tired—He rested to establish a pattern for us. The Sabbath was "made for man" (Mark 2:27). It's a gift, not a burden. President Nelson has invited us to make the Sabbath a "delight." Ask class members what specific practices make it delightful for them.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 10: BECOMING LIKE HIM -->
+            <section>
+                <h2>Becoming Like Him</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Transformation"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of spiritual transformation, caterpillar to butterfly or seed to flower metaphor, figure shedding darkness and emerging into light, rich purple and gold tones, style of Emil Nolde, dramatic metamorphosis, bold hopeful brushwork"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="scripture-box">
+                            <p class="invitation">Let's Read: <strong>Mosiah 3:19</strong></p>
+                        </div>
+                        <div class="content-box" style="text-align: left;">
+                            <p style="font-size: 0.95em;">Being created in God's image is not the end—it's the beginning.</p>
+                            <p style="font-size: 0.95em; margin-top: 0.6em;">We must also <strong>become</strong> like Him through:</p>
+                            <ul style="font-size: 0.9em; margin-top: 0.4em;">
+                                <li>Yielding to the Holy Spirit</li>
+                                <li>Putting off the natural man</li>
+                                <li>Becoming as a child—submissive, meek, patient, full of love</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Some might argue that being created in God's image means all our thoughts and desires are approved by Him. Mosiah 3:19 clarifies: we have divine potential, but we must choose to develop it. The "natural man" is the default—we must actively become something more. This is the purpose of mortality.
+                </aside>
+            </section>
+            
+            <!-- SLIDE 11: CLOSING INVITATION -->
+            <section>
+                <h2>This Week's Invitation</h2>
+                <div class="two-column" style="align-items: center; margin-top: 1em;">
+                    <div class="img-placeholder">
+                        📸 <strong>Image: "Eternal Journey"</strong><br><br>
+                        <em>Prompt:</em> "German Expressionist painting of figure walking toward brilliant horizon light, divine potential and eternal journey theme, pathway leading to celestial glow, deep teal foreground to radiant gold destination, style of Emil Nolde and Franz Marc, hopeful and transcendent, bold emotional brushwork"
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="principle">
+                            <p style="font-size: 1.1em;">Because I know I am created in God's image,<br>I choose to _______________.</p>
+                        </div>
+                        <div class="question-box">
+                            <p class="question">💭 What will you do this week to honor your divine origin and potential?</p>
+                        </div>
+                        <p style="font-size: 0.95em; margin-top: 1.2em; font-style: italic; color: var(--deep-teal);">
+                            "We have the potential to become like Him: exalted, glorified, heavenly."
+                        </p>
+                    </div>
+                </div>
+                
+                <aside class="notes">
+                    Invite class members to silently complete the sentence. Then, if time permits, invite a few to share. Close with your testimony of the Creation—that we are not accidents, that life has purpose, and that God is actively working to help us become like Him.
+                </aside>
+            </section>
+            
+        </div>
+    </div>
+    
+    <div class="slide-counter"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            transition: 'slide',
+            width: 1920,
+            height: 1080,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0,
+            center: true,
+            plugins: [ RevealNotes ]
+        });
+        
+        // Slide counter
+        function updateSlideCounter() {
+            const current = Reveal.getState().indexh + 1;
+            const total = Reveal.getTotalSlides();
+            document.querySelector('.slide-counter').textContent = `${current}/${total}`;
+        }
+        Reveal.on('slidechanged', updateSlideCounter);
+        updateSlideCounter();
+        
+        // Pop-up functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('popup-trigger')) {
+                const popupId = e.target.getAttribute('data-popup');
+                document.getElementById(popupId).classList.add('active');
+            }
+            if (e.target.classList.contains('popup-close')) {
+                document.querySelectorAll('.popup').forEach(p => p.classList.remove('active'));
+            }
+        });
+        
+        // Close popup when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('popup')) {
+                e.target.classList.remove('active');
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.popup').forEach(p => p.classList.remove('active'));
+            }
+        });
+    </script>
+</body>
+</html>
