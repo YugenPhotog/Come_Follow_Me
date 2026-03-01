@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css" />
 
   <style>
-    /* ── Design tokens ──────────────────────────────────── */
     :root {
       --sand:      #f7f0e2;
       --parchment: #ede0c4;
@@ -21,7 +20,6 @@
       --panel-bg:  #faf6ee;
     }
 
-    /* ── Reveal base ────────────────────────────────────── */
     .reveal {
       font-family: Georgia, 'Times New Roman', serif;
       color: var(--ink);
@@ -34,20 +32,23 @@
       padding: 0;
       height: 100%;
       top: 0 !important;
-      overflow: hidden;        /* NO slide-level scroll */
+      overflow: hidden;
     }
 
-    /* ══════════════════════════════════════════════════════
-       TWO-COLUMN SHELL — fixed height, no overflow
-       Image 42% | Text 58%
-       Default: img LEFT   .img-right: img RIGHT
-    ══════════════════════════════════════════════════════ */
+    /* ── Two-column shell ───────────────────────────── */
     .col-layout {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;          /* hard clamp — no scroll ever */
-    }
+  display: flex;
+  width: 100%;
+  height: 100%;   /* was 100vh */
+  overflow: hidden;
+}
+
+.title-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;   /* was 100vh */
+  overflow: hidden;
+}
 
     .col-img {
       flex: 0 0 42%;
@@ -67,14 +68,13 @@
       background: var(--panel-bg);
       display: flex;
       flex-direction: column;
-      justify-content: center;   /* vertically centre the block */
+      justify-content: center;
       padding: 28px 42px;
-      overflow: hidden;          /* NO scroll — content must fit */
+      overflow: hidden;
       box-sizing: border-box;
       border-left: 6px solid var(--gold);
     }
 
-    /* Image-right variant */
     .col-layout.img-right .col-img { order: 2; }
     .col-layout.img-right .col-text {
       order: 1;
@@ -82,61 +82,12 @@
       border-right: 6px solid var(--gold);
     }
 
-    /* ── Title slide — 48 / 52 split ───────────────────── */
-    .title-layout {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .title-img {
-      flex: 0 0 48%;
-      overflow: hidden;
-    }
-
-    .title-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .title-text {
-      flex: 1;
-      background: var(--panel-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 48px 56px;
-      border-left: 8px solid var(--rust);
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    /* ── Typography — sized to fit comfortably at 1080p ── */
-    .reveal h1 {
-      font-size: 1.75em;
-      font-weight: bold;
-      color: var(--rust);
-      line-height: 1.2;
-      margin: 0 0 0.2em 0;
-    }
-
+    /* ── Typography ─────────────────────────────────── */
     .reveal h2 {
       font-size: 1.2em;
       font-weight: bold;
       color: var(--deep-blue);
       line-height: 1.25;
-      margin: 0 0 0.3em 0;
-    }
-
-    .reveal h3 {
-      font-size: 0.88em;
-      color: var(--rust);
-      font-style: italic;
-      font-weight: normal;
       margin: 0 0 0.3em 0;
     }
 
@@ -151,7 +102,7 @@
       line-height: 1.45;
     }
 
-    /* ── Eyebrow ────────────────────────────────────────── */
+    /* ── Eyebrow ────────────────────────────────────── */
     .eyebrow {
       font-size: 0.46em;
       letter-spacing: 0.12em;
@@ -161,7 +112,7 @@
       font-family: Arial, sans-serif;
     }
 
-    /* ── Principle badge ────────────────────────────────── */
+    /* ── Principle badge ────────────────────────────── */
     .badge {
       display: inline-block;
       background: var(--rust);
@@ -175,7 +126,7 @@
       margin-bottom: 0.4em;
     }
 
-    /* ── Scripture box ──────────────────────────────────── */
+    /* ── Scripture box ──────────────────────────────── */
     .scripture-box {
       background: rgba(201,146,42,0.10);
       border-left: 4px solid var(--gold);
@@ -206,7 +157,7 @@
       margin-top: 5px;
     }
 
-    /* ── Question box ───────────────────────────────────── */
+    /* ── Question box ───────────────────────────────── */
     .question-box { margin-top: 8px; }
 
     .question-box p {
@@ -219,7 +170,7 @@
       border-left: 3px solid var(--deep-blue);
     }
 
-    /* ── Bullet list ────────────────────────────────────── */
+    /* ── Bullet list ────────────────────────────────── */
     .reveal ul {
       list-style: none;
       padding: 0;
@@ -245,14 +196,14 @@
       top: 8px;
     }
 
-    /* ── Hebrew callout ─────────────────────────────────── */
+    /* ── Hebrew callout ─────────────────────────────── */
     .hebrew {
       color: var(--rust);
       font-weight: bold;
       font-size: 1.05em;
     }
 
-    /* ── Typology table ─────────────────────────────────── */
+    /* ── Typology table ─────────────────────────────── */
     .typology-table {
       width: 100%;
       border-collapse: collapse;
@@ -280,14 +231,14 @@
       background: rgba(201,146,42,0.07);
     }
 
-    /* ── Divider ────────────────────────────────────────── */
+    /* ── Divider ────────────────────────────────────── */
     .rule {
       border: none;
       border-top: 1px solid rgba(201,146,42,0.35);
       margin: 10px 0;
     }
 
-    /* ── Closing verse ──────────────────────────────────── */
+    /* ── Closing verse ──────────────────────────────── */
     .closing-verse {
       margin-top: 10px;
       font-size: 0.70em;
@@ -297,7 +248,6 @@
       padding-top: 8px;
     }
 
-    /* ── Chrome ─────────────────────────────────────────── */
     .reveal .controls { color: var(--rust); }
     .reveal .progress span { background: var(--rust); }
   </style>
@@ -307,22 +257,23 @@
 <div class="slides">
 
 
- <!-- ═══════════════════════════════════════
-     SLIDE 1 — TITLE  (full-bleed image, no text)
-═══════════════════════════════════════ -->
-<section>
-  <div style="width:100%; height:100vh; overflow:hidden;">
-    <img
-      src="images/01-title.jpg"
-      alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. Soft wet-on-wet edges. A lone figure in ancient desert robes stands at the crest of a hill looking out over a vast starlit sky. The stars multiply into uncountable thousands above him, the Milky Way sweeping in silver and pale gold. Golden hour light warms the desert sand below. The figure's posture radiates longing and wonder. Sacred and contemplative mood. No text. 1920x1080 landscape."
-      style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
-    />
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════
+       SLIDE 1 — TITLE  (full-bleed image)
+  ═══════════════════════════════════════ -->
+  <section>
+    <div style="width:100%; height:100vh; overflow:hidden;">
+      <img
+        src="images/01-title.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. A lone figure in ancient desert robes stands at the crest of a hill looking out over a vast starlit sky. The Milky Way sweeps in silver and pale gold. Golden hour light warms the desert sand below. Sacred and contemplative mood. No text. 1920x1080 landscape."
+        style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+      />
+    </div>
+  </section>
 
 
   <!-- ═══════════════════════════════════════
        SLIDE 2 — HISTORICAL CONTEXT  (image LEFT)
+       Pattern: Let's Read → context → Discuss
   ═══════════════════════════════════════ -->
   <section>
     <div class="col-layout">
@@ -330,191 +281,293 @@
       <div class="col-img">
         <img
           src="images/02-ur.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. Ancient city of Ur in Mesopotamia at twilight. Ziggurats rise against a deep purple and ochre sky. Stone idol statues on pedestals glow with torchlight. Priests in robes perform rituals at a smoking altar. In the foreground a young man in simple robes turns his back on the scene and walks alone toward an open lighter horizon. Tension between darkness and light. No text. 1920x1080 landscape."
+          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Ancient city of Ur at twilight. Ziggurats rise against a deep purple and ochre sky. Idol altars glow with torchlight. In the foreground a young man turns his back on the scene and walks toward an open lighter horizon. No text. 1920x1080 landscape."
         />
       </div>
 
       <div class="col-text">
         <p class="eyebrow">Historical Context</p>
         <h2>Abraham's World: Ur of the Chaldees</h2>
-        <ul>
-          <li>One of the most sophisticated cities on earth — c. 2000 BCE</li>
-          <li>His father Terah had <strong>abandoned true worship</strong> — idols, ritual sacrifice at pagan altars</li>
-          <li>Abraham was handed over to be <strong>sacrificed to false gods</strong> (Abraham 1:5–12)</li>
-          <li>His covenant begins <em>not in comfort</em> — but in near-death and rupture from family</li>
-        </ul>
-        <div class="scripture-box" style="margin-top:12px;">
-          <p class="ref">Opening question — hold 30 seconds of silence before any scripture:</p>
-          <p class="verse">"Have you ever walked away from something your family expected of you — in order to walk toward God?"</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 3 — PRINCIPLE 1  (image RIGHT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout img-right">
-
-      <div class="col-img">
-        <img
-          src="images/03-desire.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. A solitary man kneels in prayer in a barren desert, arms outstretched upward toward a shaft of golden light breaking through dark storm clouds. The surrounding sky is deep blue and purple. The man's posture radiates longing, surrender, and yearning for something holy. His face is lifted, eyes closed. Deeply spiritual and intimate. No text. 1920x1080 landscape."
-        />
-      </div>
-
-      <div class="col-text">
-        <div class="badge">Principle 1</div>
-        <h2>Covenant Membership Begins With Desire, Not Genealogy</h2>
         <div class="scripture-box">
-          <p class="invitation">Let's Read: <strong>Abraham 1:2</strong></p>
-          <p class="verse">"…desiring also to be one who possessed great knowledge, and to be a <em>greater</em> follower of righteousness…"</p>
-        </div>
-        <div class="question-box">
-          <p>💭 <strong>Personal first:</strong> When did you first feel that your testimony was <em>yours</em> — not inherited from your parents or your culture?</p>
-          <p>📖 <strong>Doctrinal:</strong> According to Abraham 2:10–11 and Galatians 3:26–29, how do we <em>become</em> Abraham's seed? What does that mean for someone with no Abrahamic bloodline?</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 4 — SCRIPTURE: ABR 2:9–11  (image LEFT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout">
-
-      <div class="col-img">
-        <img
-          src="images/04-covenant-stars.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. An ancient bearded man stands beneath an impossibly vast night sky. The countless stars above gradually dissolve and transform into the faces of many generations of people — descendants stretching into eternity. The Milky Way sweeps overhead in silver and pale gold. The man's arms are slightly open, palms upward, receiving. Awe and wonder. Eternal and sacred. No text. 1920x1080 landscape."
-        />
-      </div>
-
-      <div class="col-text">
-        <h2>You Are Accounted His Seed</h2>
-        <div class="scripture-box">
-          <p class="invitation">Let's Read: <strong>Abraham 2:9–11</strong></p>
-          <p class="verse">"…as many as receive this Gospel shall be called after thy name, and shall be accounted thy seed, and shall rise up and bless thee, as their father…"</p>
-        </div>
-        <ul style="margin-top:10px;">
-          <li><span class="hebrew">Abram</span> → <span class="hebrew">Abraham</span> — God renames him <em>into</em> his covenant destiny (Genesis 17:5)</li>
-          <li>The covenant is <strong>adoptive, not merely biological</strong> — entered through baptism and temple ordinance</li>
-          <li>See also: <strong>Galatians 3:26–29 · D&amp;C 132:30–32</strong></li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 5 — PRINCIPLE 2  (image RIGHT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout img-right">
-
-      <div class="col-img">
-        <img
-          src="images/05-covenant-scales.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. Two hands reaching toward each other across a vast open space — one hand descending from above in golden light, one human hand rising from the desert below. Between them an ancient glowing scroll unfurls its edges illuminated. The background transitions from deep indigo at the top to warm desert sand at the bottom. Sacred reciprocity and covenant bond. No text. 1920x1080 landscape."
-        />
-      </div>
-
-      <div class="col-text">
-        <div class="badge">Principle 2</div>
-        <h2>The Covenant: Blessings Received <em>and</em> Obligations Carried</h2>
-        <ul>
-          <li><strong>Seed</strong> — vast posterity, physical and spiritual (Genesis 13:16; 17:4–8)</li>
-          <li><strong>Land</strong> — inheritance now and eternally (D&amp;C 131:1–4)</li>
-          <li><strong>Gospel</strong> — all nations blessed through his seed (Abraham 2:11)</li>
-        </ul>
-        <div class="scripture-box" style="margin-top:10px;">
-          <p class="ref">Genesis 12:2 — the mandate often read past:</p>
-          <p class="verse">"…and thou shalt <strong>be</strong> a blessing" — not just <em>receive</em> one.</p>
-        </div>
-        <div class="question-box">
-          <p>💡 <strong>Application:</strong> In your neighborhood or family — not in a calling — what does it look like to <em>be</em> a blessing as a covenant bearer?</p>
-          <p>💭 <strong>Personal:</strong> Have you ever felt the weight of being Abraham's seed — that you carry something forward for others, not just yourself?</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 6 — TRANSITION: MORIAH  (image LEFT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout">
-
-      <div class="col-img">
-        <img
-          src="images/06-moriah-approach.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. An elderly man and a young boy walk together up a steep rocky mountain path at early dawn. The father walks with a long knife at his side; the son carries a heavy bundle of wood strapped to his back. They walk toward pale light on the horizon but their posture carries enormous weight. Long shadows stretch behind them. The mountain top dissolves into morning mist. Profound sorrow and faithfulness. No text. 1920x1080 landscape."
-        />
-      </div>
-
-      <div class="col-text">
-        <p class="eyebrow">Transition — Teacher Narrative</p>
-        <h2>Twenty-Five Years of Waiting — Then the Unthinkable</h2>
-        <p style="font-size:0.74em; color:var(--olive); font-style:italic; margin-bottom:10px;">
-          Deliver this bridge without class discussion. Let it land.
-        </p>
-        <div class="scripture-box">
-          <p class="ref">Teacher reads slowly — Genesis 22:1–2:</p>
-          <p class="verse">"Take now thy son, thine <em>only</em> son Isaac, whom thou lovest, and get thee into the land of Moriah; and offer him there for a burnt offering…"</p>
-        </div>
-        <hr class="rule" />
-        <p style="font-size:0.80em; color:var(--deep-blue); font-style:italic; margin-top:6px;">
-          The covenant God gave Abraham a face. And then asked for that face back.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 7 — PRINCIPLE 3: AKEDAH  (image RIGHT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout img-right">
-
-      <div class="col-img">
-        <img
-          src="images/07-akedah-altar.png"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. An elderly man with a white beard kneels beside a rough stone altar on a barren mountaintop, arms raised toward heaven, face lifted in anguish and trust. A young man lies on the altar with eyes closed in willing surrender. A shaft of brilliant gold light descends from above. In the far background a ram is just visible caught in a thornbush. The mood is simultaneously anguished and transcendent. No text. 1920x1080 landscape."
-        />
-      </div>
-
-      <div class="col-text">
-        <div class="badge">Principle 3</div>
-        <h2>The Covenant Is Tested, Not Voided, by the Impossible</h2>
-        <div class="scripture-box">
-          <p class="invitation">Let's Read: <strong>Genesis 22:5–8</strong></p>
-          <p class="verse">"I and the lad will go yonder and worship, and <em>come again</em> to you." — v.5<br/>
-          "God will provide himself a lamb for a burnt offering…" — v.8</p>
+          <p class="invitation">Let's Read: <strong>Abraham 1:5–7</strong></p>
+          <p class="verse">"My fathers having turned from their righteousness…unto the worshiping of the gods of the heathen…[they] offered up…their children…"</p>
         </div>
         <ul style="margin-top:8px;">
-          <li>Abraham says <em>we</em> will return — resurrection faith (Hebrews 11:17–19)</li>
-          <li>Isaac carries the wood for his own sacrifice (v. 6) — a detail the narrator does not explain</li>
-          <li>"God will provide himself a lamb" — faithful readers across centuries have heard this as prophecy (Jacob 4:5)</li>
+          <li>Terah had abandoned true worship; Abraham's own life was threatened by the priest of Elkenah</li>
+          <li>The covenant begins in violence and rupture — not comfort</li>
         </ul>
+        
       </div>
 
     </div>
   </section>
 
 
+ <!-- ═══════════════════════════════════════
+     SLIDE 3 — PRINCIPLE 1  (image RIGHT)
+     Pattern: Let's Read → doctrinal note
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout img-right">
+    <div class="col-img">
+      <img
+        src="images/03-desire.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. A solitary man kneels in prayer in a barren desert, arms outstretched toward a shaft of golden light through dark storm clouds. His face is lifted, eyes closed. Deeply spiritual and intimate. No text. 1920x1080 landscape."
+      />
+    </div>
+    <div class="col-text">
+      <div class="badge">Principle 1</div>
+      <h2>Covenant Membership Begins With Desire, Not Genealogy</h2>
+      <div class="scripture-box">
+        <p class="invitation">Let's Read: <strong>Abraham 1:2 and Galatians 3:26–29</strong></p>
+        <p class="verse">Notice how many times Abraham uses the word <em>desiring</em></p>
+      </div>
+      <p style="font-size:0.72em; color:var(--olive); font-style:italic; margin:6px 0;">
+        Abraham didn't inherit his covenant — he chose it. Desire is the covenant-initiating faculty.
+        <br>Galatians 3:26–29 teaches the same: we are Abraham's seed by faith, not blood.
+      </p>
+    </div>
+  </div>
+</section>
+
+	
+	<!-- ═══════════════════════════════════════
+     SLIDE — ELDER ANDERSEN QUOTE
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout">
+
+    <div class="col-img" style="display:flex; flex-direction:column; align-items:center; justify-content:center; background:var(--deep-blue); gap:20px; padding:40px 30px; box-sizing:border-box;">
+      <img
+        src="images/neil_l_andersen_official_portrait_2019.png"
+        alt="Elder Neil L. Andersen, Quorum of the Twelve Apostles"
+        onerror="this.style.display='none';"
+        style="width:75%; max-width:340px; border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.5); display:block;"
+      />
+      <p style="color:rgba(241,233,223,0.9); font-size:0.70em; text-align:center; margin:0; line-height:1.5;">
+        Elder Neil L. Andersen<br>
+        <span style="font-size:0.88em; color:rgba(201,146,42,0.85);">Quorum of the Twelve Apostles</span>
+      </p>
+    </div>
+
+    <div class="col-text" style="justify-content:center;">
+      <p class="eyebrow">On Desire and Identity</p>
+      <h2>Our Inner Desires Become Our Choices</h2>
+      <div class="scripture-box" style="margin-top:14px; padding:16px 20px;">
+        <p class="verse" style="font-size:0.82em; line-height:1.65;">
+          "We are all influenced by our families and our culture, and yet I believe
+          there is a place inside of us that we uniquely and individually control
+          and create.… Eventually, our inner desires are given life
+          and they are seen in our choices and in our actions."
+        </p>
+        <p class="ref" style="margin-top:10px;">— Elder Neil L. Andersen · "Educate Your Desires" · ChurchofJesusChrist.org</p>
+      </div>
+      <div class="question-box" style="margin-top:14px;">
+        <p>💭 <strong>Discuss:</strong> Abraham's desire for righteousness preceded everything — his calling, his covenant, his test. What does that tell us about where covenant life actually begins?</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+	<!-- ═══════════════════════════════════════
+     SLIDE 3b — PRINCIPLE 1 DISCUSS
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-text" style="border-left:none; height:100%; justify-content:center; padding:60px 120px;">
+    <div class="badge">Principle 1</div>
+    <h2>Covenant Membership Begins With Desire, Not Genealogy</h2>
+    <div class="question-box" style="margin-top:20px;">
+      <p>💭 <strong>Personal:</strong> When did you first feel that your testimony was <em>yours</em> — not inherited from your parents or your culture?</p>
+      <p>📖 <strong>Doctrinal:</strong> If the covenant is adoptive, not biological, what does that mean for how we think about who belongs to it?</p>
+    </div>
+  </div>
+</section>
+  
+	<!-- ═══════════════════════════════════════
+     SLIDE 4 — THE NAME CHANGE  (image LEFT)
+     Pattern: Let's Read → doctrinal notes
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout">
+    <div class="col-img">
+      <img
+        src="images/04-name-change.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. An ancient bearded man stands beneath a vast night sky. The stars gradually dissolve into the faces of many generations of descendants. The Milky Way sweeps overhead in silver and pale gold. Awe and wonder. No text. 1920x1080 landscape."
+      />
+    </div>
+    <div class="col-text">
+      <h2>The Covenant Changes Who You Are</h2>
+      <div class="scripture-box">
+        <p class="invitation">Let's Read: <strong>Genesis 17:5</strong></p>
+        <p class="verse">"Neither shall thy name any more be called Abram, but thy name shall be Abraham; for a father of many nations have I made thee."</p>
+      </div>
+      <ul style="margin-top:10px;">
+        <li><strong>Name-giving as divine authority</strong> — In the ancient Near East, to name something is to define its reality. God speaks "Abraham" before a single descendant exists. The name creates what it declares.</li>
+        <li><strong>The pattern is deliberate</strong> — Jacob becomes Israel, Simon becomes Peter. In every case the new name is a commission spoken in advance of its fulfillment, not a reward granted after it.</li>
+        <li><strong>The deeper theological point</strong> — You cannot receive a covenant of this magnitude as the person you were. The covenant requires — and produces — a new self capable of inhabiting it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SLIDE 4b — THE NAME CHANGE DISCUSS
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-text" style="border-left:none; height:100%; justify-content:center; padding:60px 120px;">
+    <h2>The Covenant Changes Who You Are</h2>
+    <div class="question-box" style="margin-top:20px;">
+      <p>📖 <strong>Discuss:</strong> He didn't leave Ur as Abraham — he <em>became</em> Abraham through the covenant. What are you becoming through yours?</p>
+    </div>
+  </div>
+</section>
+	
   <!-- ═══════════════════════════════════════
-       SLIDE 8 — AKEDAH DISCUSSION  (image LEFT)
+     SLIDE 5 — PRINCIPLE 2  (image RIGHT)
+     Pattern: Let's Read → doctrinal note → Discuss
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout img-right">
+    <div class="col-img">
+      <img
+        src="images/05-covenant-scales.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Two hands reaching toward each other across open space — one descending from above in golden light, one rising from the desert below. Between them an ancient glowing scroll unfurls. Sacred reciprocity and covenant bond. No text. 1920x1080 landscape."
+      />
+    </div>
+    <div class="col-text">
+      <div class="badge">Principle 2</div>
+      <h2>The Covenant: Blessings Received <em>and</em> Obligations Carried</h2>
+      <div class="scripture-box">
+        <p class="invitation">Let's Read: <strong>Genesis 12:2–3</strong></p>
+        <p class="verse">"…and thou shalt be a blessing…and in thee shall all families of the earth be blessed."</p>
+      </div>
+      <div class="question-box">
+        <p>📖 <strong>Discuss:</strong> What are the blessings and promises of the Abrahamic Covenant?</p>
+        <p>💡 <strong>Discuss:</strong> What are our obligations as inheritors of Abraham's seed?</p>
+        <p>💭 <strong>Application:</strong> In your neighborhood or family — not in a calling — what does it look like to <em>be</em> a blessing as a covenant bearer?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+	<!-- ═══════════════════════════════════════
+     SLIDE 5b — ETERNAL DIMENSIONS  (image LEFT)
+     Pattern: Let's Read → doctrinal notes → Discuss
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout">
+    <div class="col-img">
+      <img
+        src="images/05b-eternal-inheritance.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Two hands reaching toward each other across open space — one descending from above in golden light, one rising from the desert below. Between them an ancient glowing scroll unfurls. Sacred reciprocity and covenant bond. No text. 1920x1080 landscape."
+      />
+    </div>
+    <div class="col-text">
+      <h2>The Covenant Reaches Into Eternity</h2>
+      <div class="scripture-box">
+        <p class="invitation">Let's Read: <strong>D&amp;C 132:20–24 and D&amp;C 131:1–4</strong></p>
+        <p class="verse">"…then shall they be gods, because they have no end…and shall inherit thrones, kingdoms, principalities, and powers…"</p>
+      </div>
+      <ul style="margin-top:10px;">
+        <li><strong>Land</strong> — Not just Canaan. The inheritance is exaltation itself — eternal thrones, kingdoms, dominion (D&amp;C 131:1–4; 132:20–24)</li>
+        <li><strong>Seed</strong> — Not just biological descendants. Eternal increase — the family continues beyond death, forever (D&amp;C 132:28–32)</li>
+        <li><strong>Temple covenants are Abrahamic covenants</strong> — When we enter the temple, we are stepping into the same promises Abraham and Sarah received on Moriah</li>
+      </ul>
+      <div class="question-box">
+        <p>💭 <strong>Discuss:</strong> If the covenant promises are eternal in scope, how does that change the weight of the ordinances you have already received?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 6 — MORIAH  (full-bleed image)
+═══════════════════════════════════════ -->
+<section data-state="video-slide">
+  <div style="position:relative; width:100%; height:100%; overflow:hidden;">
+    <img
+      src="images/06-moriah-approach.jpg"
+      alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. An elderly man and a young boy walk together up a steep rocky mountain path at early dawn. The son carries a heavy bundle of wood. They walk toward pale light but their posture carries enormous weight. Profound sorrow and faithfulness. No text. 1920x1080 landscape."
+      style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+    />
+    <!-- Title overlay bottom left -->
+    <div style="position:absolute; bottom:0; left:0; right:0; padding:40px 60px; background:linear-gradient(to top, rgba(20,10,5,0.82) 0%, transparent 100%);">
+      <h2 style="color:#f7f0e2; font-size:1.6em; text-shadow:2px 2px 8px rgba(0,0,0,0.7); margin:0;">
+        Twenty-Five Years of Waiting — Then the Unthinkable
+      </h2>
+    </div>
+    <!-- Video overlay bottom right -->
+    <div
+      style="position:absolute; bottom:40px; right:50px; border:3px solid rgba(201,146,42,0.8); border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.7); overflow:hidden; z-index:10;"
+      onclick="event.stopPropagation();"
+    >
+      <video
+        id="moriah-video"
+        width="420"
+        controls
+        preload="auto"
+        style="display:block;"
+        onclick="event.stopPropagation();"
+      >
+        <source src="Abraham_Promised_a_Son.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
+	
+	
+	<!-- ═══════════════════════════════════════
+     SLIDE — AKEDAH DEFINED
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout">
+    <div class="col-text" style="border-left:none; justify-content:center; align-items:center; text-align:center; background:var(--panel-bg);">
+      <p class="eyebrow">Hebrew Term</p>
+      <h2 style="font-size:2.2em; color:var(--rust); margin-bottom:0.3em;">עֲקֵדָה</h2>
+      <h2 style="font-size:1.4em; color:var(--rust); margin-top:0; margin-bottom:0.6em;"><em>Akedah</em> — "The Binding"</h2>
+      <hr class="rule" style="width:60%; margin:0.6em auto;" />
+      <div class="scripture-box" style="text-align:left; max-width:700px; margin:16px auto 0;">
+        <p class="verse" style="font-size:0.82em;">The term derives from the Hebrew root <strong>עקד</strong> (<em>aqad</em>) — "to bind." It refers to Genesis 22, the account of Abraham's binding of Isaac upon the altar on Mount Moriah. In Jewish tradition, the Akedah is among the most studied and theologically significant passages in all of scripture — a test of faith, a covenant sealed in obedience, and for Latter-day Saints, a profound similitude of the Father and the Son.</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+	<!-- ═══════════════════════════════════════
+     SLIDE 7 — PRINCIPLE 3: AKEDAH  (image RIGHT)
+     Pattern: Let's Read → theological frame → Discuss
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout img-right">
+    <div class="col-img">
+      <img
+        src="images/07-akedah-altar.png"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. An elderly man kneels beside a rough stone altar on a barren mountaintop, arms raised toward heaven. A young man lies on the altar in willing surrender. A shaft of brilliant gold light descends from above. In the far background a ram is caught in a thornbush. Anguished and transcendent. No text. 1920x1080 landscape."
+      />
+    </div>
+    <div class="col-text">
+      <div class="badge">Principle 3</div>
+      <h2>The Covenant Is Tested</h2>
+      <div class="scripture-box">
+        <p class="invitation">Let's Read: <strong>Abraham 3:25</strong></p>
+        <p class="verse">"And we will prove them herewith, to see if they will do all things whatsoever the Lord their God shall command them."</p>
+      </div>
+      <p style="font-size:0.72em; color:var(--olive); font-style:italic; margin:6px 0;">
+        Mortality is designed as a proving ground. The Akedah is the apex of that proof in Abraham's life — When God asks for the promise back, He is not withdrawing it — He is asking whether Abraham loves the Giver more than the gift.
+      </p>
+      
+    </div>
+  </div>
+</section>
+
+
+
+ 
+  <!-- ═══════════════════════════════════════
+       SLIDE 8 — AKEDAH: DEEPER  (image LEFT)
+       Pattern: Let's Read → Discuss
   ═══════════════════════════════════════ -->
   <section>
     <div class="col-layout">
@@ -522,106 +575,109 @@
       <div class="col-img">
         <img
           src="images/08-akedah-questions.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. Close-up of two hands clasped tightly together over a rough stone surface — one old and weathered, one younger and smooth. Warm amber and gold light glows in the background dissolving into shadow at the edges. The image conveys intergenerational trust, covenant bond, and mutual surrender. Tender and profound. No text. 1920x1080 landscape."
+          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Close-up of two hands clasped tightly together — one old and weathered, one younger and smooth. Warm amber and gold light. Intergenerational trust, covenant bond, and mutual surrender. Tender and profound. No text. 1920x1080 landscape."
         />
       </div>
 
       <div class="col-text">
-        <h2>Ponder the Akedah</h2>
-        <div class="question-box">
-          <p>💭 <strong>Personal:</strong> Have you ever been asked to offer something back to God that you believed He had given you — a calling, a relationship, a plan that felt like your Isaac? What did that teach you?</p>
-          <p>📖 <strong>Doctrinal:</strong> Isaac never resists. He carries the wood and asks about the lamb. What does his willing obedience add to the typology?</p>
-          <p>🔎 <strong>Faith:</strong> Hebrews 11:17–19 tells us what Abraham believed as he climbed that mountain. What was it — and how does that change the emotional weight of the story?</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 9 — TYPOLOGY TABLE  (image RIGHT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout img-right">
-
-      <div class="col-img" style="display:flex; align-items:center; justify-content:center; background:var(--panel-bg);">
-  <img
-    src="images/09-similitude.jpg"
-    alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. A split composition. On the left half: an ancient stone altar on a windswept mountaintop at sunrise, a ram caught in a thornbush in the foreground, warm golden light. On the right half: a wooden cross silhouetted on a hill at dusk against a deep crimson and violet sky. The two scenes mirror each other across the center divided by a thin vertical line of radiant white light. Typological sacred and reverent. No text. 1920x1080 landscape."
-    style="width:80%; height:80%; object-fit:cover; object-position:center; display:block;"
-  />
-</div>
-
-      <div class="col-text">
-        <h2>"A Similitude of God and His Only Begotten Son"</h2>
-        <p style="font-size:0.68em; color:var(--rust); margin-bottom:6px;"><strong>Jacob 4:5</strong></p>
-        <table class="typology-table">
-          <thead>
-            <tr>
-              <th>The Akedah — Genesis 22</th>
-              <th>The Atonement</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Isaac — "only begotten" of Abraham &amp; Sarah (Heb. 11:17)</td>
-              <td>Jesus — Only Begotten of the Father (John 3:16)</td>
-            </tr>
-            <tr>
-              <td>Isaac carries the wood for his own sacrifice (v. 6)</td>
-              <td>Christ carries His own cross (John 19:17)</td>
-            </tr>
-            <tr>
-              <td>A ram substituted — Isaac is spared (v. 13)</td>
-              <td><strong>No substitution.</strong> The Father does not stop what Abraham was stopped from finishing.</td>
-            </tr>
-            <tr>
-              <td><span class="hebrew">Jehovah-Jireh</span> — "YHWH will be seen" (v. 14)</td>
-              <td>On a hill outside Jerusalem — God is finally, fully <em>seen</em></td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="margin-top:10px; font-size:0.72em; color:var(--rust); font-style:italic;">
-          📖 In the Akedah, a ram appears. In the Atonement — there is no ram. What does that difference tell us?
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SLIDE 10 — CLOSING  (image LEFT)
-  ═══════════════════════════════════════ -->
-  <section>
-    <div class="col-layout">
-
-      <div class="col-img">
-        <img
-          src="images/10-closing.jpg"
-          alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. Loose luminous washes. A wide luminous dawn sky over an ancient desert landscape. In the foreground an open covenant scroll rests on a flat stone its edges glowing with warm golden light. Behind it a dusty path leads forward into the sunrise on the horizon. The mood is one of sacred responsibility completion and hopeful invitation. No text. 1920x1080 landscape."
-        />
-      </div>
-
-      <div class="col-text">
-        <div class="badge">Closing</div>
-        <h2>Abraham Was Stopped. The Father Was Not.</h2>
+        <h2>He Loved the Giver More Than the Gift</h2>
         <div class="scripture-box">
-          <p class="invitation">Let's Read: <strong>D&amp;C 132:30–32</strong></p>
-          <p class="verse">"Abraham received all things, whatsoever he received, by revelation and commandment, by my word, saith the Lord, and hath entered into his exaltation…"</p>
+          <p class="invitation">Let's Read: <strong>Hebrews 11:17–19</strong></p>
+          <p class="verse">"By faith Abraham…offered up Isaac…accounting that God was able to raise him up, even from the dead; from whence also he received him in a figure."</p>
         </div>
         <div class="question-box">
-          <p>💭 How does standing in the Akedah from Abraham's perspective — as a parent, as a covenant keeper — change how you understand what the Father gave?</p>
-          <p>✦ We entered the same covenant Abraham did. If covenant faithfulness can be tested the way his was — what does that mean for our willingness to offer?</p>
+          <p>💭 <strong>Personal:</strong> Have you ever been asked to offer something back to God that He had given you — a calling, a relationship, a plan that felt like your Isaac?</p>
+          <p>📖 <strong>Doctrinal:</strong> Isaac never resists. He carries the wood, asks about the lamb, and surrenders willingly. What does his obedience teach us about the Son who would one day do the same?</p>
+          
         </div>
-        <p class="closing-verse">
-          <strong>Abraham 3:25</strong> — "We will prove them herewith, to see if they will do all things whatsoever the Lord their God shall command them."
-        </p>
       </div>
 
     </div>
   </section>
+
+
+<!-- ═══════════════════════════════════════
+     SLIDE 9 — TYPOLOGY TABLE  (image RIGHT)
+     Pattern: Let's Read → typology → Discuss
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout img-right">
+    <div class="col-img" style="display:flex; align-items:center; justify-content:center; background:var(--panel-bg);">
+      <img
+        src="images/09-similitude.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. A split composition — left: an ancient stone altar at sunrise with a ram in a thornbush; right: a wooden cross silhouetted at dusk against crimson and violet sky. The scenes mirror each other across a thin line of radiant white light. Sacred and typological. No text. 1920x1080 landscape."
+        style="width:80%; height:80%; object-fit:cover; object-position:center; display:block;"
+      />
+    </div>
+    <div class="col-text" style="padding:18px 28px;">
+      <h2 style="font-size:1.0em; margin-bottom:0.2em;">"A Similitude of God and His Only Begotten Son"</h2>
+      <div class="scripture-box" style="padding:6px 12px; margin:6px 0;">
+        <p class="invitation" style="font-size:0.70em;">Let's Read: <strong>Jacob 4:5</strong></p>
+        <p class="verse" style="font-size:0.66em; margin-top:3px;">"…Abraham's offering…was a similitude of God and his Only Begotten Son."</p>
+      </div>
+      <table class="typology-table" style="font-size:0.62em; margin-top:4px;">
+        <thead>
+          <tr>
+            <th>The Akedah — Genesis 22</th>
+            <th>The Atonement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Isaac — "only begotten" of Abraham &amp; Sarah (Heb. 11:17)</td>
+            <td>Jesus — Only Begotten of the Father (John 3:16)</td>
+          </tr>
+          <tr>
+            <td>Isaac carries the wood (v. 6)</td>
+            <td>Christ carries His own cross (John 19:17)</td>
+          </tr>
+          <tr>
+            <td>A ram substituted — Isaac is spared (v. 13)</td>
+            <td><strong>No substitution.</strong> The Father does not stop what Abraham was stopped from finishing.</td>
+          </tr>
+          <tr>
+            <td><span class="hebrew">Jehovah-Jireh</span> — "YHWH will be seen" (v. 14)</td>
+            <td>On a hill outside Jerusalem — God is finally, fully <em>seen</em></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="question-box" style="margin-top:6px;">
+        <p style="font-size:0.66em;">📖 <strong>Discuss:</strong> In the Akedah a ram appears. In the Atonement there is no ram. What does that difference tell us about the Father's offering?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ═══════════════════════════════════════
+     SLIDE 10 — CLOSING  (image LEFT)
+═══════════════════════════════════════ -->
+<section>
+  <div class="col-layout">
+    <div class="col-img">
+      <img
+        src="images/10-closing.jpg"
+        alt="Watercolor painting. Warm ochre, sienna, and deep cobalt blue palette. A luminous dawn sky over an ancient desert landscape. An open covenant scroll rests on a flat stone, its edges glowing with warm golden light. A dusty path leads forward into the sunrise. Sacred responsibility and hopeful invitation. No text. 1920x1080 landscape."
+      />
+    </div>
+    <div class="col-text">
+      <div class="badge">Closing</div>
+      <h2>The Covenant Is Alive in This Room</h2>
+      <p style="font-size:0.74em; color:var(--ink); line-height:1.55; margin:6px 0;">
+        Every person here who has been baptized has entered it. Every person who has made temple covenants has stepped into the full weight of what Abraham carried. We are not spectators to this story. <strong>We are the seed.</strong>
+      </p>
+      <hr class="rule" />
+      <p style="font-size:0.72em; color:var(--deep-blue); font-style:italic; line-height:1.5; margin:6px 0;">
+        <strong>We are beneficiaries</strong> — of a covenant so old it predates Israel, so deep it reaches into eternity. That faith is our inheritance.<br/><br/>
+        <strong>We carry an obligation</strong> — not to perform blessings, not to accumulate them. To <em>be</em> one. The covenant is not a transaction. It is a transformation.
+      </p>
+      <hr class="rule" />
+      <div class="scripture-box">
+        <p class="invitation">Let's Read: <strong>D&amp;C 132:30–32</strong></p>
+        <p class="verse">"Abraham received all things, whatsoever he received, by revelation and commandment, by my word, saith the Lord, and hath entered into his exaltation…"</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 </div><!-- /.slides -->
@@ -642,7 +698,27 @@
     margin: 0,
     minScale: 0.2,
     maxScale: 2.0,
-    fragments: false,          /* NO fragment animations */
+    fragments: false,
+    keyboard: {
+        32: null  // disable spacebar so it doesn't interfere with video
+    }
+});
+</script>
+	<script>
+  document.querySelectorAll('video').forEach(function(video) {
+    video.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+    // Also stop propagation on all video control interactions
+    video.addEventListener('mousedown', function(e) { e.stopPropagation(); });
+    video.addEventListener('mouseup',   function(e) { e.stopPropagation(); });
+    video.addEventListener('touchstart',function(e) { e.stopPropagation(); });
+    video.addEventListener('touchend',  function(e) { e.stopPropagation(); });
   });
 </script>
 </body>
