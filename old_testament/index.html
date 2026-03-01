@@ -1,422 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Old Testament - Come Follow Me</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --parchment: #f4e8d0;
-            --warm-earth: #8b6f47;
-            --deep-bronze: #5c4a2f;
-            --covenant-gold: #d4a574;
-            --sacred-crimson: #8b2f2f;
-            --olive-shadow: #4a5a3a;
-            --stone-gray: #6b6b5f;
-        }
+  <meta charset="utf-8" />
+  <title>Old Testament 2026 — Come, Follow Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Come, Follow Me — Old Testament 2026. Weekly lesson links for Gospel Doctrine class." />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Crimson Text', serif;
-            background: linear-gradient(135deg, var(--parchment) 0%, #e8d9b8 100%);
-            color: var(--deep-bronze);
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
+  <style>
+    :root {
+      /* Desert / Ancient Near East Palette */
+      --parchment:       #f5e9d3;
+      --warm-sand:       #d4a96a;
+      --deep-bronze:     #8b5e2d;
+      --covenant-gold:   #c49a3c;
+      --sinai-red:       #8b3a2a;
+      --olive-grove:     #5a6b3a;
+      --jordan-blue:     #3d6b8a;
+      --stone:           #7a7060;
 
-        /* Decorative background texture */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(139, 111, 71, 0.03) 2px,
-                    rgba(139, 111, 71, 0.03) 4px
-                );
-            pointer-events: none;
-            opacity: 0.6;
-            z-index: 1;
-        }
+      /* Semantic assignments */
+      --primary:         #8b5e2d;   /* deep bronze */
+      --primary-dark:    #6a4520;
+      --secondary:       #5a6b3a;   /* olive grove */
+      --accent:          #c49a3c;   /* covenant gold */
+      --warm-accent:     #8b3a2a;   /* sinai red */
+      --background:      #f5e9d3;   /* parchment */
+      --card-bg:         #fffdf8;
+      --text-dark:       #3a2c1a;
+      --text-light:      #fffdf8;
+    }
 
-        /* Animated corner flourishes */
-        .corner-flourish {
-            position: fixed;
-            width: 200px;
-            height: 200px;
-            opacity: 0.15;
-            z-index: 2;
-            pointer-events: none;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .corner-flourish.top-left {
-            top: 0;
-            left: 0;
-            border-top: 3px solid var(--covenant-gold);
-            border-left: 3px solid var(--covenant-gold);
-            border-top-left-radius: 5px;
-            animation: flourishFadeIn 2s ease-out;
-        }
+    body {
+      font-family: 'EB Garamond', 'Georgia', serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background-color: var(--background);
+    }
 
-        .corner-flourish.bottom-right {
-            bottom: 0;
-            right: 0;
-            border-bottom: 3px solid var(--covenant-gold);
-            border-right: 3px solid var(--covenant-gold);
-            border-bottom-right-radius: 5px;
-            animation: flourishFadeIn 2s ease-out 0.3s backwards;
-        }
+    /* ── Header Banner ─────────────────────────────── */
+    .text-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--text-light);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    }
 
-        @keyframes flourishFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 0.15;
-                transform: scale(1);
-            }
-        }
+    .banner-content { max-width: 1200px; margin: 0 auto; }
 
-        .container {
-            position: relative;
-            z-index: 10;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
+    .banner-subtitle {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-bottom: 1rem;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-        /* Header Section */
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
-            animation: slideDown 1s ease-out;
-        }
+    .banner-main-title {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .banner-tagline {
+      font-size: 1.05rem;
+      font-style: italic;
+      opacity: 0.88;
+      margin-bottom: 0.5rem;
+    }
 
-        .site-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            font-weight: 400;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--stone-gray);
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
-        }
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 700;
-            color: var(--deep-bronze);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(139, 111, 71, 0.1);
-        }
+    .nav-link:hover {
+      background: rgba(255,255,255,0.27);
+      transform: translateY(-2px);
+    }
 
-        .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            font-style: italic;
-            color: var(--warm-earth);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
+    .decorative-rule {
+      width: 100px;
+      height: 3px;
+      background: var(--accent);
+      margin: 1.5rem auto 0;
+      opacity: 0.8;
+    }
 
-        .decorative-line {
-            width: 120px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--covenant-gold), transparent);
-            margin: 2rem auto;
-            position: relative;
-        }
+    /* ── Container ─────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
 
-        .decorative-line::before,
-        .decorative-line::after {
-            content: '◆';
-            position: absolute;
-            top: -8px;
-            font-size: 0.8rem;
-            color: var(--covenant-gold);
-        }
+    /* ── Section Titles ────────────────────────────── */
+    .section-title {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--secondary);
+    }
 
-        .decorative-line::before {
-            left: -15px;
-        }
+    .lead {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      max-width: 820px;
+    }
 
-        .decorative-line::after {
-            right: -15px;
-        }
+    /* ── Course / Month Sections ───────────────────── */
+    .courses-section { margin-bottom: 4rem; }
 
-        /* Scripture Highlight */
-        .scripture-highlight {
-            max-width: 700px;
-            margin: 3rem auto;
-            padding: 2.5rem;
-            background: rgba(255, 255, 255, 0.5);
-            border-left: 4px solid var(--sacred-crimson);
-            border-radius: 2px;
-            box-shadow: 0 10px 40px rgba(92, 74, 47, 0.15);
-            animation: fadeInUp 1s ease-out 0.3s backwards;
-        }
+    /* ── Course Grid ───────────────────────────────── */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    /* ── Course Cards ──────────────────────────────── */
+    .course-card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.09);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+    }
 
-        .scripture-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--deep-bronze);
-            margin-bottom: 1rem;
-        }
+    .course-card:nth-child(4n+2) { border-left-color: var(--secondary); }
+    .course-card:nth-child(4n+3) { border-left-color: var(--accent); }
+    .course-card:nth-child(4n+4) { border-left-color: var(--warm-accent); }
 
-        .scripture-reference {
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--sacred-crimson);
-            letter-spacing: 0.05em;
-            text-align: right;
-        }
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.13);
+    }
 
-        /* Navigation Cards */
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
+    .course-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-        .nav-card {
-            position: relative;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(244, 232, 208, 0.6));
-            border: 1px solid rgba(139, 111, 71, 0.2);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            animation: fadeInUp 1s ease-out backwards;
-            box-shadow: 0 4px 20px rgba(92, 74, 47, 0.1);
-        }
+    .course-number {
+      color: var(--warm-accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-        .nav-card:nth-child(1) { animation-delay: 0.4s; }
-        .nav-card:nth-child(2) { animation-delay: 0.5s; }
-        .nav-card:nth-child(3) { animation-delay: 0.6s; }
-        .nav-card:nth-child(4) { animation-delay: 0.7s; }
-        .nav-card:nth-child(5) { animation-delay: 0.8s; }
-        .nav-card:nth-child(6) { animation-delay: 0.9s; }
+    .course-title {
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
 
-        .nav-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--covenant-gold) 0%, var(--sacred-crimson) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
+    .course-subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--stone);
+      margin-bottom: 1.2rem;
+    }
 
-        .nav-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(92, 74, 47, 0.25);
-            border-color: var(--covenant-gold);
-        }
+    /* ── CTA Buttons ───────────────────────────────── */
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
 
-        .nav-card:hover::before {
-            opacity: 0.05;
-        }
+    .cta {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding: 0.9rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
 
-        .card-icon {
-            position: relative;
-            z-index: 1;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            transition: transform 0.4s ease;
-        }
+    .cta:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    }
 
-        .nav-card:hover .card-icon {
-            transform: scale(1.1) rotate(-5deg);
-        }
+    .cta.secondary { background-color: var(--secondary); }
+    .cta.secondary:hover { background-color: #47572e; }
 
-        .card-title {
-            position: relative;
-            z-index: 1;
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--deep-bronze);
-            transition: color 0.3s ease;
-        }
+    .cta.gold { background-color: var(--accent); color: var(--text-dark); }
+    .cta.gold:hover { background-color: #a87e2a; color: var(--text-light); }
 
-        .nav-card:hover .card-title {
-            color: var(--sacred-crimson);
-        }
+    /* ── Resources Section ─────────────────────────── */
+    .link-list { list-style: none; padding: 0; }
 
-        .card-description {
-            position: relative;
-            z-index: 1;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: var(--warm-earth);
-        }
+    .link-list li {
+      background-color: var(--card-bg);
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 2rem 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid rgba(139, 111, 71, 0.2);
-            animation: fadeInUp 1s ease-out 1s backwards;
-        }
+    .link-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    }
 
-        .footer-text {
-            font-size: 0.95rem;
-            color: var(--stone-gray);
-            line-height: 1.6;
-        }
+    .link-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
 
-        .footer-text a {
-            color: var(--sacred-crimson);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease;
-        }
+    .link-list a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
 
-        .footer-text a:hover {
-            border-bottom-color: var(--sacred-crimson);
-        }
+    /* ── Footer ────────────────────────────────────── */
+    .site-footer {
+      background: linear-gradient(135deg, var(--stone) 0%, var(--primary-dark) 100%);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem 1.5rem;
-            }
+    .footer__rule {
+      width: 100px;
+      height: 2px;
+      background: var(--text-light);
+      margin: 0 auto 1rem;
+      opacity: 0.5;
+    }
 
-            .scripture-highlight {
-                padding: 1.5rem;
-            }
+    .site-footer p {
+      margin: 0.5rem 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+    }
 
-            .nav-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .site-footer a { color: var(--warm-sand); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 768px) {
+      .banner-main-title { font-size: 2rem; }
+      .course-grid { grid-template-columns: 1fr; }
+      .container { padding: 2rem 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .banner-main-title { font-size: 1.6rem; }
+      .section-title { font-size: 1.6rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="corner-flourish top-left"></div>
-    <div class="corner-flourish bottom-right"></div>
 
-    <div class="container">
-        <header>
-            <div class="site-title">Come Follow Me</div>
-            <h1>Old Testament</h1>
-            <div class="decorative-line"></div>
-            <p class="subtitle">Ancient Covenants, Eternal Truths</p>
-        </header>
-
-        <section class="scripture-highlight">
-            <p class="scripture-text">
-                "Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me."
-            </p>
-            <p class="scripture-reference">— John 5:39</p>
-        </section>
-
-        <nav class="nav-grid">
-            <a href="lessons/" class="nav-card">
-                <div class="card-icon">📖</div>
-                <h2 class="card-title">Weekly Lessons</h2>
-                <p class="card-description">
-                    Explore each week's Come Follow Me study with contextual insights and doctrinal connections.
-                </p>
-            </a>
-
-            <a href="timeline/" class="nav-card">
-                <div class="card-icon">⏳</div>
-                <h2 class="card-title">Timeline & Context</h2>
-                <p class="card-description">
-                    Navigate the historical periods from Creation through the prophets and into the intertestamental era.
-                </p>
-            </a>
-
-            <a href="covenants/" class="nav-card">
-                <div class="card-icon">✋</div>
-                <h2 class="card-title">Covenant Patterns</h2>
-                <p class="card-description">
-                    Discover the covenantal thread from Adam to Abraham to Moses and beyond.
-                </p>
-            </a>
-
-            <a href="prophets/" class="nav-card">
-                <div class="card-icon">🗣️</div>
-                <h2 class="card-title">Prophets & Witnesses</h2>
-                <p class="card-description">
-                    Meet the prophets who testified of Christ and called Israel to repentance.
-                </p>
-            </a>
-
-            <a href="types-shadows/" class="nav-card">
-                <div class="card-icon">✨</div>
-                <h2 class="card-title">Types & Shadows</h2>
-                <p class="card-description">
-                    See how Old Testament symbols and stories point toward Jesus Christ.
-                </p>
-            </a>
-
-            <a href="resources/" class="nav-card">
-                <div class="card-icon">📚</div>
-                <h2 class="card-title">Study Resources</h2>
-                <p class="card-description">
-                    Access maps, charts, videos, and scholarly resources to deepen your understanding.
-                </p>
-            </a>
-        </nav>
-
-        <footer>
-            <p class="footer-text">
-                Part of <a href="../index.html">Seek Learning Gospel Doctrine</a><br>
-                A resource for Come Follow Me study and Sunday School teaching
-            </p>
-        </footer>
+  <!-- ══ HEADER ══════════════════════════════════════ -->
+  <header class="text-banner">
+    <div class="banner-content">
+      <p class="banner-subtitle" style="margin-bottom:6px;">
+        <a href="../index.html" class="nav-link">← Home</a>
+      </p>
+      <h1 class="banner-main-title">Old Testament 2026</h1>
+      <p class="banner-tagline">Come, Follow Me — Gospel Doctrine</p>
+      <p class="banner-subtitle" style="font-style:italic; font-size:1.1rem; opacity:0.92;">"As for me and my house, we will serve the Lord." — Joshua 24:15</p>
+      <div class="decorative-rule" aria-hidden="true"></div>
     </div>
+  </header>
+
+  <main class="container" id="main">
+
+    <!-- ══ OVERVIEW ════════════════════════════════════ -->
+    <section aria-labelledby="intro-title">
+      <h2 id="intro-title" class="section-title">Overview</h2>
+      <p class="lead">
+        Weekly lessons from the official <em>Come, Follow Me — Old Testament 2026</em> manual.
+        Lessons marked <strong>Teaching Sunday</strong> are the dates we will meet as a class — those lessons include a link to an interactive web presentation to support our discussion.
+      </p>
+    </section>
+
+    <!-- ══ JANUARY ══════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="jan-title">
+      <h2 id="jan-title" class="section-title">January 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">📜</div>
+          <p class="course-number">Dec 29 – Jan 4</p>
+          <h3 class="course-title">Introduction to the Old Testament</h3>
+          <p class="course-subtitle">Why We Study the Old Testament</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/01?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">⭐</div>
+          <p class="course-number">January 5–11</p>
+          <h3 class="course-title">Moses 1; Abraham 3</h3>
+          <p class="course-subtitle">This Is My Work and My Glory</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/02?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🌍</div>
+          <p class="course-number">January 12–18 · Teaching Sunday</p>
+          <h3 class="course-title">Genesis 1–2; Moses 2–3; Abraham 4–5</h3>
+          <p class="course-subtitle">The Creation</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/03?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="lessons/genesis-creation-gospel-doctrine-revised.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🍎</div>
+          <p class="course-number">January 19–25</p>
+          <h3 class="course-title">Genesis 3–4; Moses 4–5</h3>
+          <p class="course-subtitle">The Fall and the Plan of Salvation</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/04?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ FEBRUARY ═════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="feb-title">
+      <h2 id="feb-title" class="section-title">February 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">🧓</div>
+          <p class="course-number">Jan 26 – Feb 1 · Teaching Sunday</p>
+          <h3 class="course-title">Genesis 5; Moses 6</h3>
+          <p class="course-subtitle">Enoch and the City of Zion</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/05?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🌅</div>
+          <p class="course-number">February 2–8</p>
+          <h3 class="course-title">Moses 7</h3>
+          <p class="course-subtitle">Zion in Vision — Enoch Weeps with God</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/06?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🕊️</div>
+          <p class="course-number">February 9–15 · Teaching Sunday</p>
+          <h3 class="course-title">Genesis 6–11; Moses 8</h3>
+          <p class="course-subtitle">Noah, Grace, and the Covenant</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/07?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="lessons/noah-grace-covenant_revised.html">🎯 View Sunday Presentation</a>
+            <a class="cta gold" href="lessons/building-personal-ark.html">⚓ Building Your Personal Ark</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">✡️</div>
+          <p class="course-number">February 16–22</p>
+          <h3 class="course-title">Genesis 12–17; Abraham 1–2</h3>
+          <p class="course-subtitle">The Abrahamic Covenant</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/08?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ MARCH ═════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="mar-title">
+      <h2 id="mar-title" class="section-title">March 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">👶</div>
+          <p class="course-number">Feb 23 – Mar 1 · Teaching Sunday</p>
+          <h3 class="course-title">Genesis 18–23</h3>
+          <p class="course-subtitle">Is Any Thing Too Hard for the Lord?</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/09?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="lessons/2026-03-01-genesis-18-23-is-any-thing-too-hard-for-the-lord.md.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🤼</div>
+          <p class="course-number">March 2–8</p>
+          <h3 class="course-title">Genesis 24–33</h3>
+          <p class="course-subtitle">Jacob, Esau, and the Birthright</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/10?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🧥</div>
+          <p class="course-number">March 9–15 · Teaching Sunday</p>
+          <h3 class="course-title">Genesis 37–41</h3>
+          <p class="course-subtitle">Joseph Is Sold into Egypt</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/11?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🤝</div>
+          <p class="course-number">March 16–22</p>
+          <h3 class="course-title">Genesis 42–50</h3>
+          <p class="course-subtitle">Joseph Forgives His Brothers</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/12?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🔥</div>
+          <p class="course-number">March 23–29 · Teaching Sunday</p>
+          <h3 class="course-title">Exodus 1–6</h3>
+          <p class="course-subtitle">Moses and the Burning Bush</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/13?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ APRIL ══════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="apr-title">
+      <h2 id="apr-title" class="section-title">April 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">✝️</div>
+          <p class="course-number">March 30 – April 5</p>
+          <h3 class="course-title">Easter</h3>
+          <p class="course-subtitle">The Resurrection of Jesus Christ</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/14?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🐸</div>
+          <p class="course-number">April 6–12 · Teaching Sunday</p>
+          <h3 class="course-title">Exodus 7–13</h3>
+          <p class="course-subtitle">The Ten Plagues and the Passover</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/15?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🌊</div>
+          <p class="course-number">April 13–19</p>
+          <h3 class="course-title">Exodus 14–18</h3>
+          <p class="course-subtitle">The Parting of the Red Sea</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/16?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">⛰️</div>
+          <p class="course-number">April 20–26 · Teaching Sunday</p>
+          <h3 class="course-title">Exodus 19–20; 24; 31–34</h3>
+          <p class="course-subtitle">The Ten Commandments</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/17?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ MAY ════════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="may-title">
+      <h2 id="may-title" class="section-title">May 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">🏛️</div>
+          <p class="course-number">Apr 27 – May 3</p>
+          <h3 class="course-title">Exodus 35–40; Leviticus 1; 4; 16; 19</h3>
+          <p class="course-subtitle">The Tabernacle and Sacrifice</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/18?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🐍</div>
+          <p class="course-number">May 4–10 · Teaching Sunday</p>
+          <h3 class="course-title">Numbers 11–14; 20–24; 27</h3>
+          <p class="course-subtitle">Murmuring in the Wilderness</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/19?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">📋</div>
+          <p class="course-number">May 11–17</p>
+          <h3 class="course-title">Deuteronomy 6–8; 15; 18; 29–30; 34</h3>
+          <p class="course-subtitle">Hear, O Israel — Moses's Farewell</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/20?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">⚔️</div>
+          <p class="course-number">May 18–24 · Teaching Sunday</p>
+          <h3 class="course-title">Joshua 1–8; 23–24</h3>
+          <p class="course-subtitle">Be Strong and of a Good Courage</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/21?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">💪</div>
+          <p class="course-number">May 25–31</p>
+          <h3 class="course-title">Judges 2–4; 6–8; 13–16</h3>
+          <p class="course-subtitle">Deborah, Gideon, and Samson</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/22?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ JUNE ════════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="jun-title">
+      <h2 id="jun-title" class="section-title">June 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">🌾</div>
+          <p class="course-number">June 1–7 · Teaching Sunday</p>
+          <h3 class="course-title">Ruth; 1 Samuel 1–7</h3>
+          <p class="course-subtitle">Whither Thou Goest, I Will Go</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/23?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">👑</div>
+          <p class="course-number">June 8–14</p>
+          <h3 class="course-title">1 Samuel 8–10; 13; 15–16</h3>
+          <p class="course-subtitle">Israel Demands a King; Samuel Anoints David</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/24?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🪃</div>
+          <p class="course-number">June 15–21 · Teaching Sunday</p>
+          <h3 class="course-title">1 Samuel 17–18; 24–26; 2 Samuel 5–7</h3>
+          <p class="course-subtitle">David and Goliath; The Davidic Covenant</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/25?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🏛️</div>
+          <p class="course-number">June 22–28</p>
+          <h3 class="course-title">2 Samuel 11–12; 1 Kings 3; 6–9; 11</h3>
+          <p class="course-subtitle">Solomon's Wisdom and the Temple</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/26?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ JULY ════════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="jul-title">
+      <h2 id="jul-title" class="section-title">July 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">⚡</div>
+          <p class="course-number">Jun 29 – Jul 5 · Teaching Sunday</p>
+          <h3 class="course-title">1 Kings 12–13; 17–22</h3>
+          <p class="course-subtitle">Elijah on Mount Carmel</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/27?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🌿</div>
+          <p class="course-number">July 6–12</p>
+          <h3 class="course-title">2 Kings 2–7</h3>
+          <p class="course-subtitle">Elisha; Naaman Healed in the Jordan</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/28?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">⛓️</div>
+          <p class="course-number">July 13–19 · Teaching Sunday</p>
+          <h3 class="course-title">2 Kings 16–25</h3>
+          <p class="course-subtitle">The Fall of Israel; Exile to Babylon</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/29?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🙏</div>
+          <p class="course-number">July 20–26</p>
+          <h3 class="course-title">2 Chronicles 14–20; 26; 30</h3>
+          <p class="course-subtitle">Jehoshaphat's Prayer; Hezekiah's Reform</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/30?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ AUGUST ══════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="aug-title">
+      <h2 id="aug-title" class="section-title">August 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">🧱</div>
+          <p class="course-number">Jul 27 – Aug 2 · Teaching Sunday</p>
+          <h3 class="course-title">Ezra 1; 3–7; Nehemiah 2; 4–6; 8</h3>
+          <p class="course-subtitle">Rebuilding the Temple and the Walls</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/31?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">👸</div>
+          <p class="course-number">August 3–9</p>
+          <h3 class="course-title">Esther</h3>
+          <p class="course-subtitle">For Such a Time as This</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/32?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🌪️</div>
+          <p class="course-number">August 10–16 · Teaching Sunday</p>
+          <h3 class="course-title">Job 1–3; 12–14; 19; 21–24; 38–40; 42</h3>
+          <p class="course-subtitle">Where Wast Thou?</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/33?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🎵</div>
+          <p class="course-number">August 17–23</p>
+          <h3 class="course-title">Psalms 1–2; 8; 19–33; 40; 46</h3>
+          <p class="course-subtitle">The Lord Is My Shepherd</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/34?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🕯️</div>
+          <p class="course-number">August 24–30 · Teaching Sunday</p>
+          <h3 class="course-title">Psalms 49–51; 61–66; 69–72; 77–78; 85–86</h3>
+          <p class="course-subtitle">Create in Me a Clean Heart</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/35?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ SEPTEMBER ═══════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="sep-title">
+      <h2 id="sep-title" class="section-title">September 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">🎶</div>
+          <p class="course-number">Aug 31 – Sep 6</p>
+          <h3 class="course-title">Psalms 102–3; 110; 116–19; 127–28; 135–39; 146–50</h3>
+          <p class="course-subtitle">Praise Ye the Lord</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/36?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">💡</div>
+          <p class="course-number">September 7–13 · Teaching Sunday</p>
+          <h3 class="course-title">Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12</h3>
+          <p class="course-subtitle">Trust in the Lord with All Thine Heart</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/37?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">📣</div>
+          <p class="course-number">September 14–20</p>
+          <h3 class="course-title">Isaiah 1–12</h3>
+          <p class="course-subtitle">Here Am I — Send Me</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/38?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🌄</div>
+          <p class="course-number">September 21–27 · Teaching Sunday</p>
+          <h3 class="course-title">Isaiah 13–14; 22; 24–30; 35</h3>
+          <p class="course-subtitle">Marvelous Work and a Wonder</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/39?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ OCTOBER ═════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="oct-title">
+      <h2 id="oct-title" class="section-title">October 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">💧</div>
+          <p class="course-number">Sep 28 – Oct 4</p>
+          <h3 class="course-title">Isaiah 40–49</h3>
+          <p class="course-subtitle">Comfort Ye My People</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/40?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🩹</div>
+          <p class="course-number">October 5–11 · Teaching Sunday</p>
+          <h3 class="course-title">Isaiah 50–57</h3>
+          <p class="course-subtitle">He Was Wounded for Our Transgressions</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/41?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">✨</div>
+          <p class="course-number">October 12–18</p>
+          <h3 class="course-title">Isaiah 58–66</h3>
+          <p class="course-subtitle">Arise, Shine — Thy Light Is Come</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/42?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">😢</div>
+          <p class="course-number">October 19–25 · Teaching Sunday</p>
+          <h3 class="course-title">Jeremiah 1–3; 7; 16–18; 20</h3>
+          <p class="course-subtitle">Before I Formed Thee in the Belly I Knew Thee</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/43?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ NOVEMBER ════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="nov-title">
+      <h2 id="nov-title" class="section-title">November 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">📜</div>
+          <p class="course-number">Oct 26 – Nov 1</p>
+          <h3 class="course-title">Jeremiah 31–33; 36–38; Lamentations 1; 3</h3>
+          <p class="course-subtitle">A New Covenant Written in the Heart</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/44?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">💀</div>
+          <p class="course-number">November 2–8 · Teaching Sunday</p>
+          <h3 class="course-title">Ezekiel 1–3; 33–34; 36–37; 47</h3>
+          <p class="course-subtitle">The Valley of Dry Bones</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/45?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🦁</div>
+          <p class="course-number">November 9–15</p>
+          <h3 class="course-title">Daniel 1–7</h3>
+          <p class="course-subtitle">Daniel in Babylon — The Stone Cut Without Hands</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/46?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">💍</div>
+          <p class="course-number">November 16–22 · Teaching Sunday</p>
+          <h3 class="course-title">Hosea 1–6; 10–14; Joel</h3>
+          <p class="course-subtitle">I Will Betroth Thee unto Me</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/47?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🐟</div>
+          <p class="course-number">November 23–29</p>
+          <h3 class="course-title">Amos; Obadiah; Jonah</h3>
+          <p class="course-subtitle">The Minor Prophets — Justice and Mercy</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/48?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ DECEMBER ════════════════════════════════════════ -->
+    <section class="courses-section" aria-labelledby="dec-title">
+      <h2 id="dec-title" class="section-title">December 2026</h2>
+      <div class="course-grid">
+
+        <article class="course-card">
+          <div class="course-icon">🌅</div>
+          <p class="course-number">Nov 30 – Dec 6 · Teaching Sunday</p>
+          <h3 class="course-title">Micah; Nahum; Habakkuk; Zephaniah</h3>
+          <p class="course-subtitle">What Doth the Lord Require of Thee?</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/49?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">🕍</div>
+          <p class="course-number">December 7–13</p>
+          <h3 class="course-title">Haggai 1–2; Zechariah 1–4; 7–14</h3>
+          <p class="course-subtitle">Rebuild the Temple — The Branch</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/50?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">☀️</div>
+          <p class="course-number">December 14–20 · Teaching Sunday</p>
+          <h3 class="course-title">Malachi</h3>
+          <p class="course-subtitle">Before the Great and Dreadful Day of the Lord</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/51?lang=eng" target="_blank">📖 Study in Official Manual</a>
+            <a class="cta secondary" href="../coming-soon.html">🎯 View Sunday Presentation</a>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-icon">⭐</div>
+          <p class="course-number">December 21–27</p>
+          <h3 class="course-title">Christmas</h3>
+          <p class="course-subtitle">A Child Is Born — The Fulfillment of Ancient Prophecy</p>
+          <div class="cta-row">
+            <a class="cta" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/52?lang=eng" target="_blank">📖 Study in Official Manual</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══ RESOURCES ═══════════════════════════════════════ -->
+    <section id="resources" aria-labelledby="resources-title">
+      <h2 id="resources-title" class="section-title">Resources</h2>
+      <ul class="link-list">
+        <li><a href="https://www.churchofjesuschrist.org/study/scriptures/ot?lang=eng" target="_blank">Old Testament (scriptures online)</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026?lang=eng" target="_blank">Come, Follow Me — Old Testament 2026 Manual</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/study/come-follow-me?lang=eng" target="_blank">Come, Follow Me Hub</a></li>
+        <li><a href="resources/" >Class Handouts &amp; Study Guides</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <p>© <span id="year"></span> Gospel Doctrine Class — Seek Learning</p>
+    <p>Unofficial class resource site. Part of <a href="../index.html">Seek Learning Gospel Doctrine</a>.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
