@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Lord Was with Joseph — Genesis 37–41</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <style>
+        .reveal { font-size: 36px; line-height: 1.5; font-family: Arial, Helvetica, sans-serif; }
+        .reveal h1 { font-size: 62px; margin-bottom: 20px; line-height: 1.2; font-weight: bold; color: #1a2e4a; }
+        .reveal h2 { font-size: 50px; margin-bottom: 20px; color: #1a2e4a; line-height: 1.3; font-weight: bold; }
+        .reveal p, .reveal li { font-size: 34px; margin-bottom: 14px; line-height: 1.6; }
+        .reveal ul { margin-left: 50px; }
+        .reveal li { margin-bottom: 14px; }
+        .reveal section { text-align: center; }
+        .reveal ul, .reveal ol { text-align: left; }
+
+        /* Scripture box */
+        .scripture-box { background-color: #eef6fb; padding: 24px 32px; border-left: 6px solid #2980b9; margin: 20px 0; border-radius: 6px; text-align: left; }
+        .scripture-box p { margin: 0 0 10px 0; font-size: 34px; }
+        .scripture-box p:last-child { margin-bottom: 0; }
+        .invitation { font-size: 38px; color: #1a7a3c; font-weight: bold; margin: 0 0 12px 0 !important; }
+
+        /* Question boxes */
+        .question { color: #1a4a7a; font-size: 33px; margin: 14px 0; padding: 18px 24px; background-color: #eaf1fb; border-radius: 8px; border-left: 4px solid #2980b9; text-align: left; line-height: 1.5; }
+        .question-box { margin: 16px 0; }
+
+        /* Doctrine box */
+        .doctrine-box { background-color: #1a2e4a; color: #ffffff; padding: 22px 30px; border-radius: 8px; margin: 18px 0; text-align: left; }
+        .doctrine-box p { font-size: 33px; margin: 0; line-height: 1.6; color: #ffffff; font-style: italic; }
+        .doctrine-label { font-size: 24px !important; font-weight: bold; color: #a8c4e0 !important; font-style: normal !important; margin-bottom: 8px !important; letter-spacing: 0.08em; text-transform: uppercase; }
+
+        /* Table */
+        .reveal table { width: 100%; border-collapse: collapse; font-size: 32px; margin: 16px 0; }
+        .reveal table th { background-color: #1a2e4a; color: #ffffff; padding: 14px 22px; text-align: left; font-size: 32px; font-weight: bold; }
+        .reveal table td { padding: 13px 22px; border-bottom: 1px solid #d0dce8; text-align: left; font-size: 30px; line-height: 1.5; vertical-align: middle; }
+        .reveal table tr:nth-child(even) td { background-color: #f4f8fc; }
+        .reveal table tr:nth-child(odd) td { background-color: #ffffff; }
+
+        /* Act boxes */
+        .act-box { background-color: #f4f8fc; border-left: 5px solid #2980b9; padding: 14px 22px; margin: 10px 0; border-radius: 0 6px 6px 0; text-align: left; }
+        .act-box strong { color: #1a2e4a; font-size: 32px; display: block; margin-bottom: 4px; }
+        .act-box p { font-size: 29px; margin: 0; color: #34495e; font-style: italic; line-height: 1.4; }
+
+        /* Title slide */
+        .title-date { font-size: 36px; color: #2c4a6e; margin-bottom: 10px; }
+        .title-scripture { font-size: 44px; color: #1a2e4a; font-style: italic; margin-bottom: 16px; }
+        .title-arc { font-size: 30px; color: #555; font-style: italic; margin-top: 20px; padding: 16px 28px; border-top: 2px solid #d0dce8; }
+
+        /* Content box */
+        .content-box { background-color: #f9fafb; border-radius: 8px; padding: 22px 30px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+
+        /* Reflection box */
+        .reflection-box { background-color: #f0f7f0; border-left: 6px solid #27ae60; padding: 22px 30px; border-radius: 6px; margin: 16px 0; text-align: left; }
+        .reflection-box p { font-size: 34px; color: #1a3a2a; margin: 0; line-height: 1.6; }
+
+        /* Closing verse */
+        .closing-verse { background-color: #1a2e4a; color: #ffffff; padding: 26px 36px; border-radius: 8px; margin: 16px 0; text-align: center; }
+        .closing-verse p { font-size: 40px; font-style: italic; color: #ffffff; margin: 0 0 10px 0; line-height: 1.6; }
+        .closing-verse span { font-size: 28px; color: #a8c4e0; }
+
+        /* Tension box */
+        .tension-box { background-color: #fdf6ec; border-left: 6px solid #e67e22; padding: 18px 26px; border-radius: 6px; margin: 14px 0; text-align: left; }
+        .tension-box p { font-size: 32px; color: #7d4e1a; margin: 0; font-style: italic; line-height: 1.5; }
+
+        /* Gameshow */
+        .gameshow-banner { background: linear-gradient(135deg, #1a2e4a 0%, #2980b9 100%); color: #ffffff; padding: 28px 40px; border-radius: 12px; margin: 0 0 24px 0; text-align: center; }
+        .gameshow-title { font-size: 58px !important; font-weight: bold; color: #ffd700 !important; margin: 0 0 8px 0 !important; letter-spacing: 0.02em; }
+        .gameshow-sub { font-size: 32px !important; color: #a8d4f0 !important; margin: 0 !important; font-style: italic; }
+        .gameshow-prompt { background-color: #f9fafb; border-radius: 8px; padding: 20px 32px; margin: 0 0 20px 0; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+        .gameshow-prompt p { font-size: 34px; margin: 8px 0; color: #1a2e4a; }
+        .gameshow-prompt strong { color: #e67e22; font-size: 38px; }
+
+        /* Reveal answer cells */
+        .reveal-answer { color: transparent; background-color: #d0dce8; border-radius: 4px; user-select: none; min-width: 200px; }
+        .reveal-answer.visible { color: inherit; background-color: transparent; }
+
+        /* Theodicy boxes */
+        .theodicy-box { background-color: #f5f0fb; border-left: 6px solid #8e44ad; padding: 22px 30px; border-radius: 6px; margin: 14px 0; text-align: left; }
+        .theodicy-box p { font-size: 32px; color: #4a235a; margin: 0 0 10px 0; line-height: 1.6; }
+        .theodicy-box p:last-child { margin-bottom: 0; }
+        .theodicy-term { font-size: 48px !important; font-weight: bold; color: #6c3483 !important; margin: 0 0 6px 0 !important; }
+        .theodicy-greek { font-size: 28px !important; color: #8e44ad !important; font-style: italic; margin: 0 0 16px 0 !important; }
+
+        /* Five categories grid */
+        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; text-align: left; }
+        .category-item { background-color: #f5f0fb; border-left: 4px solid #8e44ad; border-radius: 0 6px 6px 0; padding: 14px 18px; }
+        .category-item strong { font-size: 28px; color: #6c3483; display: block; margin-bottom: 4px; }
+        .category-item p { font-size: 26px; color: #4a235a; margin: 0; line-height: 1.4; }
+        .category-lds { grid-column: 1 / -1; background-color: #1a2e4a; border-left: 4px solid #ffd700; border-radius: 0 6px 6px 0; padding: 14px 18px; }
+        .category-lds strong { font-size: 28px; color: #ffd700; display: block; margin-bottom: 4px; }
+        .category-lds p { font-size: 26px; color: #ffffff; margin: 0; line-height: 1.4; }
+
+        /* Pauline suffering box */
+        .paul-box { background-color: #1a2e4a; border-radius: 8px; padding: 22px 30px; margin: 14px 0; text-align: left; }
+        .paul-box p { font-size: 32px; color: #ffffff; margin: 0 0 12px 0; line-height: 1.6; }
+        .paul-box p:last-child { margin-bottom: 0; }
+        .paul-label { font-size: 24px !important; font-weight: bold; color: #a8c4e0 !important; font-style: normal !important; margin-bottom: 8px !important; letter-spacing: 0.08em; text-transform: uppercase; }
+        .paul-verse { background-color: rgba(255,255,255,0.08); border-left: 4px solid #a8c4e0; border-radius: 0 6px 6px 0; padding: 12px 18px; margin: 10px 0; }
+        .paul-verse strong { color: #ffd700; font-size: 28px; display: block; margin-bottom: 4px; }
+        .paul-verse p { font-size: 27px; color: #dce8f5; margin: 0; font-style: italic; line-height: 1.5; }
+        .paul-bridge { background-color: rgba(255,215,0,0.12); border-left: 4px solid #ffd700; padding: 14px 18px; border-radius: 0 6px 6px 0; margin-top: 14px; }
+        .paul-bridge p { font-size: 28px; color: #ffd700; margin: 0; font-style: italic; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: TITLE -->
+            <section>
+                <p class="title-date">March 9–15, 2026</p>
+                <h1>"The Lord Was with Joseph"</h1>
+                <p class="title-scripture">Genesis 37–41</p>
+                <p class="title-arc">"The Lord was with Joseph — and that presence gave him the power to bear what he could not bear alone."</p>
+            </section>
+
+            <!-- SLIDE 2: JOSEPH'S WORLD -->
+            <section>
+                <h2>Joseph's World</h2>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; What do you remember about Joseph — who is he, and what is his place in Jacob's family?
+                    </div>
+                    <div class="question">
+                        &#x1F4AD; How would you describe the relationship between Joseph and his brothers — and what drove it to that point?
+                    </div>
+                    <div class="question">
+                        &#x1F4AD; As his story begins, what advantages and what vulnerabilities does Joseph carry into what's coming?
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3A: GAMESHOW INTRO -->
+            <section>
+                <div class="gameshow-banner">
+                    <p class="gameshow-title">&#127916; What Happens Next?</p>
+                    <p class="gameshow-sub">A Game of Righteous Choices &amp; Surprising Outcomes</p>
+                </div>
+                <div class="gameshow-prompt">
+                    <p>Joseph does the right thing — every time.</p>
+                    <p>Before we look at what actually happened...</p>
+                    <p><strong>What would you expect God to do for him?</strong></p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3B: ADVERSITY TABLE WITH CLICK REVEALS -->
+            <section>
+                <h2>What Happens Next?</h2>
+                <table>
+                    <tr>
+                        <th>What Joseph Did Right</th>
+                        <th>What Happened Next</th>
+                    </tr>
+                    <tr>
+                        <td>Faithful to his father</td>
+                        <td class="fragment reveal-answer">Brothers despised him</td>
+                    </tr>
+                    <tr>
+                        <td>Reported brothers' wrongdoing</td>
+                        <td class="fragment reveal-answer">Sold into slavery</td>
+                    </tr>
+                    <tr>
+                        <td>Served Potiphar faithfully</td>
+                        <td class="fragment reveal-answer">Falsely accused, imprisoned</td>
+                    </tr>
+                    <tr>
+                        <td>Interpreted the butler's dream</td>
+                        <td class="fragment reveal-answer">Forgotten two more years</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- SLIDE 3C: THEODICY NAMED AND DEFINED -->
+            <section>
+                <h2>This Question Has a Name</h2>
+                <div class="theodicy-box">
+                    <p class="theodicy-term">Theodicy <em style="font-size:0.6em; font-weight:normal; color:#8e44ad;">(thee-OD-ih-see)</em></p>
+                    <p class="theodicy-greek">Greek: theos (God) + dike (justice)</p>
+                    <p>If God is good and all-powerful — why does He allow His people to suffer?</p>
+                </div>
+                <div class="content-box">
+                    <ul>
+                        <li><strong>Job</strong> — righteous man, stripped of everything, given no explanation</li>
+                        <li><strong>Jeremiah</strong> — faithful prophet, thrown into a pit</li>
+                        <li><strong>Joseph Smith</strong> — Liberty Jail, 1839: <em>"O God, where art thou?"</em> (D&amp;C 121:1–2)</li>
+                        <li><strong>Joseph of Egypt</strong> — and now, this man</li>
+                    </ul>
+                </div>
+                <div class="tension-box">
+                    <p>We are not going to resolve this in the abstract today. We are going to watch God answer it through one man's life.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3D: DISCUSSION — WHY DOES GOD ALLOW SUFFERING -->
+            <section>
+                <h2>Let's Discuss</h2>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; Why do you think God allows His people to suffer — even when they are faithful?
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- SLIDE 3E: FIVE CATEGORIES -->
+            <section>
+                <h2>Why God Allows Suffering</h2>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <strong>1. Free Will</strong>
+                        <p>Agency requires the possibility of opposition. God will not override human choices — suffering is often the consequence of a world where agency is real. <em>(2 Nephi 2:11, 27)</em></p>
+                    </div>
+                    <div class="category-item">
+                        <strong>2. Soul-Making</strong>
+                        <p>Suffering is the training ground for virtue and spiritual maturity. Earth life is designed to produce growth. <em>(Abraham 3:25; D&amp;C 122:7)</em></p>
+                    </div>
+                    <div class="category-item">
+                        <strong>3. Greater Good</strong>
+                        <p>Some suffering leads to goods that could not exist otherwise — testimony, communal strength, canonized revelation from Liberty Jail. <em>(Ether 12:6)</em></p>
+                    </div>
+                    <div class="category-item">
+                        <strong>4. Mysterious Providence</strong>
+                        <p>Some suffering cannot be fully explained. God responds not always with answers, but with assurance. <em>"My son, peace be unto thy soul." (D&amp;C 121:7)</em></p>
+                    </div>
+                    <div class="category-lds">
+                        <strong>5. The LDS Distinctive — A Weeping God</strong>
+                        <p>God is not distant from our suffering. He entered it in Gethsemane. He weeps with us (Moses 7:28). Our suffering is consecrated — not just educational, but preparation for exaltation itself. Christ's empathy is not theoretical. It is earned. <em>(Alma 7:11–12)</em></p>
+                    </div>
+                </div>
+                <div class="tension-box">
+                    <p>&#128209; A handout with full explanations and scriptures is available for further study.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3F: SUFFERING WITH CHRIST -->
+            <section>
+                <h2>Suffering With Christ</h2>
+                <div class="paul-box">
+                    <p class="paul-label">The Deepest Answer — The Pauline Doctrine</p>
+                    <p>Our suffering is not random, not pointless, not merely educational. When we suffer faithfully, we suffer <em>with</em> Christ — participating in something larger than ourselves.</p>
+                    <div class="paul-verse">
+                        <strong>Romans 8:17</strong>
+                        <p>Joint-heirs with Christ — <em>if so be that we suffer with him.</em> Suffering with Christ is the condition of joint-heirship.</p>
+                    </div>
+                    <div class="paul-verse">
+                        <strong>Philippians 3:10</strong>
+                        <p><em>"The fellowship of his sufferings."</em> Suffering with Christ is a form of knowing Him — intimate, participatory knowledge.</p>
+                    </div>
+                    <div class="paul-verse">
+                        <strong>Colossians 1:24</strong>
+                        <p>Paul's sufferings <em>fill up</em> the afflictions of Christ in His body. Our suffering has redemptive meaning because it is joined to His.</p>
+                    </div>
+                    <div class="paul-bridge">
+                        <p>Joseph didn't just endure suffering. He suffered redemptively — his pit, his prison, his false accusation all became instruments of salvation for his family and for Egypt. His suffering participated in something far larger than he could see.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: LET'S READ THE REFRAIN -->
+            <section>
+                <h2>The Narrator's Refrain</h2>
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read: Genesis 39:2–3, 21, 23</p>
+                    <p>Three times — inside the disaster, not after it</p>
+                </div>
+                <div class="doctrine-box">
+                    <p class="doctrine-label">Notice</p>
+                    <p>This is the narrator speaking — not an angel, not Joseph's testimony. The author of Genesis insists quietly, three separate times, that something invisible runs underneath the visible disaster.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: DISCUSSION — ADVERSITY -->
+            <section>
+                <h2>Let's Discuss</h2>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; When have you recognized the Lord's presence during a trial — in the moment, or only looking back?
+                    </div>
+                    <div class="question">
+                        &#x1F4A1; What helps you stay close to the Lord when circumstances suggest He has forgotten you?
+                    </div>
+                    <div class="question">
+                        &#x1F4AD; Has there been a trial in your life that, looking back, you can see was part of something larger? How did that realization change the meaning of what you went through?
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: THE PROMISE -->
+            <section>
+                <h2>The Promise</h2>
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read:</p>
+                    <p>&#128214; Deuteronomy 31:6</p>
+                    <p>&#128214; John 14:18</p>
+                    <p>&#128214; D&amp;C 121:7–8</p>
+                </div>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; What do these verses tell us about the character of God — what kind of God makes promises like these?
+                    </div>
+                    <div class="question">
+                        &#x1F4A1; Has there been a moment in your life when one of these promises became real to you — rather than just words on a page?
+                    </div>
+                </div>
+                <div class="doctrine-box">
+                    <p class="doctrine-label">Doctrine</p>
+                    <p>The Lord's presence is not explanation and not always deliverance — it is enablement. The promise precedes the pit.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: THE MECHANISM -->
+            <section>
+                <h2>The Mechanism</h2>
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read:</p>
+                    <p>&#128214; Alma 7:11–12</p>
+                    <p>&#128214; Philippians 4:13</p>
+                    <p>&#128214; Isaiah 40:29–31</p>
+                </div>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; Alma says Christ took on our afflictions so He would know how to succor us — what does it mean to you that He didn't just observe our suffering but entered it?
+                    </div>
+                    <div class="question">
+                        &#x1F4A1; Where in your life right now do you need the strength Paul describes — the ability to do hard things through Christ?
+                    </div>
+                </div>
+                <div class="doctrine-box">
+                    <p class="doctrine-label">Doctrine</p>
+                    <p>He has been in the pit. That experiential knowledge becomes the source of our enabling strength.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: THE EVIDENCE -->
+            <section>
+                <h2>The Evidence</h2>
+                <div class="scripture-box">
+                    <p class="invitation">Let's Read:</p>
+                    <p>&#128214; Romans 8:28</p>
+                    <p>&#128214; D&amp;C 122:7</p>
+                    <p>&#128214; 2 Corinthians 4:8–9</p>
+                </div>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; Joseph never complains in the text — not once. What do you think that silence tells us about what the Lord's presence was actually doing in him?
+                    </div>
+                    <div class="question">
+                        &#x1F4A1; Can you think of a person in your own life who embodied this — troubled on every side, yet not destroyed? What did their example teach you?
+                    </div>
+                </div>
+                <div class="doctrine-box">
+                    <p class="doctrine-label">Doctrine</p>
+                    <p>Troubled on every side, yet not distressed. Cast down, but not destroyed. That endurance is not personality — it is the fruit of a presence.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: THREE ACTS OF REVELATION -->
+            <section>
+                <h2>The Three Acts of Revelation</h2>
+                <div class="act-box">
+                    <strong>Act 1 — Genesis 37:5–11</strong>
+                    <p>Joseph tells his dreams openly and naively — his brothers hate him more, his father rebukes him</p>
+                </div>
+                <div class="act-box">
+                    <strong>Act 2 — Genesis 40:8</strong>
+                    <p>"Do not interpretations belong to God? Tell me them, I pray you."</p>
+                </div>
+                <div class="act-box">
+                    <strong>Act 3 — Genesis 41:16</strong>
+                    <p>"It is not in me: God shall give Pharaoh an answer of peace."</p>
+                </div>
+                <div class="tension-box">
+                    <p>What changed between Act 1 and Acts 2–3?</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: DISCUSSION — HUMILITY -->
+            <section>
+                <h2>Let's Discuss</h2>
+                <div class="question-box">
+                    <div class="question">
+                        &#x1F4AD; Has suffering ever made you more receptive to the Lord's voice? What changed in you?
+                    </div>
+                </div>
+                <div class="doctrine-box">
+                    <p class="doctrine-label">Doctrine</p>
+                    <p>The Lord's presence in adversity does more than sustain us — it slowly transforms us into instruments in His hands. Humility is not chosen in comfort. It is forged in the pit.</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 11: THE ARC CLOSES -->
+            <section>
+                <h2>The Arc Closes</h2>
+                <div class="closing-verse">
+                    <p>"Ye thought evil against me; but God meant it unto good."</p>
+                    <span>— Genesis 50:20</span>
+                </div>
+                <div class="content-box">
+                    <ul>
+                        <li>The Lord was present through every layer of suffering</li>
+                        <li>Joseph is now humble enough to see it clearly</li>
+                        <li>Presence enabled endurance. Endurance produced transformation.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SLIDE 12: CLOSING REFLECTION — THEODICY ANSWERED -->
+            <section>
+                <h2>So What Is the Answer to Theodicy?</h2>
+                <div class="theodicy-box">
+                    <p>God does not always prevent the pit. But He enters it with us.</p>
+                    <p>His presence gives us the power to bear what we cannot bear alone — and through that bearing, we become something we could not have become any other way.</p>
+                    <p>And when we suffer faithfully, we do not suffer alone — we suffer <em>with Christ</em>, participating in something redemptive, something larger than we can see.</p>
+                </div>
+                <div class="reflection-box">
+                    <p>Where in your life do you need to trust that the Lord's presence is already there — even if you can't feel it yet?</p>
+                </div>
+                <div class="doctrine-box">
+                    <p class="doctrine-label">The Arc</p>
+                    <p>"The Lord was with Joseph — and that presence gave him the power to bear what he could not bear alone."</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide',
+            width: 1920,
+            height: 1080,
+            margin: 0.08,
+            minScale: 0.2,
+            maxScale: 2.0,
+            keyboard: true,
+            touch: true,
+            fragmentInURL: false
+        });
+    </script>
+</body>
+</html>

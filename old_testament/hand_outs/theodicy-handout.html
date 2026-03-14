@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theodicy: Why Does God Allow Suffering?</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1a2e4a;
+            background: #ffffff;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        /* ── HEADER BANNER ── */
+        .header-banner {
+            background-color: #1a2e4a;
+            border-radius: 8px;
+            padding: 28px 36px;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .header-banner h1 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .header-banner .subtitle {
+            font-size: 13px;
+            color: #a8c4e0;
+            margin-bottom: 6px;
+        }
+        .header-banner .greek {
+            font-size: 13px;
+            color: #ffd700;
+            font-style: italic;
+        }
+
+        /* ── CENTRAL QUESTION ── */
+        .question-box {
+            border-left: 6px solid #8e44ad;
+            background-color: #f5f0fb;
+            padding: 18px 24px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 20px;
+        }
+        .question-box .label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #6c3483;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+        .question-box p {
+            font-size: 17px;
+            font-style: italic;
+            color: #4a235a;
+            line-height: 1.5;
+        }
+
+        /* ── BODY TEXT ── */
+        .body-text {
+            font-size: 14px;
+            color: #1a2e4a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* ── SECTION HEADING ── */
+        .section-heading {
+            font-size: 18px;
+            font-weight: bold;
+            padding-bottom: 6px;
+            margin: 32px 0 16px 0;
+        }
+        .section-heading.purple {
+            color: #6c3483;
+            border-bottom: 3px solid #8e44ad;
+        }
+        .section-heading.navy {
+            color: #1a2e4a;
+            border-bottom: 3px solid #1a2e4a;
+        }
+        .section-heading.orange {
+            color: #7d4e1a;
+            border-bottom: 3px solid #e67e22;
+        }
+
+        /* ── CATEGORY BOXES ── */
+        .category-box {
+            display: flex;
+            margin-bottom: 14px;
+            border-radius: 0 6px 6px 0;
+            overflow: hidden;
+        }
+        .category-accent {
+            width: 8px;
+            flex-shrink: 0;
+        }
+        .category-content {
+            flex: 1;
+            padding: 16px 20px;
+        }
+        .category-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .category-row {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        .category-row strong {
+            font-weight: bold;
+        }
+        .category-row.scripture strong {
+            color: #1a7a3c;
+        }
+        .category-row.scripture em {
+            color: #1a7a3c;
+            font-style: italic;
+        }
+
+        /* Free Will */
+        .cat-freewill .category-accent { background-color: #2c5282; }
+        .cat-freewill .category-content { background-color: #f0f4f8; }
+        .cat-freewill .category-title { color: #2c5282; }
+        .cat-freewill .category-row { color: #2d3748; }
+
+        /* Soul-Making */
+        .cat-soul .category-accent { background-color: #1a6640; }
+        .cat-soul .category-content { background-color: #f0f7f4; }
+        .cat-soul .category-title { color: #1a6640; }
+        .cat-soul .category-row { color: #1a3a2a; }
+
+        /* Greater Good */
+        .cat-good .category-accent { background-color: #b7791f; }
+        .cat-good .category-content { background-color: #fffde7; }
+        .cat-good .category-title { color: #b7791f; }
+        .cat-good .category-row { color: #744210; }
+
+        /* Mysterious Providence */
+        .cat-mystery .category-accent { background-color: #c05621; }
+        .cat-mystery .category-content { background-color: #fdf6ec; }
+        .cat-mystery .category-title { color: #c05621; }
+        .cat-mystery .category-row { color: #7b341e; }
+
+        /* LDS Distinctive */
+        .cat-lds {
+            display: flex;
+            margin-bottom: 14px;
+            border-radius: 0 6px 6px 0;
+            overflow: hidden;
+        }
+        .cat-lds .category-accent { width: 8px; flex-shrink: 0; background-color: #ffd700; }
+        .cat-lds .category-content { flex: 1; padding: 18px 20px; background-color: #1a2e4a; }
+        .cat-lds .category-title { font-size: 16px; font-weight: bold; color: #ffd700; margin-bottom: 10px; }
+        .cat-lds .intro-text { font-size: 13px; color: #a8c4e0; margin-bottom: 10px; }
+        .cat-lds .lds-item { font-size: 13px; color: #dce8f5; line-height: 1.6; margin-bottom: 8px; padding-left: 16px; }
+        .cat-lds .lds-item strong { color: #ffd700; }
+
+        /* ── PAULINE VERSES ── */
+        .paul-verse {
+            display: flex;
+            margin-bottom: 12px;
+            border-radius: 0 6px 6px 0;
+            overflow: hidden;
+        }
+        .paul-accent { width: 6px; flex-shrink: 0; background-color: #1a2e4a; }
+        .paul-content { flex: 1; padding: 14px 18px; background-color: #1e3a5f; }
+        .paul-ref { font-size: 15px; font-weight: bold; color: #ffd700; margin-bottom: 6px; }
+        .paul-text { font-size: 13px; color: #dce8f5; font-style: italic; line-height: 1.6; margin-bottom: 6px; }
+        .paul-application { font-size: 13px; color: #a8c4e0; line-height: 1.5; }
+
+        /* ── GENESIS 50:20 QUOTE ── */
+        .closing-quote {
+            border-left: 6px solid #e67e22;
+            background-color: #fdf6ec;
+            padding: 18px 24px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 18px;
+        }
+        .closing-quote p {
+            font-size: 17px;
+            font-style: italic;
+            color: #7d4e1a;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .closing-quote cite {
+            font-size: 13px;
+            font-weight: bold;
+            color: #7d4e1a;
+            font-style: normal;
+        }
+
+        /* ── BULLET LIST ── */
+        .joseph-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 20px 0;
+        }
+        .joseph-list li {
+            font-size: 14px;
+            color: #1a2e4a;
+            line-height: 1.6;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            border-bottom: 1px solid #e8eef4;
+        }
+        .joseph-list li:last-child { border-bottom: none; }
+        .joseph-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #8e44ad;
+            font-weight: bold;
+        }
+        .joseph-list li strong { color: #1a2e4a; }
+
+        /* ── REFLECTION BOX ── */
+        .reflection-box {
+            border-left: 6px solid #27ae60;
+            background-color: #f0f7f0;
+            padding: 18px 24px;
+            border-radius: 0 6px 6px 0;
+            margin: 20px 0;
+        }
+        .reflection-box .label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1a5c2e;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 10px;
+        }
+        .reflection-box p {
+            font-size: 14px;
+            font-style: italic;
+            color: #1a3a2a;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .reflection-box p:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            border-top: 1px solid #cccccc;
+            padding-top: 14px;
+            margin-top: 32px;
+        }
+
+        /* ── PRINT STYLES ── */
+        @media print {
+            body { max-width: 100%; padding: 0; font-size: 13px; }
+            .header-banner { border-radius: 0; }
+            .category-box, .cat-lds, .paul-verse { break-inside: avoid; }
+            .section-heading { break-after: avoid; }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 16px 12px; }
+            .header-banner { padding: 20px 16px; }
+            .header-banner h1 { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header-banner">
+        <h1>Theodicy: Why Does God Allow Suffering?</h1>
+        <p class="subtitle">Gospel Doctrine Companion Handout &nbsp;•&nbsp; Genesis 37–41 &nbsp;•&nbsp; March 9–15, 2026</p>
+        <p class="greek">Greek: theos (God) + dike (justice)</p>
+    </div>
+
+    <!-- CENTRAL QUESTION -->
+    <div class="question-box">
+        <div class="label">The Central Question</div>
+        <p>If God is good and all-powerful — why does He allow His people to suffer?</p>
+    </div>
+
+    <p class="body-text">This question has occupied theologians and saints for millennia. Scripture does not offer a single answer but a cluster of answers, each illuminating a different facet of God's purposes in human suffering. The five frameworks below represent the major traditions of Christian and Latter-day Saint theodicy.</p>
+
+    <!-- FIVE FRAMEWORKS -->
+    <h2 class="section-heading purple">Five Frameworks for Understanding Suffering</h2>
+
+    <!-- 1. Free Will -->
+    <div class="category-box cat-freewill">
+        <div class="category-accent"></div>
+        <div class="category-content">
+            <div class="category-title">1. Free Will Theodicy</div>
+            <div class="category-row"><strong>Classical:</strong> Evil and suffering exist because God gave humans free will. Without the possibility of choosing wrong, love and obedience would be meaningless. (Augustine, Plantinga)</div>
+            <div class="category-row"><strong>LDS:</strong> Agency is a pillar of the Plan of Salvation. God does not override evil choices because agency is essential to our mortal probation. Opposition in all things is the necessary backdrop against which agency functions.</div>
+            <div class="category-row scripture"><strong>Scriptures:</strong> <em>2 Nephi 2:11, 27; Abraham 3:25</em></div>
+        </div>
+    </div>
+
+    <!-- 2. Soul-Making -->
+    <div class="category-box cat-soul">
+        <div class="category-accent"></div>
+        <div class="category-content">
+            <div class="category-title">2. Soul-Making Theodicy</div>
+            <div class="category-row"><strong>Classical:</strong> Suffering is a training ground for virtue. Hardship develops moral and spiritual maturity. God is not primarily a problem-solver but a soul-maker. (Irenaeus, John Hick)</div>
+            <div class="category-row"><strong>LDS:</strong> Earth life is a testing ground designed to produce growth. Zion's Camp is a classic example: outward failure, inward preparation. "All these things shall give thee experience, and shall be for thy good."</div>
+            <div class="category-row scripture"><strong>Scriptures:</strong> <em>Abraham 3:25; D&amp;C 122:7; Ether 12:6</em></div>
+        </div>
+    </div>
+
+    <!-- 3. Greater Good -->
+    <div class="category-box cat-good">
+        <div class="category-accent"></div>
+        <div class="category-content">
+            <div class="category-title">3. Greater Good Theodicy</div>
+            <div class="category-row"><strong>Classical:</strong> Some evils are permitted because they lead to greater goods that could not exist otherwise. Courage presupposes danger. Compassion presupposes suffering. (Leibniz, Swinburne)</div>
+            <div class="category-row"><strong>LDS:</strong> Trials of faith produce testimony and spiritual power. God brings greater good from apparent tragedy: Liberty Jail produced D&amp;C 121–123. Pioneer suffering produced a cohesive covenant people. Even death is a passage to eternal life, not ultimate loss.</div>
+            <div class="category-row scripture"><strong>Scriptures:</strong> <em>Ether 12:6; D&amp;C 58:2–4; Romans 8:28</em></div>
+        </div>
+    </div>
+
+    <!-- 4. Mysterious Providence -->
+    <div class="category-box cat-mystery">
+        <div class="category-accent"></div>
+        <div class="category-content">
+            <div class="category-title">4. Mysterious Providence</div>
+            <div class="category-row"><strong>Classical:</strong> Some suffering cannot be explained rationally. Humans must trust God's wisdom even without answers. The book of Job is the biblical archetype. (Calvin, Barth)</div>
+            <div class="category-row"><strong>LDS:</strong> Latter-day Saints affirm mystery but embed it in eternal perspective. When Joseph Smith cried "O God, where art thou?" the Lord responded not with explanation but with assurance: "My son, peace be unto thy soul." What seems inexplicable now will be understood in the next life.</div>
+            <div class="category-row scripture"><strong>Scriptures:</strong> <em>D&amp;C 121:1–8; Job 38:1–4</em></div>
+        </div>
+    </div>
+
+    <!-- 5. LDS Distinctive -->
+    <div class="cat-lds">
+        <div class="category-accent"></div>
+        <div class="category-content">
+            <div class="category-title">5. The LDS Distinctive — A Weeping God</div>
+            <p class="intro-text">LDS doctrine adds dimensions not found in classical theodicy:</p>
+            <div class="lds-item"><strong>Premortal existence:</strong> Suffering is seen in the context of a long eternal narrative. We accepted the risks of mortality before birth.</div>
+            <div class="lds-item"><strong>Divine Empathy:</strong> God is not distant. He suffered in Gethsemane. Christ experienced all human pain (Alma 7:11–12), giving Him perfect empathy — not theoretical, but earned.</div>
+            <div class="lds-item"><strong>A Weeping God:</strong> "And it came to pass that the God of heaven looked upon the residue of the people, and he wept." (Moses 7:28) God is not detached from our pain. He is a co-sufferer who bears it with us.</div>
+            <div class="lds-item"><strong>Exaltation through consecrated suffering:</strong> Trials sanctify us for godhood itself. The refining fire is not just moral development but divine preparation.</div>
+        </div>
+    </div>
+
+    <!-- SUFFERING WITH CHRIST -->
+    <h2 class="section-heading navy">Suffering With Christ — The Pauline Doctrine</h2>
+
+    <p class="body-text">The deepest answer to theodicy is not philosophical but participatory. When we suffer faithfully, we do not merely endure — we suffer <em>with</em> Christ, joining our suffering to His in a bond that transforms it from meaningless pain into redemptive participation.</p>
+
+    <div class="paul-verse">
+        <div class="paul-accent"></div>
+        <div class="paul-content">
+            <div class="paul-ref">Romans 8:17</div>
+            <div class="paul-text">"If children, then heirs — heirs of God and joint-heirs with Christ; if so be that we suffer with him, that we may be also glorified together."</div>
+            <div class="paul-application">Suffering with Christ is not incidental to the covenant — it is the condition of joint-heirship. Glory and suffering are bound together.</div>
+        </div>
+    </div>
+
+    <div class="paul-verse">
+        <div class="paul-accent"></div>
+        <div class="paul-content">
+            <div class="paul-ref">Philippians 3:10</div>
+            <div class="paul-text">"That I may know him, and the power of his resurrection, and the fellowship of his sufferings, being made conformable unto his death."</div>
+            <div class="paul-application">Paul frames suffering with Christ as a form of knowing Him — intimate, participatory knowledge. Fellowship in suffering is fellowship with Christ.</div>
+        </div>
+    </div>
+
+    <div class="paul-verse">
+        <div class="paul-accent"></div>
+        <div class="paul-content">
+            <div class="paul-ref">Colossians 1:24</div>
+            <div class="paul-text">"Who now rejoice in my sufferings for you, and fill up that which is behind of the afflictions of Christ in my flesh for his body's sake."</div>
+            <div class="paul-application">The most daring of Paul's statements: our suffering fills up the afflictions of Christ. It has redemptive meaning because it is joined to His.</div>
+        </div>
+    </div>
+
+    <div class="paul-verse">
+        <div class="paul-accent"></div>
+        <div class="paul-content">
+            <div class="paul-ref">2 Corinthians 4:8–9</div>
+            <div class="paul-text">"We are troubled on every side, yet not distressed; we are perplexed, but not in despair; persecuted, but not forsaken; cast down, but not destroyed."</div>
+            <div class="paul-application">The evidence of the Lord's enabling presence — endurance that is not personality but the fruit of participation in Christ.</div>
+        </div>
+    </div>
+
+    <!-- JOSEPH'S STORY -->
+    <h2 class="section-heading orange">Joseph's Story as the Answer</h2>
+
+    <div class="closing-quote">
+        <p>"Ye thought evil against me; but God meant it unto good."</p>
+        <cite>— Genesis 50:20</cite>
+    </div>
+
+    <p class="body-text">Joseph's biography is the Old Testament's most sustained answer to theodicy. He doesn't argue it — he lives it. Every framework above is visible in his story:</p>
+
+    <ul class="joseph-list">
+        <li><strong>Free Will:</strong> His brothers' agency, Potiphar's wife's choice — Joseph suffers the consequences of others' free choices. God does not override them.</li>
+        <li><strong>Soul-Making:</strong> The naive dreamer of Genesis 37 becomes the humble, wise statesman of Genesis 41. The pit and prison made him.</li>
+        <li><strong>Greater Good:</strong> His suffering became the salvation of Egypt and his family. What looked like catastrophe was preparation for deliverance.</li>
+        <li><strong>Mysterious Providence:</strong> He never receives an explanation. The Lord's presence is assurance, not explanation.</li>
+        <li><strong>Suffering with Christ:</strong> His pit, his prison, his false accusation all became instruments of salvation — his suffering participated in something far larger than he could see.</li>
+    </ul>
+
+    <!-- REFLECTION -->
+    <div class="reflection-box">
+        <div class="label">Personal Reflection</div>
+        <p>Where in your life do you need to trust that the Lord's presence is already there — even if you can't feel it yet?</p>
+        <p>Has there been a trial in your life that, looking back, you can see was part of something larger? How did that realization change the meaning of what you went through?</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Gospel Doctrine Sunday School &nbsp;•&nbsp; Genesis 37–41 &nbsp;•&nbsp; March 9–15, 2026 &nbsp;•&nbsp; seek-learning.netlify.app
+    </div>
+
+</body>
+</html>
